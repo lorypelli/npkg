@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply font-custom text-primary_dark dark:text-primary;
+}
+
+:focus {
+    @apply outline-none;
+}
+
+button:disabled {
+    @apply cursor-not-allowed;
+}
