@@ -14,6 +14,10 @@ export default {
             fontFamily: {
                 custom: "'Martian Mono', monospace",
             },
+            width: {
+                container_max: '1150px',
+                container_min: '350px',
+            },
         },
     },
     darkMode: 'media',

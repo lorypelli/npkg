@@ -1,6 +1,12 @@
 import type { User } from './user.ts';
 
-export interface Package {
+export interface General {
+    ["dist-tags"]: {
+        latest: string;
+    };
+    readme: string;
+}
+export interface Version {
     name: string;
     version: string;
     description?: string;
