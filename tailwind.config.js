@@ -13,7 +13,7 @@ export default {
             },
             fontFamily: {
                 custom: "'Martian Mono', monospace",
-            }
+            },
         },
     },
     darkMode: 'media',

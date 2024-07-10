@@ -2,6 +2,4 @@
     import '../globals.css';
 </script>
 
-<div>
-    <slot />
-</div>
+<slot />

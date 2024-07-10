@@ -1,4 +1,4 @@
-import type { User } from './user.ts'
+import type { User } from './user.ts';
 
 export interface Search {
     objects: {
@@ -10,17 +10,8 @@ export interface Search {
 interface Package {
     name: string;
     version: string;
-    description: string;
+    description?: string;
+    keywords?: string[];
     date: string;
-    links: Links;
-    author?: User;
     publisher: User;
-    mantainers: User[];
-}
-
-interface Links {
-    npm: string;
-    homepage: string;
-    repository: string;
-    bugs: string;
 }
