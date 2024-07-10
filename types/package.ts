@@ -1,11 +1,5 @@
 import type { User } from './user.ts';
 
-export interface General {
-    ["dist-tags"]: {
-        latest: string;
-    };
-    readme: string;
-}
 export interface Version {
     name: string;
     version: string;
@@ -22,6 +16,21 @@ export interface Version {
     scripts?: Entries;
     dependencies: Entries;
     devDependencies: Entries;
+}
+
+export interface Code {
+    fileCount: number;
+    files: {
+        [x: string]: FileInfo
+    }
+}
+
+interface FileInfo {
+    contentType: string;
+    hex: string;
+    path: string;
+    size: number;
+    type: string;
 }
 
 interface Entries {
