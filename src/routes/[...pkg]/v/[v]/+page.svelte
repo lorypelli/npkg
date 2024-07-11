@@ -4,6 +4,7 @@
 
 <svelte:head>
     <title>npkg - {data.name}@{data.version}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/github-dark.min.css" />
 </svelte:head>
 
 <div class="flex columns-3">

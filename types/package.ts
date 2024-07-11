@@ -1,10 +1,7 @@
 import type { User } from './user.ts';
 
-export interface Version {
-    name: string;
-    version: string;
-    description?: string;
-    author?: User;
+export interface General {
+    readme: string;
     contributors?: User[];
     license?: string;
     maintainers?: User[];
@@ -12,6 +9,12 @@ export interface Version {
     bugs?: {
         url: string;
     };
+}
+
+export interface Version {
+    name: string;
+    version: string;
+    description?: string;
     types?: string;
     scripts?: Entries;
     dependencies: Entries;
