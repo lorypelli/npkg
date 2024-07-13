@@ -19,7 +19,7 @@
                 >
             </div>
             {#if o.package.description}
-                <span>{o.package.description}</span>
+                <span class="text-sm">{o.package.description}</span>
             {/if}
             <div class="flex items-center pt-1">
                 <span

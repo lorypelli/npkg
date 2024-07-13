@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-    @apply font-custom text-primary_dark dark:text-primary;
+    @apply font-mono text-primary_dark dark:text-primary;
 }
 
 :focus {

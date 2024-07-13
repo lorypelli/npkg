@@ -12,6 +12,7 @@
             >{data.name}@{data.version}</span
         >
         <span class="text-center text-sm">{data.description}</span>
+        <span>Installation</span>
     </div>
     <div class="flex w-container_max items-center justify-center">
         <iframe
