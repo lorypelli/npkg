@@ -1,18 +1,26 @@
 <script lang="ts">
     export let data;
+    const pkg = `${data.name}@${data.version}`
 </script>
 
 <svelte:head>
-    <title>npkg - {data.name}@{data.version}</title>
+    <title>npkg - {pkg}</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/github-dark.min.css"
+    />
 </svelte:head>
 
 <div class="flex h-screen columns-3">
     <div class="flex h-full w-container_min flex-col">
         <span class="text-center font-extrabold"
-            >{data.name}@{data.version}</span
+            >{pkg}</span
         >
         <span class="text-center text-sm">{data.description}</span>
-        <span>Installation</span>
+        <span class="text-center font-bold">Installation:</span>
+        <pre class="flex justify-center items-center">
+            <code class="hljs language-sh rounded-lg">npm i {pkg}</code>
+        </pre>
     </div>
     <div class="flex w-container_max items-center justify-center">
         <iframe
