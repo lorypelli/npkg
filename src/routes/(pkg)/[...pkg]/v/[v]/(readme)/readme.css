@@ -1,0 +1,13 @@
+* {
+    font-family: 'Martian Mono', monospace;
+}
+
+body {
+    background-color: #e7e5e4;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #181a1b;
+    }
+}

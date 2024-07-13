@@ -1,20 +1,13 @@
 import type { User } from './user.ts';
 
-export interface General {
-    readme: string;
-    contributors?: User[];
-    license?: string;
-    maintainers?: User[];
-    homepage?: string;
-    bugs?: {
-        url: string;
-    };
-}
-
 export interface Version {
     name: string;
     version: string;
     description?: string;
+    author?: User;
+    contributors?: User[];
+    license?: string;
+    maintainers?: User[];
     types?: string;
     scripts?: Entries;
     dependencies: Entries;
@@ -24,8 +17,8 @@ export interface Version {
 export interface Code {
     fileCount: number;
     files: {
-        [x: string]: FileInfo
-    }
+        [x: string]: FileInfo;
+    };
 }
 
 interface FileInfo {

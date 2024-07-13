@@ -54,13 +54,19 @@
 <div class="flex justify-center space-x-2">
     {#each data.pages as p}
         <a href="/search?q={data.q}&page={p}">
-            <button class="rounded-md border-2 mb-2 text-xl border-black px-1 dark:border-white">{p}</button>
+            <button
+                class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
+                >{p}</button
+            >
         </a>
     {/each}
     {#if data.pages.at(-1) && (data.pages.at(-1) || 0) + 1 != data.lastPage}
         <span>...</span>
     {/if}
     <a href="/search?q={data.q}&page={data.lastPage}">
-        <button class="rounded-md border-2 mb-2 text-xl border-black px-1 dark:border-white">{data.lastPage}</button>
+        <button
+            class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
+            >{data.lastPage}</button
+        >
     </a>
 </div>
