@@ -1,5 +1,5 @@
 import { redirect } from '@sveltejs/kit';
-import type { Version } from '../../../../../types/package.ts';
+import type { General } from '../../../../../types/package.ts';
 
 export async function load({ params: { pkg } }) {
     if (!pkg) {
@@ -9,9 +9,11 @@ export async function load({ params: { pkg } }) {
     if (general.status != 200) {
         redirect(302, '/');
     }
-    const pkg_general: { versions: { [x: string]: Version } } = await general.json();
+    const pkg_general: General = await general.json();
     return {
         pkg,
+        tags: pkg_general['dist-tags'],
         versions: pkg_general.versions,
+        time: pkg_general.time
     }
 }

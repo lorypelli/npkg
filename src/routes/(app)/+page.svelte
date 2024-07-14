@@ -4,7 +4,7 @@
 
 <div class="flex h-screen flex-col items-center justify-center text-center">
     <span class="text-8xl font-extrabold">NPKG</span>
-    <form action="/search" class="pt-2" autocomplete="off">
+    <form action="/search" autocomplete="off">
         <input
             name="q"
             placeholder="Search Packages..."

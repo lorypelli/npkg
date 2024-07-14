@@ -1,5 +1,11 @@
 import type { User } from './user.ts';
 
+export interface General {
+    ['dist-tags']: Entries;
+    versions: Entries;
+    time: Entries;
+}
+
 export interface Version {
     name: string;
     version: string;

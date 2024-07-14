@@ -9,7 +9,7 @@
 {#each data.objects as o}
     <a href="/{o.package.name}">
         <div
-            class="m-2 flex flex-col rounded-xl border-2 border-black bg-primary p-2 text-primary_dark dark:border-white dark:bg-primary_dark dark:text-primary"
+            class="m-1 flex flex-col rounded-xl border-2 border-black bg-primary p-2 text-primary_dark dark:border-white dark:bg-primary_dark dark:text-primary"
         >
             <div class="flex space-x-1">
                 <span class="font-extrabold">{o.package.name}</span>
