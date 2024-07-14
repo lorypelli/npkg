@@ -16,9 +16,7 @@ export interface Version {
 
 export interface Code {
     fileCount: number;
-    files: {
-        [x: string]: FileInfo;
-    };
+    files: FileEntries;
 }
 
 interface FileInfo {
@@ -31,4 +29,8 @@ interface FileInfo {
 
 interface Entries {
     [x: string]: string;
+}
+
+interface FileEntries {
+    [x: string]: FileInfo;
 }

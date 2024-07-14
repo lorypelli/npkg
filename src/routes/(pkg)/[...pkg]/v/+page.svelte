@@ -6,6 +6,6 @@
     <title>npkg - {data.pkg} versions</title>
 </svelte:head>
 
-{#each data.versions as v}
+{#each Object.entries(data.versions) as [k, v]}
     <div></div>
 {/each}

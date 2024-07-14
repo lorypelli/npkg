@@ -29,6 +29,7 @@
             width="1150px"
             height="100%"
             title="Readme"
+            sandbox=""
         ></iframe>
     </div>
     <div class="flex h-full w-container_min flex-col p-2 text-center">
