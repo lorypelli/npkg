@@ -14,6 +14,6 @@ export async function load({ params: { pkg } }) {
         pkg,
         tags: pkg_general['dist-tags'],
         versions: pkg_general.versions,
-        time: pkg_general.time
-    }
+        time: pkg_general.time,
+    };
 }

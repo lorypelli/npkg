@@ -1,6 +1,6 @@
 <script lang="ts">
     export let data;
-    const pkg = `${data.name}@${data.version}`
+    const pkg = `${data.name}@${data.version}`;
 </script>
 
 <svelte:head>
@@ -13,12 +13,10 @@
 
 <div class="flex h-screen columns-3">
     <div class="flex h-full w-container_min flex-col">
-        <span class="text-center font-extrabold"
-            >{pkg}</span
-        >
+        <span class="text-center font-extrabold">{pkg}</span>
         <span class="text-center text-sm">{data.description}</span>
         <span class="text-center font-bold">Installation:</span>
-        <pre class="flex justify-center items-center">
+        <pre class="flex items-center justify-center">
             <code class="hljs language-sh rounded-lg">npm i {pkg}</code>
         </pre>
     </div>
