@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+    import Search from '../../components/Search.svelte';
     import '../../globals.css';
 </script>
 
@@ -9,13 +10,6 @@
             >Home</button
         >
     </a>
-    <form action="/search" autocomplete="off" class="flex justify-center">
-        <input
-            name="q"
-            placeholder="Search Packages..."
-            required
-            class="w-96 rounded-xl border-2 border-black bg-primary p-3 text-primary_dark dark:border-white dark:bg-primary_dark dark:text-primary"
-        />
-    </form>
+    <Search />
 </nav>
 <slot />

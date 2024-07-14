@@ -25,16 +25,16 @@ export interface Code {
     files: FileEntries;
 }
 
+export interface Entries {
+    [x: string]: string;
+}
+
 interface FileInfo {
     contentType: string;
     hex: string;
     path: string;
     size: number;
     type: string;
-}
-
-interface Entries {
-    [x: string]: string;
 }
 
 interface FileEntries {

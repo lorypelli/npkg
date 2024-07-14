@@ -1,4 +1,5 @@
 <script lang="ts">
+    import '../readme.css';
     export let data;
 </script>
 

@@ -15,10 +15,12 @@
     <div class="flex h-full w-container_min flex-col">
         <span class="text-center font-extrabold">{pkg}</span>
         <span class="text-center text-sm">{data.description}</span>
-        <span class="text-center font-bold">Installation:</span>
+        <span class="text-center font-bold text-lg">Installation:</span>
         <pre class="flex items-center justify-center">
             <code class="hljs language-sh rounded-lg">npm i {pkg}</code>
         </pre>
+        <span class="text-center font-bold text-lg">Versions:</span>
+        <a href="/{data.name}/v" class="hover:underline text-center">Click Here...</a>
     </div>
     <div class="flex w-container_max items-center justify-center">
         <iframe

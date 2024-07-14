@@ -13,7 +13,7 @@ export async function load({ url }) {
         redirect(302, '/search/v/latest');
     }
     const res = await fetch(
-        `https://registry.npmjs.com/-/v1/search?text=${q}&from=${pkg_page * page - pkg_page}`,
+        `https://registry.npmjs.com/-/v1/search?text=${q}&from=${pkg_page * (page - 1)}`,
     );
     const pkgs: Search = await res.json();
     const pages: number[] = [];

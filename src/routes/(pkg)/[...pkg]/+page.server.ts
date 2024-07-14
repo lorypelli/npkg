@@ -1,8 +1,8 @@
-import { redirect } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 
 export function load({ params: { pkg } }) {
     if (!pkg) {
-        redirect(302, '/');
+        error(404);
     }
-    redirect(302, `${pkg}/v/latest`);
+    redirect(302, `/${pkg}/v/latest`);
 }
