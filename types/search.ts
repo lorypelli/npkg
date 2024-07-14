@@ -8,10 +8,10 @@ export interface Search {
 }
 
 interface Package {
-    name: string;
-    version: string;
+    date: string;
     description?: string;
     keywords?: string[];
-    date: string;
+    name: string;
     publisher: User;
+    version: string;
 }

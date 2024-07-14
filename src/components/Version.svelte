@@ -1,9 +1,9 @@
 <script lang="ts">
     import type { Entries } from '../../types/package';
-    export let tags: Entries;
     export let pkg: string;
-    export let versions: Entries;
+    export let tags: Entries;
     export let time: Entries;
+    export let versions: Entries;
 </script>
 
 <div class="px-4">

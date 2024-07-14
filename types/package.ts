@@ -2,22 +2,22 @@ import type { User } from './user.ts';
 
 export interface General {
     ['dist-tags']: Entries;
-    versions: Entries;
     time: Entries;
+    versions: Entries;
 }
 
 export interface Version {
-    name: string;
-    version: string;
-    description?: string;
     author?: User;
     contributors?: User[];
+    dependencies: Entries;
+    description?: string;
+    devDependencies: Entries;
     license?: string;
     maintainers?: User[];
-    types?: string;
+    name: string;
     scripts?: Entries;
-    dependencies: Entries;
-    devDependencies: Entries;
+    types?: string;
+    version: string;
 }
 
 export interface Code {

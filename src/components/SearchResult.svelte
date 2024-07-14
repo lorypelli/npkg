@@ -1,11 +1,11 @@
 <script lang="ts">
     import type { User } from '../../types/user';
+    export let date: string;
+    export let description = '';
+    export let keywords: string[] = [];
     export let name: string;
     export let publisher: User;
-    export let description = '';
     export let version: string;
-    export let date: string;
-    export let keywords: string[] = [];
 </script>
 
 <a href="/{name}">

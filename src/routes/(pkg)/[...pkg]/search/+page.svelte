@@ -9,7 +9,14 @@
 </svelte:head>
 
 {#each data.objects as o}
-    <SearchResult {...o.package} />
+    <SearchResult
+        date={o.package.date}
+        description={o.package.description}
+        keywords={o.package.keywords}
+        name={o.package.name}
+        publisher={o.package.publisher}
+        version={o.package.version}
+    />
 {:else}
     <NotFound />
 {/each}
