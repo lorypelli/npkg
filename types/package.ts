@@ -3,12 +3,13 @@ import type { User } from './user.ts';
 export interface General {
     pkg: string;
     tags: Entries;
-    time: Entries;
+    versions: Entries[];
 }
 
 export interface NPMGeneral {
     ['dist-tags']: Entries;
     time: Entries;
+    versions: Entries;
 }
 
 export interface Version {

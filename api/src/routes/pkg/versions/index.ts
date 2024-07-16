@@ -11,9 +11,19 @@ export default async function versions(ctx: Context) {
         return ctx.notFound();
     }
     const pkg_general: NPMGeneral = await general.json();
+    const versions = [];
+    const time_keys = Object.keys(pkg_general.time);
+    const version_keys = Object.keys(pkg_general.versions);
+    for (let i = 0; i < time_keys.length; i++) {
+        if (time_keys.includes(version_keys[i])) {
+            versions.push({
+                [version_keys[i]]: pkg_general.time[time_keys[i]],
+            });
+        }
+    }
     return ctx.json({
         pkg,
         tags: pkg_general['dist-tags'],
-        time: pkg_general.time,
+        versions,
     });
 }

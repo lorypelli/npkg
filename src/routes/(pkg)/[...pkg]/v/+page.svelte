@@ -7,4 +7,4 @@
     <title>npkg - {data.pkg} versions</title>
 </svelte:head>
 
-<Version pkg={data.pkg} tags={data.tags} time={data.time} />
+<Version pkg={data.pkg} tags={data.tags} versions={data.versions} />
