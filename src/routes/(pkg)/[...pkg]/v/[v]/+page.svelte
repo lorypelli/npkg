@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Keywords from '../../../../../components/Keywords.svelte';
     export let data;
     const pkg = `${data.name}@${data.version}`;
 </script>
@@ -23,6 +24,12 @@
         <a href="/{data.name}/v" class="text-center hover:underline"
             >Click Here...</a
         >
+        <span class="text-center text-lg font-bold">Keywords:</span>
+        {#if data.keywords}
+            <div class="grid grid-cols-3 gap-2 pl-2 text-center">
+                <Keywords keywords={data.keywords} />
+            </div>
+        {/if}
     </div>
     <div class="flex w-container_max items-center justify-center">
         <iframe

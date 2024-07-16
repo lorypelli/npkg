@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { User } from '../../types/user';
+    import Keywords from './Keywords.svelte';
     export let date: string;
     export let description = '';
     export let keywords: string[] = [];
@@ -30,15 +31,7 @@
             >
             {#if keywords}
                 <div class="space-x-2 pl-2">
-                    {#each keywords.slice(0, 5) as k}
-                        <span
-                            class="rounded-xl border-2 border-black p-1 dark:border-white"
-                            >{k}</span
-                        >
-                    {/each}
-                    {#if keywords.length > 5}
-                        <span>View More...</span>
-                    {/if}
+                    <Keywords {keywords} limit={5} />
                 </div>
             {/if}
         </div>
