@@ -20,7 +20,7 @@
     </div>
     <br />
     <div class="grid grid-cols-4 gap-2">
-        {#each versions.reverse() as v}
+        {#each versions as v}
             {#each Object.keys(v) as k}
                 <a href="/{pkg}/v/{k}">
                     <div

@@ -21,6 +21,7 @@ export default async function versions(ctx: Context) {
             });
         }
     }
+    versions.reverse();
     return ctx.json({
         pkg,
         tags: pkg_general['dist-tags'],
