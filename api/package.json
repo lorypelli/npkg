@@ -2,8 +2,8 @@
     "name": "api",
     "private": true,
     "scripts": {
-        "dev": "wrangler dev src/index.ts",
-        "deploy": "wrangler deploy",
+        "dev": "wrangler dev",
+        "prod": "wrangler deploy",
         "format": "prettier --write ."
     },
     "dependencies": {

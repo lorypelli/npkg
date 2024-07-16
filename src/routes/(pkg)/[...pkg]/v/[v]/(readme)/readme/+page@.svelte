@@ -12,4 +12,4 @@
     <base target="_blank" />
 </svelte:head>
 
-{@html data.readme}
+{@html data.pkg_readme}

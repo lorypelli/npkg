@@ -8,19 +8,12 @@
     <title>npkg - results for "{data.q}"</title>
 </svelte:head>
 
-{#each data.objects as o}
-    <SearchResult
-        date={o.package.date}
-        description={o.package.description}
-        keywords={o.package.keywords}
-        name={o.package.name}
-        publisher={o.package.publisher}
-        version={o.package.version}
-    />
+{#each data.packages as p}
+    <SearchResult {...p} />
 {:else}
     <NotFound />
 {/each}
-{#if data.total > 0}
+{#if data.packages.length > 0}
     <div class="flex justify-center space-x-2">
         {#each data.pages as p}
             <a href="/search?q={data.q}&page={p}">

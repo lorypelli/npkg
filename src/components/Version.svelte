@@ -3,7 +3,6 @@
     export let pkg: string;
     export let tags: Entries;
     export let time: Entries;
-    export let versions: Entries;
 </script>
 
 <div class="px-4">
@@ -21,7 +20,7 @@
     </div>
     <br />
     <div class="grid grid-cols-4 gap-2">
-        {#each Object.entries(versions).reverse() as [k]}
+        {#each Object.entries(time).slice(2).reverse() as [k]}
             <a href="/{pkg}/v/{k}">
                 <div
                     class="h-full rounded-xl border-2 border-black bg-primary p-2 text-center text-primary_dark dark:border-white dark:bg-primary_dark dark:text-primary"

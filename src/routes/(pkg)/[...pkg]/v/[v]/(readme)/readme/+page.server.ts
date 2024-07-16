@@ -1,7 +1,7 @@
+import { error } from '@sveltejs/kit';
 import hljs from 'highlight.js';
 import { Marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
-import type { Code } from '../../../../../../../../types/package.ts';
 
 export async function load({ params: { pkg, v } }) {
     const md = new Marked(
@@ -13,20 +13,14 @@ export async function load({ params: { pkg, v } }) {
             },
         }),
     );
-    let readme = 'No README Found!';
-    const code = await fetch(
-        `https://www.npmjs.com/package/${pkg}/v/${v}/index`,
+    const readme = await fetch(
+        `https://api.npkg.lorypelli.dev/pkg/${pkg}/${v}/readme`,
     );
-    const pkg_code: Code = await code.json();
-    for (let f in pkg_code.files) {
-        if (f.startsWith('/README')) {
-            const res = await fetch(
-                `https://www.npmjs.com/package/${pkg}/file/${pkg_code.files[f].hex}`,
-            );
-            readme = md.parse(await res.text()).toString();
-        }
+    if (!readme.ok) {
+        error(404);
     }
+    const pkg_readme = md.parse(await readme.text()).toString();
     return {
-        readme,
+        pkg_readme,
     };
 }

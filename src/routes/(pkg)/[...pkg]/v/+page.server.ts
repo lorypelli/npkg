@@ -5,15 +5,14 @@ export async function load({ params: { pkg } }) {
     if (!pkg) {
         error(404);
     }
-    const general = await fetch(`https://registry.npmjs.com/${pkg}`);
-    if (general.status != 200) {
+    const versions = await fetch(
+        `https://api.npkg.lorypelli.dev/pkg/${pkg}/versions`,
+    );
+    if (!versions.ok) {
         error(404);
     }
-    const pkg_general: General = await general.json();
+    const pkg_version: General = await versions.json();
     return {
-        pkg,
-        tags: pkg_general['dist-tags'],
-        versions: pkg_general.versions,
-        time: pkg_general.time,
+        ...pkg_version,
     };
 }
