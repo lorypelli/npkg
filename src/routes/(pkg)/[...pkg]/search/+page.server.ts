@@ -3,7 +3,7 @@ import type { Search } from '../../../../../types/search.ts';
 
 export async function load({ url }) {
     const q = url.searchParams.get('q');
-    const p = url.searchParams.get('page');
+    const p = url.searchParams.get('page') || "1";
     if (!q) {
         redirect(302, '/search/v/latest');
     }
