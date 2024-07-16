@@ -38,7 +38,7 @@
             width="1150px"
             height="100%"
             title="Readme"
-            sandbox=""
+            sandbox="allow-popups allow-popups-to-escape-sandbox"
         ></iframe>
     </div>
     <div class="flex h-full w-container_min flex-col p-2 text-center">
@@ -46,7 +46,7 @@
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>
                 {#if data.author.url}
-                    <a href={data.author.url}>
+                    <a href={data.author.url} target="_blank" class="hover:underline">
                         <span>{data.author.username || data.author.name}</span>
                     </a>
                 {:else}
@@ -61,7 +61,7 @@
             {#each data.contributors as c}
                 {#if c.username || c.name}
                     {#if c.url}
-                        <a href={c.url}>
+                        <a href={c.url} target="_blank" class="hover:underline">
                             <span>{c.username || c.name}</span>
                         </a>
                     {:else}
@@ -79,7 +79,7 @@
             {#each data.maintainers as m}
                 {#if m.username || m.name}
                     {#if m.url}
-                        <a href={m.url}>
+                        <a href={m.url} target="_blank" class="hover:underline">
                             <span>{m.username || m.name}</span>
                         </a>
                     {:else}
