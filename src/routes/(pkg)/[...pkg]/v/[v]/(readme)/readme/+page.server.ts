@@ -4,6 +4,9 @@ import { Marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
 
 export async function load({ params: { pkg, v } }) {
+    if (!pkg || !v) {
+        error(404);
+    }
     const md = new Marked(
         markedHighlight({
             langPrefix: 'hljs language-',
@@ -14,7 +17,7 @@ export async function load({ params: { pkg, v } }) {
         }),
     );
     const readme = await fetch(
-        `https://api.npkg.lorypelli.dev/pkg/${pkg}/${v}/readme`,
+        `https://api.npkg.lorypelli.dev/pkg/${encodeURIComponent(pkg)}/${v}/readme`,
     );
     if (!readme.ok) {
         error(404);

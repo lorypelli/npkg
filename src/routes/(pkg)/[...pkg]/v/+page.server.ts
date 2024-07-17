@@ -6,7 +6,7 @@ export async function load({ params: { pkg } }) {
         error(404);
     }
     const versions = await fetch(
-        `https://api.npkg.lorypelli.dev/pkg/${pkg}/versions`,
+        `https://api.npkg.lorypelli.dev/pkg/${encodeURIComponent(pkg)}/versions`,
     );
     if (!versions.ok) {
         error(404);
