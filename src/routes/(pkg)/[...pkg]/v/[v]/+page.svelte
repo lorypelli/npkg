@@ -24,8 +24,8 @@
         <a href="/{data.name}/v" class="text-center hover:underline"
             >Click Here...</a
         >
-        <span class="text-center text-lg font-bold">Keywords:</span>
         {#if data.keywords}
+            <span class="text-center text-lg font-bold">Keywords:</span>
             <div class="grid grid-cols-3 gap-2 pl-2 text-center">
                 <Keywords keywords={data.keywords} />
             </div>
@@ -46,7 +46,11 @@
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>
                 {#if data.author.url}
-                    <a href={data.author.url} target="_blank" class="hover:underline">
+                    <a
+                        href={data.author.url}
+                        target="_blank"
+                        class="hover:underline"
+                    >
                         <span>{data.author.username || data.author.name}</span>
                     </a>
                 {:else}
