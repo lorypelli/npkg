@@ -11,10 +11,6 @@ export default {
                 primary: '#E7E5E4',
                 primary_dark: '#181A1B',
             },
-            width: {
-                container_max: '1150px',
-                container_min: '350px',
-            },
         },
     },
     darkMode: 'media',
