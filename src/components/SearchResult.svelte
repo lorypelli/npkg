@@ -7,6 +7,7 @@
     export let name: string;
     export let publisher: User;
     export let version: string;
+    export let small = false;
 </script>
 
 <a href="/{name}">
@@ -15,10 +16,12 @@
     >
         <div class="flex space-x-1">
             <span class="font-extrabold">{name}</span>
-            <span>({publisher.username || publisher.name})</span>
+            {#if !small}
+                <span>({publisher.username || publisher.name})</span>
+            {/if}
         </div>
         {#if description}
-            <span class="text-sm">{description}</span>
+            <span class="break-words text-sm">{description}</span>
         {/if}
         <div class="flex items-center pt-1">
             <span
@@ -29,7 +32,7 @@
                     >{new Date(date).toLocaleDateString()}</span
                 ></span
             >
-            {#if keywords}
+            {#if !small && keywords}
                 <div class="space-x-2 pl-2">
                     <Keywords {keywords} limit={5} />
                 </div>

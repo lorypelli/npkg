@@ -3,6 +3,9 @@ import type { NPMSearch, Search } from '../../../../types/search.ts';
 
 export default async function search(ctx: Context) {
     const { q, p } = ctx.req.query();
+    if (!q) {
+        return ctx.notFound();
+    }
     let page = 1;
     if (p) {
         page = parseInt(p);

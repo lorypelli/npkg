@@ -10,6 +10,6 @@
             >Home</button
         >
     </a>
-    <Search />
+    <Search nav />
 </nav>
 <slot />
