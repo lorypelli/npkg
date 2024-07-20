@@ -12,8 +12,8 @@
     />
 </svelte:head>
 
-<div class="flex h-screen columns-3 justify-center">
-    <div class="flex h-full w-1/4 flex-col">
+<div class="flex h-screen columns-3 justify-center overflow-hidden">
+    <div class="flex h-full w-1/4 flex-col overflow-auto px-2">
         <span class="text-center font-extrabold">{pkg}</span>
         <span class="text-center text-sm">{data.description}</span>
         <span class="text-center text-lg font-bold">Installation:</span>
@@ -26,7 +26,7 @@
         >
         {#if data.keywords}
             <span class="text-center text-lg font-bold">Keywords:</span>
-            <div class="grid grid-cols-2 gap-2 pl-2 text-center">
+            <div class="grid grid-cols-2 gap-2 text-center">
                 <Keywords keywords={data.keywords} />
             </div>
         {/if}
@@ -42,7 +42,6 @@
     </div>
     <div class="flex w-1/2 items-center justify-center">
         <iframe
-            class="pl-5"
             src="/{data.name}/v/{data.version}/readme"
             width="1150px"
             height="100%"
@@ -50,7 +49,7 @@
             sandbox="allow-popups allow-popups-to-escape-sandbox"
         ></iframe>
     </div>
-    <div class="flex h-full w-1/4 flex-col p-2 text-center">
+    <div class="flex h-full w-1/4 flex-col overflow-auto px-2 text-center">
         {#if data.homepage}
             <span class="font-extrabold">Homepage:</span>
             <span>{data.homepage.replace(/http?s:\/\//, '')}</span>
