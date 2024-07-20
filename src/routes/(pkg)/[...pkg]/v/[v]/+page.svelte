@@ -52,7 +52,13 @@
     <div class="flex h-full w-1/4 flex-col overflow-auto px-2 text-center">
         {#if data.homepage}
             <span class="font-extrabold">Homepage:</span>
-            <span>{data.homepage.replace(/http?s:\/\//, '')}</span>
+            <a href={data.homepage} target="_blank" class="hover:underline">
+                <span
+                    >{data.homepage
+                        .replace(/http?s:\/\//, '')
+                        .replace(/\/$/, '')}</span
+                >
+            </a>
         {/if}
         {#if data.author}
             {#if data.author.username || data.author.name}
