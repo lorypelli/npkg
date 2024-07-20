@@ -30,6 +30,15 @@
                 <Keywords keywords={data.keywords} />
             </div>
         {/if}
+        {#if data.scripts}
+            <span class="text-center text-lg font-bold">Scripts:</span>
+            {#each Object.entries(data.scripts) as [k, v]}
+                <span class="text-center font-bold">{k}</span>
+                <pre class="flex items-center justify-center">
+                    <code class="hljs language-sh rounded-lg">{v}</code>
+                </pre>
+            {/each}
+        {/if}
     </div>
     <div class="flex w-1/2 items-center justify-center">
         <iframe
@@ -42,6 +51,10 @@
         ></iframe>
     </div>
     <div class="flex h-full w-1/4 flex-col p-2 text-center">
+        {#if data.homepage}
+            <span class="font-extrabold">Homepage:</span>
+            <span>{data.homepage.replace(/http?s:\/\//, '')}</span>
+        {/if}
         {#if data.author}
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>

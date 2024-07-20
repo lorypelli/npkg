@@ -1,5 +1,5 @@
 import type { Context } from 'hono';
-import type { NPMGeneral } from '../../../../../types/package.ts';
+import type { Entries, NPMGeneral } from '../../../../../types/package.ts';
 
 export default async function versions(ctx: Context) {
     const { pkg } = ctx.req.param();
@@ -11,7 +11,7 @@ export default async function versions(ctx: Context) {
         return ctx.notFound();
     }
     const pkg_general: NPMGeneral = await general.json();
-    const versions = [];
+    const versions: Entries[] = [];
     const time_keys = Object.keys(pkg_general.time);
     const version_keys = Object.keys(pkg_general.versions);
     for (let i = 0; i < time_keys.length; i++) {
@@ -21,10 +21,9 @@ export default async function versions(ctx: Context) {
             });
         }
     }
-    versions.reverse();
     return ctx.json({
         pkg,
         tags: pkg_general['dist-tags'],
-        versions,
+        versions: versions.reverse(),
     });
 }

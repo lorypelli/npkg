@@ -18,6 +18,7 @@ export interface Version {
     dependencies: Entries;
     description?: string;
     devDependencies: Entries;
+    homepage?: string;
     keywords?: string[];
     license?: string;
     maintainers?: User[];

@@ -7,7 +7,7 @@
 
 <div class="px-4">
     <div class="grid grid-cols-4 gap-2">
-        {#each Object.entries(tags).reverse() as [k, v]}
+        {#each Object.entries(tags) as [k, v]}
             <a href="/{pkg}/v/{k}">
                 <div
                     class="h-full rounded-xl border-2 border-black bg-primary p-2 text-center text-primary_dark dark:border-white dark:bg-primary_dark dark:text-primary"
