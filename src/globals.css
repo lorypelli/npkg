@@ -9,7 +9,3 @@
 :focus {
     @apply outline-none;
 }
-
-button:disabled {
-    @apply cursor-not-allowed;
-}
