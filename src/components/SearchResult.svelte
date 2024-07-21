@@ -10,9 +10,9 @@
     export let small = false;
 </script>
 
-<a href="/{name}">
+<a href="/{name}/v/latest#pkg">
     <div
-        class="m-1 flex flex-col rounded-xl border-2 border-black bg-primary p-2 text-primary_dark dark:border-white dark:bg-primary_dark dark:text-primary"
+        class="m-1 flex flex-col rounded-xl border-2 border-black bg-primary p-2 dark:border-white dark:bg-primary_dark"
     >
         <div class="flex space-x-1">
             <span class="font-extrabold">{name}</span>

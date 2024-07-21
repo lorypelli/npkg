@@ -4,5 +4,5 @@ export function load({ params: { pkg } }) {
     if (!pkg) {
         error(404);
     }
-    redirect(302, `/${pkg}/v/latest`);
+    redirect(302, `/${pkg}/v/latest#pkg`);
 }

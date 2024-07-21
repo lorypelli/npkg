@@ -12,7 +12,7 @@
     />
 </svelte:head>
 
-<div class="flex h-screen columns-3 justify-center overflow-hidden">
+<div id="pkg" class="flex h-screen columns-3 justify-center overflow-hidden">
     <div class="flex h-full w-1/4 flex-col overflow-auto px-2">
         <span class="text-center font-extrabold">{pkg}</span>
         <span class="text-center text-sm">{data.description}</span>
@@ -20,10 +20,20 @@
         <pre class="flex items-center justify-center">
             <code class="hljs language-sh rounded-lg">npm i {pkg}</code>
         </pre>
-        <span class="text-center text-lg font-bold">Versions:</span>
-        <a href="/{data.name}/v" class="text-center hover:underline"
-            >Click Here...</a
-        >
+        <div class="flex justify-center space-x-14">
+            <div class="flex flex-col">
+                <span class="text-center text-lg font-bold">Versions:</span>
+                <a href="/{data.name}/v" class="text-center hover:underline"
+                    >Click Here...</a
+                >
+            </div>
+            <div class="flex flex-col">
+                <span class="text-center text-lg font-bold">Dependencies:</span>
+                <a href="#deps" class="text-center hover:underline"
+                    >Click Here...</a
+                >
+            </div>
+        </div>
         {#if data.keywords}
             <span class="text-center text-lg font-bold">Keywords:</span>
             <div class="grid grid-cols-2 gap-2 text-center">
@@ -112,5 +122,45 @@
                 {/if}
             {/each}
         {/if}
+    </div>
+</div>
+<div
+    id="deps"
+    class="absolute inset-0 hidden items-center justify-center target:flex"
+>
+    <div
+        class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 dark:border-white dark:bg-primary_dark"
+    >
+        <div class="flex space-x-8">
+            {#if data.dependencies}
+                <div class="flex flex-col">
+                    <span class="text-center text-lg font-bold"
+                        >Dependencies:</span
+                    >
+                    <div class="grid grid-cols-3 justify-items-center gap-4">
+                        {#each Object.entries(data.dependencies) as [k]}
+                            <span class="font-extrabold">{k}</span>
+                        {/each}
+                    </div>
+                </div>
+            {/if}
+            {#if data.devDependencies}
+                <div class="flex flex-col">
+                    <span class="text-center text-lg font-bold"
+                        >Dev Dependencies</span
+                    >
+                    <div class="grid grid-cols-3 justify-items-center gap-4">
+                        {#each Object.entries(data.devDependencies) as [k]}
+                            <span class="font-extrabold">{k}</span>
+                        {/each}
+                    </div>
+                </div>
+            {/if}
+        </div>
+        <a
+            href="#pkg"
+            class="absolute right-2 top-2 rounded-full border-2 p-1 text-sm font-extrabold"
+            >Close</a
+        >
     </div>
 </div>

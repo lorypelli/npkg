@@ -32,18 +32,16 @@
                 showSuggestions = true;
             }}
             required
-            class="w-96 rounded-xl border-2 border-black bg-primary p-3 text-primary_dark dark:border-white dark:bg-primary_dark dark:text-primary"
+            class="w-96 rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
         />
     </form>
     {#if suggestions.length > 0 && input.trim() != ''}
-        <div
-            class="{showSuggestions ? 'block' : 'hidden'} w-96 pt-2 {nav
-                ? 'absolute top-14 shadow-2xl'
-                : ''}"
-        >
-            {#each suggestions as s}
-                <SearchResult {...s} small />
-            {/each}
-        </div>
+        {#if showSuggestions}
+            <div class="w-96 pt-2 {nav ? 'absolute top-14 shadow-2xl' : ''}">
+                {#each suggestions as s}
+                    <SearchResult {...s} small />
+                {/each}
+            </div>
+        {/if}
     {/if}
 </div>
