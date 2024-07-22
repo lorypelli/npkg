@@ -5,7 +5,7 @@ export async function load({ url }) {
     const q = url.searchParams.get('q');
     const p = url.searchParams.get('page') || '1';
     if (!q) {
-        redirect(302, '/search/v/latest');
+        redirect(302, '/search/v/latest#pkg');
     }
     const res = await fetch(
         `https://api.npkg.lorypelli.dev/search?q=${q}&p=${p}`,

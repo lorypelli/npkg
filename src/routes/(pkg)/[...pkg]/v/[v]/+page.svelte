@@ -1,7 +1,21 @@
 <script lang="ts">
     import Keywords from '../../../../../components/Keywords.svelte';
+    import { page } from '$app/stores';
+    import { goto } from '$app/navigation';
+    import { onMount } from 'svelte';
     export let data;
     const pkg = `${data.name}@${data.version}`;
+    onMount(() => {
+        const unsubscribe = page.subscribe(($p) => {
+            if (
+                !$p.url.hash ||
+                ($p.url.hash != '#pkg' && $p.url.hash != '#deps')
+            ) {
+                goto('#pkg', { replaceState: true });
+            }
+        });
+        return () => unsubscribe();
+    });
 </script>
 
 <svelte:head>
@@ -129,7 +143,7 @@
     class="absolute inset-0 hidden items-center justify-center target:flex"
 >
     <div
-        class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 dark:border-white dark:bg-primary_dark"
+        class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-2xl dark:border-white dark:bg-primary_dark"
     >
         <div class="flex space-x-8">
             {#if data.dependencies}
