@@ -3,6 +3,9 @@
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
+    import Dependencies from '../../../../../components/Dependencies.svelte';
+    import Readme from '../../../../../components/Readme.svelte';
+    import Scripts from '../../../../../components/Scripts.svelte';
     export let data;
     const pkg = `${data.name}@${data.version}`;
     onMount(() => {
@@ -55,24 +58,10 @@
             </div>
         {/if}
         {#if data.scripts}
-            <span class="text-center text-lg font-bold">Scripts:</span>
-            {#each Object.entries(data.scripts) as [k, v]}
-                <span class="text-center font-bold">{k}</span>
-                <pre class="flex items-center justify-center">
-                    <code class="hljs language-sh rounded-lg">{v}</code>
-                </pre>
-            {/each}
+            <Scripts scripts={data.scripts} />
         {/if}
     </div>
-    <div class="flex w-1/2 items-center justify-center">
-        <iframe
-            src="/{data.name}/v/{data.version}/readme"
-            width="1150px"
-            height="100%"
-            title="Readme"
-            sandbox="allow-popups allow-popups-to-escape-sandbox"
-        ></iframe>
-    </div>
+    <Readme name={data.name} version={data.version} />
     <div class="flex h-full w-1/4 flex-col overflow-auto px-2 text-center">
         {#if data.homepage}
             <span class="font-extrabold">Homepage:</span>
@@ -138,43 +127,7 @@
         {/if}
     </div>
 </div>
-<div
-    id="deps"
-    class="absolute inset-0 hidden items-center justify-center target:flex"
->
-    <div
-        class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-2xl dark:border-white dark:bg-primary_dark"
-    >
-        <div class="flex space-x-8">
-            {#if data.dependencies}
-                <div class="flex flex-col">
-                    <span class="text-center text-lg font-bold"
-                        >Dependencies:</span
-                    >
-                    <div class="grid grid-cols-3 justify-items-center gap-4">
-                        {#each Object.entries(data.dependencies) as [k]}
-                            <span class="font-extrabold">{k}</span>
-                        {/each}
-                    </div>
-                </div>
-            {/if}
-            {#if data.devDependencies}
-                <div class="flex flex-col">
-                    <span class="text-center text-lg font-bold"
-                        >Dev Dependencies</span
-                    >
-                    <div class="grid grid-cols-3 justify-items-center gap-4">
-                        {#each Object.entries(data.devDependencies) as [k]}
-                            <span class="font-extrabold">{k}</span>
-                        {/each}
-                    </div>
-                </div>
-            {/if}
-        </div>
-        <a
-            href="#pkg"
-            class="absolute right-2 top-2 rounded-full border-2 p-1 text-sm font-extrabold"
-            >Close</a
-        >
-    </div>
-</div>
+<Dependencies
+    dependencies={data.dependencies}
+    devDependencies={data.devDependencies}
+/>
