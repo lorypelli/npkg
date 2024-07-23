@@ -1,6 +1,6 @@
 <script lang="ts">
-    import NotFound from '../../../../components/NotFound.svelte';
-    import SearchResult from '../../../../components/SearchResult.svelte';
+    import NotFound from '$lib/components/NotFound.svelte';
+    import SearchResult from '$lib/components/SearchResult.svelte';
     export let data;
 </script>
 

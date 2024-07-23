@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Entries } from '../../types/package';
+    import type { Entries } from '../../../types/package';
     export let dependencies: Entries;
     export let devDependencies: Entries;
 </script>

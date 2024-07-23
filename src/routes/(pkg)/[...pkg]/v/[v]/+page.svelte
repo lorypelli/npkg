@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Keywords from '../../../../../components/Keywords.svelte';
+    import Keywords from '$lib/components/Keywords.svelte';
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
-    import Dependencies from '../../../../../components/Dependencies.svelte';
-    import Readme from '../../../../../components/Readme.svelte';
-    import Scripts from '../../../../../components/Scripts.svelte';
+    import Dependencies from '$lib/components/Dependencies.svelte';
+    import Readme from '$lib/components/Readme.svelte';
+    import Scripts from '$lib/components/Scripts.svelte';
     export let data;
     const pkg = `${data.name}@${data.version}`;
     onMount(() => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Search } from '../../types/search.ts';
+    import type { Search } from '../../../types/search.ts';
     import SearchResult from './SearchResult.svelte';
     export let nav = false;
     let input = '';

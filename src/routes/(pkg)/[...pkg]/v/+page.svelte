@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Version from '../../../../components/Version.svelte';
+    import Version from '$lib/components/Version.svelte';
     export let data;
 </script>
 

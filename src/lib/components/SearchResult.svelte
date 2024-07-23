@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { User } from '../../types/user';
+    import type { User } from '../../../types/user';
     import Keywords from './Keywords.svelte';
     export let date: string;
     export let description = '';
