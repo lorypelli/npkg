@@ -73,6 +73,10 @@
                 >
             </a>
         {/if}
+        {#if data.license}
+            <span class="font-extrabold">License:</span>
+            <span>{data.license}</span>
+        {/if}
         {#if data.author}
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>
