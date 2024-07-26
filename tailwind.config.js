@@ -11,6 +11,9 @@ export default {
                 primary: '#E7E5E4',
                 primary_dark: '#181A1B',
             },
+            maxHeight: {
+                container: '80vh',
+            },
         },
     },
     darkMode: 'media',

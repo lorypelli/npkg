@@ -25,7 +25,7 @@
     <title>npkg - {pkg}</title>
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/github-dark.min.css"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"
     />
 </svelte:head>
 

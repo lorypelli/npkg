@@ -11,13 +11,13 @@
     <div
         class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-2xl dark:border-white dark:bg-primary_dark"
     >
-        <div class="flex space-x-8">
+        <div
+            class="grid max-h-container grid-cols-2 overflow-hidden text-center"
+        >
             {#if dependencies}
-                <div class="flex flex-col">
-                    <span class="text-center text-lg font-bold"
-                        >Dependencies:</span
-                    >
-                    <div class="grid grid-cols-3 justify-items-center gap-4">
+                <div class="flex max-h-container flex-col">
+                    <span class="text-lg font-bold">Dependencies:</span>
+                    <div class="flex flex-col overflow-auto">
                         {#each Object.entries(dependencies) as [k]}
                             <span class="font-extrabold">{k}</span>
                         {/each}
@@ -25,11 +25,9 @@
                 </div>
             {/if}
             {#if devDependencies}
-                <div class="flex flex-col">
-                    <span class="text-center text-lg font-bold"
-                        >Dev Dependencies</span
-                    >
-                    <div class="grid grid-cols-3 justify-items-center gap-4">
+                <div class="flex max-h-container flex-col">
+                    <span class="text-lg font-bold">Dev Dependencies</span>
+                    <div class="flex flex-col overflow-auto">
                         {#each Object.entries(devDependencies) as [k]}
                             <span class="font-extrabold">{k}</span>
                         {/each}
