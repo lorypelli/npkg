@@ -13,6 +13,5 @@ export default async function info(ctx: Context) {
     const pkg_version: Version = await version.json();
     return ctx.json({
         ...pkg_version,
-        v,
     });
 }

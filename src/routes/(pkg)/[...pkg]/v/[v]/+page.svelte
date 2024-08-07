@@ -37,16 +37,17 @@
         <pre class="flex items-center justify-center">
             <code class="hljs language-sh rounded-lg">npm i {pkg}</code>
         </pre>
-        <div class="flex justify-center space-x-14">
+        <div class="grid grid-cols-2">
             <div class="flex flex-col">
                 <span class="text-center text-lg font-bold">Versions:</span>
-                <a href="/{data.name}/v" class="text-center hover:underline"
-                    >Click Here...</a
+                <a
+                    href="/{data.name}/v"
+                    class="text-center text-sm hover:underline">Click Here...</a
                 >
             </div>
             <div class="flex flex-col">
                 <span class="text-center text-lg font-bold">Dependencies:</span>
-                <a href="#deps" class="text-center hover:underline"
+                <a href="#deps" class="text-center text-sm hover:underline"
                     >Click Here...</a
                 >
             </div>
@@ -63,20 +64,34 @@
     </div>
     <Readme name={data.name} version={data.version} />
     <div class="flex h-full w-1/4 flex-col overflow-auto px-2 text-center">
-        {#if data.homepage}
-            <span class="font-extrabold">Homepage:</span>
-            <a href={data.homepage} target="_blank" class="hover:underline">
-                <span
-                    >{data.homepage
-                        .replace(/http?s:\/\//, '')
-                        .replace(/\/$/, '')}</span
-                >
-            </a>
-        {/if}
-        {#if data.license}
-            <span class="font-extrabold">License:</span>
-            <span>{data.license}</span>
-        {/if}
+        <div class="grid grid-cols-2">
+            {#if data.homepage}
+                <div class="flex flex-col">
+                    <span class="font-extrabold">Homepage:</span>
+                    <a
+                        href={data.homepage}
+                        target="_blank"
+                        class="hover:underline"
+                    >
+                        <span class="break-words"
+                            >{data.homepage
+                                .replace(/http?s:\/\//, '')
+                                .replace(/\/$/, '')}</span
+                        >
+                    </a>
+                </div>
+            {/if}
+            {#if data.license}
+                <div class="flex flex-col">
+                    <span class="font-extrabold">License:</span>
+                    <span>{data.license}</span>
+                </div>
+            {/if}
+        </div>
+        <span class="font-extrabold">Code:</span>
+        <a href="/{data.name}/v/{data.version}/code" class="hover:underline"
+            >Click Here...</a
+        >
         {#if data.author}
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>

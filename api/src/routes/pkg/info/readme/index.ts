@@ -1,8 +1,11 @@
 import type { Context } from 'hono';
-import { Code } from '../../../../../../types/package.ts';
+import type { Code } from '../../../../../../types/package.ts';
 
 export default async function readme(ctx: Context) {
     const { pkg, v } = ctx.req.param();
+    if (!pkg || !v) {
+        return ctx.notFound();
+    }
     let pkg_readme = 'No README Found!';
     const code = await fetch(
         `https://www.npmjs.com/package/${pkg}/v/${v}/index`,

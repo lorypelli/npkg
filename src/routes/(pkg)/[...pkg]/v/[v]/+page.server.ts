@@ -14,6 +14,5 @@ export async function load({ params: { pkg, v } }) {
     const pkg_version: Version = await version.json();
     return {
         ...pkg_version,
-        v,
     };
 }

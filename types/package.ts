@@ -29,7 +29,6 @@ export interface Version {
 }
 
 export interface Code {
-    fileCount: number;
     files: FileEntries;
 }
 
