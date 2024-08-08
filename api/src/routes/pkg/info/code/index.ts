@@ -1,5 +1,5 @@
 import type { Context } from 'hono';
-import type { Code } from '../../../../../../types/package.ts';
+import type { NPMCode } from '../../../../../../types/package.ts';
 
 export default async function code(ctx: Context) {
     const { pkg, v } = ctx.req.param();
@@ -12,8 +12,10 @@ export default async function code(ctx: Context) {
     if (!code.ok) {
         return ctx.notFound();
     }
-    const pkg_code: Code = await code.json();
+    const pkg_code: NPMCode = await code.json();
     return ctx.json({
-        ...pkg_code['files'],
+        code: pkg_code['files'],
+        pkg,
+        version: v,
     });
 }

@@ -1,5 +1,5 @@
 import type { Context } from 'hono';
-import type { Code } from '../../../../../../types/package.ts';
+import type { NPMCode } from '../../../../../../types/package.ts';
 
 export default async function readme(ctx: Context) {
     const { pkg, v } = ctx.req.param();
@@ -13,7 +13,7 @@ export default async function readme(ctx: Context) {
     if (!code.ok) {
         return ctx.notFound();
     }
-    const pkg_code: Code = await code.json();
+    const pkg_code: NPMCode = await code.json();
     for (let f in pkg_code.files) {
         if (f.startsWith('/README')) {
             const readme = await fetch(

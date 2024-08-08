@@ -10,10 +10,10 @@
         {#each Object.entries(tags) as [k, v]}
             <a href="/{pkg}/v/{k}#pkg">
                 <div
-                    class="h-full rounded-xl border-2 border-black bg-primary p-2 text-center dark:border-white dark:bg-primary_dark"
+                    class="flex h-full min-w-max flex-col rounded-xl border-2 border-black bg-primary p-2 text-center dark:border-white dark:bg-primary_dark"
                 >
                     <span class="font-extrabold">{k}</span>
-                    <span>{v}</span>
+                    <span class="break-words">{v}</span>
                 </div>
             </a>
         {/each}
@@ -24,9 +24,9 @@
             {#each Object.keys(v) as k}
                 <a href="/{pkg}/v/{k}#pkg">
                     <div
-                        class="h-full rounded-xl border-2 border-black bg-primary p-2 text-center dark:border-white dark:bg-primary_dark"
+                        class="flex h-full flex-col rounded-xl border-2 border-black bg-primary p-2 text-center dark:border-white dark:bg-primary_dark"
                     >
-                        <span class="font-extrabold">{k}</span>
+                        <span class="break-words font-extrabold">{k}</span>
                         <span>{new Date(v[k]).toLocaleDateString()}</span>
                     </div>
                 </a>

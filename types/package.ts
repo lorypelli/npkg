@@ -29,11 +29,21 @@ export interface Version {
 }
 
 export interface Code {
+    code: FileEntries;
+    pkg: string;
+    version: string;
+}
+
+export interface NPMCode {
     files: FileEntries;
 }
 
 export interface Entries {
     [x: string]: string;
+}
+
+export interface FileEntries {
+    [x: string]: FileInfo;
 }
 
 interface FileInfo {
@@ -42,8 +52,4 @@ interface FileInfo {
     path: string;
     size: number;
     type: string;
-}
-
-interface FileEntries {
-    [x: string]: FileInfo;
 }
