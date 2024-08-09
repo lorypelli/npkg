@@ -37,7 +37,7 @@
     </form>
     {#if suggestions.length > 0 && input.trim() != ''}
         {#if showSuggestions}
-            <div class="w-96 pt-2 {nav ? 'absolute top-14 shadow-2xl' : ''}">
+            <div class="w-96 pt-2 {nav ? 'absolute top-14' : ''}">
                 {#each suggestions as s}
                     <SearchResult {...s} small />
                 {/each}

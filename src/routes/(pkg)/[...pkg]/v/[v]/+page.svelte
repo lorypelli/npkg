@@ -29,32 +29,32 @@
     />
 </svelte:head>
 
-<div id="pkg" class="flex h-screen columns-3 justify-center overflow-hidden">
+<div id="pkg" class="flex h-screen columns-3 justify-center overflow-hidden text-center">
     <div class="flex h-full w-1/4 flex-col overflow-auto px-2">
-        <span class="text-center font-extrabold">{pkg}</span>
-        <span class="text-center text-sm">{data.description}</span>
-        <span class="text-center text-lg font-bold">Installation:</span>
+        <span class="font-extrabold">{pkg}</span>
+        <span class="text-sm">{data.description}</span>
+        <span class="text-lg font-bold">Installation:</span>
         <pre class="flex items-center justify-center">
             <code class="hljs language-sh rounded-lg">npm i {pkg}</code>
         </pre>
         <div class="grid grid-cols-2">
             <div class="flex flex-col">
-                <span class="text-center text-lg font-bold">Versions:</span>
+                <span class="text-lg font-bold">Versions:</span>
                 <a
                     href="/{data.name}/v"
-                    class="text-center text-sm hover:underline">Click Here...</a
+                    class="text-sm hover:underline">Click Here...</a
                 >
             </div>
             <div class="flex flex-col">
-                <span class="text-center text-lg font-bold">Dependencies:</span>
-                <a href="#deps" class="text-center text-sm hover:underline"
+                <span class="text-lg font-bold">Dependencies:</span>
+                <a href="#deps" class="text-sm hover:underline"
                     >Click Here...</a
                 >
             </div>
         </div>
         {#if data.keywords}
-            <span class="text-center text-lg font-bold">Keywords:</span>
-            <div class="grid grid-cols-2 gap-2 text-center">
+            <span class="text-lg font-bold">Keywords:</span>
+            <div class="grid grid-cols-2 gap-2">
                 <Keywords keywords={data.keywords} />
             </div>
         {/if}
@@ -63,7 +63,7 @@
         {/if}
     </div>
     <Readme name={data.name} version={data.version} />
-    <div class="flex h-full w-1/4 flex-col overflow-auto px-2 text-center">
+    <div class="flex h-full w-1/4 flex-col overflow-auto px-2">
         <div class="grid grid-cols-2">
             {#if data.homepage}
                 <div class="flex flex-col">

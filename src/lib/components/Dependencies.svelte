@@ -6,10 +6,10 @@
 
 <div
     id="deps"
-    class="absolute inset-0 hidden items-center justify-center target:flex"
+    class="absolute inset-0 hidden items-center justify-center target:flex bg-black/60"
 >
     <div
-        class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-2xl dark:border-white dark:bg-primary_dark"
+        class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-lg shadow-black dark:border-white dark:bg-primary_dark"
     >
         <div
             class="grid max-h-container grid-cols-2 overflow-hidden text-center"
@@ -37,7 +37,7 @@
         </div>
         <a
             href="#pkg"
-            class="absolute right-2 top-2 rounded-full border-2 p-1 text-sm font-extrabold"
+            class="absolute right-2 top-2 rounded-full border-2 border-black dark:border-white p-1 text-sm font-extrabold"
             >Close</a
         >
     </div>
