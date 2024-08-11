@@ -29,7 +29,10 @@
     />
 </svelte:head>
 
-<div id="pkg" class="flex h-screen columns-3 justify-center overflow-hidden text-center">
+<div
+    id="pkg"
+    class="flex h-screen columns-3 justify-center overflow-hidden text-center"
+>
     <div class="flex h-full w-1/4 flex-col overflow-auto px-2">
         <span class="font-extrabold">{pkg}</span>
         <span class="text-sm">{data.description}</span>
@@ -40,15 +43,13 @@
         <div class="grid grid-cols-2">
             <div class="flex flex-col">
                 <span class="text-lg font-bold">Versions:</span>
-                <a
-                    href="/{data.name}/v"
-                    class="text-sm hover:underline">Click Here...</a
+                <a href="/{data.name}/v" class="text-sm hover:underline"
+                    >Click Here...</a
                 >
             </div>
             <div class="flex flex-col">
                 <span class="text-lg font-bold">Dependencies:</span>
-                <a href="#deps" class="text-sm hover:underline"
-                    >Click Here...</a
+                <a href="#deps" class="text-sm hover:underline">Click Here...</a
                 >
             </div>
         </div>
