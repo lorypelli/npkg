@@ -5,11 +5,12 @@
 </script>
 
 <svelte:head>
-    <title>file of {data.pkg}@{data.version}</title>
+    <title>{data.fname} - {data.pkg}@{data.version}</title>
 </svelte:head>
 
 <File
     file={data.file}
+    fname={data.fname}
     pkg={data.pkg}
     pkg_file={data.pkg_file}
     version={data.version}

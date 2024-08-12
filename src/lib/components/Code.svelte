@@ -19,7 +19,7 @@
     class="mx-2 hidden flex-col items-center overflow-auto rounded-xl border-2 border-black target:flex dark:border-white"
 >
     {#each Object.entries(code) as [k, v]}
-        <a href="/{pkg}/v/{version}/code/{v.hex}"
+        <a href="/{pkg}/v/{version}/code/{k.slice(1)}?hex={v.hex}"
             ><button
                 class="m-1 rounded-md border-2 border-black p-1 dark:border-white"
                 >{k.slice(1)}</button
