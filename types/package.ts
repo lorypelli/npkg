@@ -34,6 +34,13 @@ export interface Code {
     version: string;
 }
 
+export interface File {
+    file: string;
+    pkg: string;
+    pkg_file: string;
+    version: string;
+}
+
 export interface NPMCode {
     files: FileEntries;
 }

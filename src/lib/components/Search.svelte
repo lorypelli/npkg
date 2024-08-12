@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Search } from '../../../types/search.ts';
+    import { BASE_URL } from '$lib/utils/url.ts';
     import SearchResult from './SearchResult.svelte';
     export let nav = false;
     let input = '';
@@ -8,7 +9,7 @@
     async function getSuggestions(input: string) {
         if (input.trim() != '') {
             const suggestions = await fetch(
-                `https://api.npkg.lorypelli.dev/suggestions?q=${input}&size=3`,
+                `${BASE_URL}/suggestions?q=${input}&size=3`,
             );
             if (!suggestions.ok) {
                 return [];
