@@ -1,4 +1,5 @@
 <script lang="ts">
+    import flourite from 'flourite';
     import Monaco from 'svelte-monaco';
 
     export let file: string;
@@ -17,6 +18,7 @@
     <Monaco
         bind:value={pkg_file}
         options={{
+            language: flourite(pkg_file).language.toLowerCase(),
             automaticLayout: true,
             minimap: { enabled: false },
             maxTokenizationLineLength: Infinity,
