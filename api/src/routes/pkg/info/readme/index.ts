@@ -15,7 +15,7 @@ export default async function readme(ctx: Context) {
     }
     const pkg_code: NPMCode = await code.json();
     for (let f in pkg_code.files) {
-        if (f.startsWith('/README')) {
+        if (/^readme(\.(txt|md))?$/i.test(f.slice(1))) {
             const readme = await fetch(
                 `https://www.npmjs.com/package/${pkg}/file/${pkg_code.files[f].hex}`,
             );
