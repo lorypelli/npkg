@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Entries } from '../../../types/package';
+    import type { Entries } from '../../../types/package.ts';
     export let scripts: Entries;
 </script>
 

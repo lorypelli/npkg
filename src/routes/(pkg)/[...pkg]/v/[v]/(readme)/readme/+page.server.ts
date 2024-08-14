@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 import hljs from 'highlight.js';
 import { Marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
-import { BASE_URL } from '../../../../../../../lib/utils/url';
+import { BASE_URL } from '../../../../../../../lib/utils/url.ts';
 
 export async function load({ params: { pkg, v } }) {
     if (!pkg || !v) {

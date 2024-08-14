@@ -1,6 +1,6 @@
 <script lang="ts">
     import { draggable } from '@neodrag/svelte';
-    import type { Entries } from '../../../types/package';
+    import type { Entries } from '../../../types/package.ts';
     export let dependencies: Entries;
     export let devDependencies: Entries;
 </script>
