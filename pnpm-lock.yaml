@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@neodrag/svelte':
+        specifier: ^2.0.6
+        version: 2.0.6
       flourite:
         specifier: ^1.3.0
         version: 1.3.0
@@ -449,6 +452,9 @@ packages:
 
   '@neoconfetti/svelte@2.2.1':
     resolution: {integrity: sha512-2Ts0Rxaf6clW2qG+AKhTwpl01AAyZEAe03XeuQ7Vp+qYIaM3ycuI94j546fmEkUxwACwGI3Zl2cZ/pncTuNcJg==}
+
+  '@neodrag/svelte@2.0.6':
+    resolution: {integrity: sha512-jjmTjRTMJaer2IyEIoS5xbccmFmOpkeoTKpBORkMItCPjHWE19eW3kvH9SuTvZJAKnKERVNGdW3VBuDxZif9Dg==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1812,6 +1818,8 @@ snapshots:
       state-local: 1.0.7
 
   '@neoconfetti/svelte@2.2.1': {}
+
+  '@neodrag/svelte@2.0.6': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:

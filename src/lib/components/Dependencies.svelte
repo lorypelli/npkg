@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { draggable } from '@neodrag/svelte';
     import type { Entries } from '../../../types/package';
     export let dependencies: Entries;
     export let devDependencies: Entries;
@@ -9,7 +10,8 @@
     class="absolute inset-0 hidden items-center justify-center bg-black/60 target:flex"
 >
     <div
-        class="relative rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-lg shadow-black dark:border-white dark:bg-primary_dark"
+        class="relative cursor-move rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-lg shadow-black dark:border-white dark:bg-primary_dark"
+        use:draggable={{ bounds: 'parent' }}
     >
         <div
             class="grid max-h-container grid-cols-2 overflow-hidden text-center"
