@@ -5,6 +5,18 @@
     export let devDependencies: Entries;
 </script>
 
+<svelte:window
+    on:keydown={(e) => {
+        if (e.shiftKey && e.key == 'D') {
+            e.preventDefault();
+            location.href = '#deps';
+        }
+        if (location.hash == '#deps' && e.key == 'Escape') {
+            e.preventDefault();
+            location.href = '#pkg';
+        }
+    }}
+/>
 <div
     id="deps"
     class="absolute inset-0 hidden items-center justify-center bg-black/60 target:flex"

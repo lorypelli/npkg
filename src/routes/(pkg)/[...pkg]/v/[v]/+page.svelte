@@ -14,7 +14,7 @@
                 !$p.url.hash ||
                 ($p.url.hash != '#pkg' && $p.url.hash != '#deps')
             ) {
-                goto('#pkg', { replaceState: true });
+                location.href = '#pkg';
             }
         });
         return () => unsubscribe();
