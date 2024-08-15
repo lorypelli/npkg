@@ -12,7 +12,7 @@
 
 <a href="/{name}/v/latest#pkg">
     <div
-        class="m-1 flex flex-col rounded-xl border-2 border-black bg-primary p-2 dark:border-white dark:bg-primary_dark"
+        class="m-1 flex flex-col rounded-xl border-2 border-black bg-primary p-2 hover:bg-gray-800 dark:border-white dark:bg-primary_dark"
     >
         <div class="flex space-x-1">
             <span class="font-extrabold">{name}</span>
