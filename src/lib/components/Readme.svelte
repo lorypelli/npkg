@@ -3,7 +3,7 @@
     export let version: string;
 </script>
 
-<div class="flex w-1/2 items-center justify-center">
+<div class="flex w-full items-center justify-center md:w-1/2">
     <iframe
         src="/{name}/v/{version}/readme"
         width="1150px"

@@ -22,7 +22,7 @@
     }
 </script>
 
-<div class="flex flex-col">
+<div class="flex">
     <form action="/search" autocomplete="off">
         <input
             name="q"
@@ -33,14 +33,26 @@
                 showSuggestions = true;
             }}
             required
-            class="w-96 rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
+            class="{nav
+                ? 'w-64'
+                : 'w-96'} rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
         />
     </form>
     {#if suggestions.length > 0 && input.trim() != ''}
         {#if showSuggestions}
-            <div class="w-96 pt-2 {nav && 'absolute top-14'}">
+            <div
+                class="{nav ? 'w-64' : 'w-96'} pt-2 {nav && 'absolute top-14'}"
+            >
                 {#each suggestions as s}
-                    <SearchResult {...s} small />
+                    <SearchResult
+                        date={s.date}
+                        description={s.description}
+                        keywords={s.keywords}
+                        name={s.name}
+                        publisher={s.publisher}
+                        version={s.version}
+                        small
+                    />
                 {/each}
             </div>
         {/if}
