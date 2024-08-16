@@ -17,7 +17,8 @@
         on:click={() => {
             const p = prompt('Enter page number...');
             if (p) {
-                if (parseInt(p) <= 0 || parseInt(p) > lastPage) {
+                const page = parseInt(p);
+                if (isNaN(page) || page <= 0 || page > lastPage) {
                     alert(
                         `Number must be a positive integer and must not be greater than ${lastPage}`,
                     );
