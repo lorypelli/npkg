@@ -17,6 +17,12 @@
         on:click={() => {
             const p = prompt('Enter page number...');
             if (p) {
+                if (parseInt(p) <= 0 || parseInt(p) > lastPage) {
+                    alert(
+                        `Number must be a positive integer and must not be greater than ${lastPage}`,
+                    );
+                    return;
+                }
                 location.href = `./search?q=${query}&page=${p}`;
             }
         }}>...</button
