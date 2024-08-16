@@ -9,7 +9,7 @@
 <span class="text-md text-center font-bold">{version}</span>
 <a href="#select">
     <div
-        class="m-2 flex justify-center rounded-md border-2 border-black p-1 dark:border-white"
+        class="flex justify-center rounded-md border-2 border-black p-1 dark:border-white"
     >
         <button class="toggle">Select a File</button>
     </div>

@@ -23,7 +23,7 @@
         {#if description}
             <span class="break-words text-sm">{description}</span>
         {/if}
-        <div class="flex items-center">
+        <div class="{keywords.length > 0 && 'space-y-2'} pt-1">
             <span
                 class="w-min rounded-xl border-2 border-black p-1 text-center dark:border-white"
                 >{version}
@@ -33,7 +33,7 @@
                 ></span
             >
             {#if !small && keywords}
-                <div class="space-x-2 pl-2">
+                <div class="flex gap-2">
                     <Keywords {keywords} limit={5} />
                 </div>
             {/if}
