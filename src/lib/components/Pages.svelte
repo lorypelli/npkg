@@ -4,7 +4,7 @@
     export let query: string;
 </script>
 
-<div class="space-x-2 p-1 text-center">
+<div class="space-x-2 pt-0.5 text-center">
     {#each pages as p}
         <a href="/search?q={query}&page={p}">
             <button
