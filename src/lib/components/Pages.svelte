@@ -4,7 +4,7 @@
     export let query: string;
 </script>
 
-<div class="space-x-2 pt-0.5 text-center">
+<div class="flex flex-wrap justify-center gap-x-1 gap-y-0.5 pt-0.5">
     {#each pages as p}
         <a href="/search?q={query}&page={p}">
             <button
