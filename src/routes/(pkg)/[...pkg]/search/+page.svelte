@@ -22,5 +22,10 @@
     <NotFound />
 {/each}
 {#if data.packages.length > 0}
-    <Pages lastPage={data.lastPage} pages={data.pages} query={data.q} />
+    <Pages
+        currentPage={data.currentPage}
+        lastPage={data.lastPage}
+        pages={data.pages}
+        query={data.q}
+    />
 {/if}

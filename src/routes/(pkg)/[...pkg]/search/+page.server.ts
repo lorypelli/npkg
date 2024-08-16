@@ -12,5 +12,6 @@ export async function load({ url }) {
     const pkgs: Search = await res.json();
     return {
         ...pkgs,
+        currentPage: parseInt(p),
     };
 }

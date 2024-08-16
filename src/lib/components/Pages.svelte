@@ -1,4 +1,5 @@
 <script lang="ts">
+    export let currentPage: number;
     export let lastPage: number;
     export let pages: number[];
     export let query: string;
@@ -8,8 +9,8 @@
     {#each pages as p}
         <a href="/search?q={query}&page={p}">
             <button
-                class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
-                >{p}</button
+                class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white {p ==
+                    currentPage && 'bg-gray-700'}">{p}</button
             >
         </a>
     {/each}
