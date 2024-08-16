@@ -9,7 +9,7 @@
     >
 {/each}
 {#if keywords.length > limit}
-<div class="flex items-center">
-    <span>View More...</span>
-</div>
+    <div class="flex items-center">
+        <span>View More...</span>
+    </div>
 {/if}

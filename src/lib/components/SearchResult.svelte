@@ -33,7 +33,7 @@
                 ></span
             >
             {#if !small && keywords}
-                <div class="flex gap-2">
+                <div class="flex flex-wrap gap-2">
                     <Keywords {keywords} limit={5} />
                 </div>
             {/if}
