@@ -13,14 +13,12 @@
             >
         </a>
     {/each}
-    {#if pages.at(-1) && (pages.at(-1) || 0) + 1 != lastPage}
-        <button
-            on:click={() => {
-                const p = prompt('Enter page number...');
-                location.href = `./search?q=${query}&page=${p}`;
-            }}>...</button
-        >
-    {/if}
+    <button
+        on:click={() => {
+            const p = prompt('Enter page number...');
+            location.href = `./search?q=${query}&page=${p}`;
+        }}>...</button
+    >
     <a href="/search?q={query}&page={lastPage}">
         <button
             class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
