@@ -16,7 +16,9 @@
     <button
         on:click={() => {
             const p = prompt('Enter page number...');
-            location.href = `./search?q=${query}&page=${p}`;
+            if (p) {
+                location.href = `./search?q=${query}&page=${p}`;
+            }
         }}>...</button
     >
     <a href="/search?q={query}&page={lastPage}">
