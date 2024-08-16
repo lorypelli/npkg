@@ -23,12 +23,12 @@
         {#if description}
             <span class="break-words text-sm">{description}</span>
         {/if}
-        <div class="flex items-center pt-1">
+        <div class="flex items-center">
             <span
-                class="w-fit rounded-xl border-2 border-black p-1 dark:border-white"
+                class="w-min rounded-xl border-2 border-black p-1 text-center dark:border-white"
                 >{version}
                 <span
-                    class="w-fit rounded-xl border-2 border-black px-1 dark:border-white"
+                    class="rounded-md border-2 border-black px-1 dark:border-white"
                     >{new Date(date).toLocaleDateString()}</span
                 ></span
             >

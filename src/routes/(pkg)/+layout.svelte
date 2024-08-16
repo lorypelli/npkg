@@ -3,7 +3,7 @@
     import '../../globals.css';
 </script>
 
-<nav class="flex justify-between p-2">
+<nav class="flex justify-center p-2 md:justify-between">
     <div class="hidden md:block">
         <a href="/">
             <button

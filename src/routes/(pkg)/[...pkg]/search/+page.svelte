@@ -21,7 +21,7 @@
     <NotFound />
 {/each}
 {#if data.packages.length > 0}
-    <div class="flex justify-center space-x-2">
+    <div class="space-x-2 p-1 text-center">
         {#each data.pages as p}
             <a href="/search?q={data.q}&page={p}">
                 <button

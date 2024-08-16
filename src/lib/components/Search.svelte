@@ -22,7 +22,7 @@
     }
 </script>
 
-<div class="flex">
+<div class="flex flex-col">
     <form action="/search" autocomplete="off">
         <input
             name="q"
