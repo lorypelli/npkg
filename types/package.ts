@@ -18,6 +18,7 @@ export interface Version {
     dependencies: Entries;
     description?: string;
     devDependencies: Entries;
+    dist: Dist;
     homepage?: string;
     keywords?: string[];
     license?: string;
@@ -51,6 +52,10 @@ export interface Entries {
 
 export interface FileEntries {
     [x: string]: FileInfo;
+}
+
+export interface Dist {
+    unpackedSize: number;
 }
 
 interface FileInfo {

@@ -65,7 +65,7 @@
     </div>
     <Readme name={data.name} version={data.version} />
     <div class="flex h-full flex-col overflow-auto px-2 md:w-1/4">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-3">
             {#if data.homepage}
                 <div class="flex flex-col">
                     <span class="font-extrabold">Homepage:</span>
@@ -88,6 +88,12 @@
                     <span>{data.license}</span>
                 </div>
             {/if}
+            <div class="flex flex-col">
+                <span class="font-extrabold">Size:</span>
+                <span
+                    >{(data.dist.unpackedSize / (1000 * 1000)).toFixed(2)} MB</span
+                >
+            </div>
         </div>
         <span class="font-extrabold">Code:</span>
         <a href="/{data.name}/v/{data.version}/code" class="hover:underline"
