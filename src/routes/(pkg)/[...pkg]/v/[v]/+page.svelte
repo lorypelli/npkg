@@ -75,9 +75,10 @@
                         class="hover:underline"
                     >
                         <span class="break-words"
-                            >{data.homepage
-                                .replace(/http?s:\/\//, '')
-                                .replace(/\/$/, '')}</span
+                            >{data.homepage.replace(
+                                /(http?s:\/\/)|(\/$)/g,
+                                '',
+                            )}</span
                         >
                     </a>
                 </div>
@@ -91,7 +92,8 @@
             <div class="flex flex-col">
                 <span class="font-extrabold">Size:</span>
                 <span
-                    >{(data.dist.unpackedSize / (1000 * 1000)).toFixed(2)} MB</span
+                    >{(data.dist.unpackedSize / (1000 * 1000)).toFixed(2)} MB<br
+                    />{(data.dist.unpackedSize / (1024 * 1024)).toFixed(2)} MiB</span
                 >
             </div>
         </div>
