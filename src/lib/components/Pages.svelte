@@ -21,38 +21,42 @@
             <PageSelector {lastPage} {query} />
         {/if}
     {/if}
-    <div class="flex flex-row-reverse flex-wrap justify-center gap-x-1">
-        {#each { length: pages } as _, i}
-            {@const page = currentPage - i - 1}
-            {#if page > 0}
-                <a href="/search?q={query}&page={page}">
-                    <button
-                        class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
-                        >{page}</button
-                    >
-                </a>
-            {/if}
-        {/each}
-    </div>
+    {#if currentPage != 1}
+        <div class="flex flex-row-reverse flex-wrap justify-center gap-x-1">
+            {#each { length: pages } as _, i}
+                {@const page = currentPage - i - 1}
+                {#if page > 0}
+                    <a href="/search?q={query}&page={page}">
+                        <button
+                            class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
+                            >{page}</button
+                        >
+                    </a>
+                {/if}
+            {/each}
+        </div>
+    {/if}
     <a href="/search?q={query}&page={currentPage}">
         <button
             class="mb-2 rounded-md border-2 border-black bg-gray-700 px-1 text-xl dark:border-white"
             >{currentPage}</button
         >
     </a>
-    <div class="flex flex-wrap justify-center gap-x-1">
-        {#each { length: pages } as _, i}
-            {@const page = currentPage + i + 1}
-            {#if page <= lastPage}
-                <a href="/search?q={query}&page={page}">
-                    <button
-                        class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
-                        >{page}</button
-                    >
-                </a>
-            {/if}
-        {/each}
-    </div>
+    {#if currentPage != lastPage}
+        <div class="flex flex-wrap justify-center gap-x-1">
+            {#each { length: pages } as _, i}
+                {@const page = currentPage + i + 1}
+                {#if page <= lastPage}
+                    <a href="/search?q={query}&page={page}">
+                        <button
+                            class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
+                            >{page}</button
+                        >
+                    </a>
+                {/if}
+            {/each}
+        </div>
+    {/if}
     {#if pageRemains > pages}
         {#if pageRemains - 1 > pages}
             <PageSelector {lastPage} {query} />
