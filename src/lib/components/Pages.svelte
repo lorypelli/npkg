@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Arrow from './Arrow.svelte';
     import PageSelector from './PageSelector.svelte';
     export let currentPage: number;
     export let lastPage: number;
@@ -8,6 +9,7 @@
 </script>
 
 <div class="flex flex-wrap justify-center gap-x-1 pt-0.5">
+    <Arrow {currentPage} {query} type="previous" />
     {#if currentPage - 1 > pages}
         <a href="/search?q={query}&page=1">
             <button
@@ -62,4 +64,5 @@
             >
         </a>
     {/if}
+    <Arrow {currentPage} {query} type="next" />
 </div>

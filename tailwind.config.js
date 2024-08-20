@@ -7,12 +7,16 @@ export default {
                 primary: '#E7E5E4',
                 primary_dark: '#181A1B',
             },
-            textColor: {
+            fill: {
                 primary: '#E7E5E4',
                 primary_dark: '#181A1B',
             },
             maxHeight: {
                 container: '80vh',
+            },
+            textColor: {
+                primary: '#E7E5E4',
+                primary_dark: '#181A1B',
             },
         },
     },
