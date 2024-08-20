@@ -7,7 +7,7 @@
     const pageRemains = lastPage - currentPage;
 </script>
 
-<div class="flex flex-wrap justify-center gap-x-1 gap-y-0.5 pt-0.5">
+<div class="flex flex-wrap justify-center gap-x-1 pt-0.5">
     {#if currentPage - 1 > pages}
         <a href="/search?q={query}&page=1">
             <button
@@ -19,7 +19,7 @@
             <PageSelector {lastPage} {query} />
         {/if}
     {/if}
-    <div class="flex flex-row-reverse gap-x-1">
+    <div class="flex flex-row-reverse flex-wrap justify-center gap-x-1">
         {#each { length: pages } as _, i}
             {@const page = currentPage - i - 1}
             {#if page > 0}
@@ -38,7 +38,7 @@
             >{currentPage}</button
         >
     </a>
-    <div class="flex gap-x-1">
+    <div class="flex flex-wrap justify-center gap-x-1">
         {#each { length: pages } as _, i}
             {@const page = currentPage + i + 1}
             {#if page <= lastPage}
