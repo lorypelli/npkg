@@ -3,7 +3,7 @@
     export let currentPage: number;
     export let lastPage: number;
     export let query: string;
-    const pages = 24;
+    const pages = 2;
     const pageRemains = lastPage - currentPage;
 </script>
 
