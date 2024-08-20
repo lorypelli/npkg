@@ -3,7 +3,6 @@ import type { User } from './user.ts';
 export interface Search {
     lastPage: number;
     packages: Package[];
-    pages: number[];
     q: string;
 }
 

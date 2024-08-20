@@ -25,7 +25,6 @@
     <Pages
         currentPage={data.currentPage}
         lastPage={data.lastPage}
-        pages={data.pages}
         query={data.q}
     />
 {/if}

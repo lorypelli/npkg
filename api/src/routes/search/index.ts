@@ -19,9 +19,7 @@ export default async function search(ctx: Context) {
     }
     const pkgs: NPMSearch = await search.json();
     const packages: Search['packages'] = [];
-    const pages: number[] = [];
     const lastPage = Math.ceil(pkgs.total / 20);
-    const pageRemains = lastPage - page;
     for (let i = 0; i < pkgs.objects.length; i++) {
         packages.push({
             date: pkgs.objects[i].package.date,
@@ -32,13 +30,9 @@ export default async function search(ctx: Context) {
             version: pkgs.objects[i].package.version,
         });
     }
-    for (let i = 0; i < (pageRemains > 24 ? 24 : pageRemains); i++) {
-        pages.push(page + i);
-    }
     return ctx.json({
         lastPage,
         packages,
-        pages,
         q,
     });
 }
