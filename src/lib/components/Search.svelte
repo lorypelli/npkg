@@ -2,6 +2,7 @@
     import type { Search } from '../../../types/search.ts';
     import { BASE_URL } from '$lib/utils/url.ts';
     import SearchResult from './SearchResult.svelte';
+    import SearchIcon from './SearchIcon.svelte';
     export let nav = false;
     let input = '';
     let suggestions: Search['packages'] = [];
@@ -23,7 +24,11 @@
 </script>
 
 <div class="flex flex-col">
-    <form action="/search" autocomplete="off">
+    <form
+        action="/search"
+        autocomplete="off"
+        class="flex justify-center gap-x-2"
+    >
         <input
             name="q"
             placeholder="Search Packages..."
@@ -37,6 +42,11 @@
                 ? 'w-64'
                 : 'w-96'} rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
         />
+        <button
+            type="submit"
+            class="rounded-xl border-2 border-black bg-primary p-3 active:bg-gray-700 dark:border-white dark:bg-primary_dark"
+            ><SearchIcon /></button
+        >
     </form>
     {#if suggestions.length > 0 && input.trim() != ''}
         {#if showSuggestions}
