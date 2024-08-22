@@ -11,7 +11,7 @@
             e.preventDefault();
             location.href = '#deps';
         }
-        if (location.hash == '#deps' && e.key == 'Escape') {
+        if (location.hash.slice(1) == 'deps' && e.key == 'Escape') {
             e.preventDefault();
             location.href = '#pkg';
         }
@@ -19,7 +19,7 @@
 />
 <div
     id="deps"
-    class="absolute inset-0 hidden items-center justify-center bg-black/60 target:flex"
+    class="fixed inset-0 hidden items-center justify-center bg-black/60 target:flex"
 >
     <div
         class="relative cursor-move rounded-xl border-2 border-black bg-primary p-3 pt-9 shadow-lg shadow-black dark:border-white dark:bg-primary_dark"

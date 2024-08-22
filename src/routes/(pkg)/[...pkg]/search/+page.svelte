@@ -2,7 +2,21 @@
     import NotFound from '$lib/components/NotFound.svelte';
     import Pages from '$lib/components/Pages.svelte';
     import SearchResult from '$lib/components/SearchResult.svelte';
+    import { page } from '$app/stores';
+    import { onMount } from 'svelte';
     export let data;
+    onMount(() => {
+        const unsubscribe = page.subscribe(($p) => {
+            if (
+                !$p.url.hash ||
+                ($p.url.hash.slice(1) != 's' &&
+                    $p.url.hash.slice(1) != 'p_select')
+            ) {
+                location.href = '#s';
+            }
+        });
+        return () => unsubscribe();
+    });
 </script>
 
 <svelte:head>

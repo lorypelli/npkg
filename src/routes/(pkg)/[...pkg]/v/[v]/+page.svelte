@@ -1,7 +1,6 @@
 <script lang="ts">
     import Keywords from '$lib/components/Keywords.svelte';
     import { page } from '$app/stores';
-    import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
     import Dependencies from '$lib/components/Dependencies.svelte';
     import Readme from '$lib/components/Readme.svelte';
@@ -12,7 +11,8 @@
         const unsubscribe = page.subscribe(($p) => {
             if (
                 !$p.url.hash ||
-                ($p.url.hash != '#pkg' && $p.url.hash != '#deps')
+                ($p.url.hash.slice(1) != 'pkg' &&
+                    $p.url.hash.slice(1) != 'deps')
             ) {
                 location.href = '#pkg';
             }
