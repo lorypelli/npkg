@@ -25,7 +25,7 @@
 
 <div class="flex flex-col">
     <form
-        action="/search"
+        action="/search#s"
         autocomplete="off"
         class="flex justify-center gap-x-2"
     >
@@ -38,9 +38,7 @@
                 showSuggestions = true;
             }}
             required
-            class="{nav
-                ? 'w-64'
-                : 'w-96'} rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
+            class="w-64 rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
         />
         <button
             type="submit"
@@ -50,9 +48,7 @@
     </form>
     {#if suggestions.length > 0 && input.trim() != ''}
         {#if showSuggestions}
-            <div
-                class="{nav ? 'w-64' : 'w-96'} pt-2 {nav && 'absolute top-14'}"
-            >
+            <div class="w-64 pt-2 {nav && 'absolute top-14'}">
                 {#each suggestions as s}
                     <SearchResult
                         date={s.date}

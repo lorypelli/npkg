@@ -30,7 +30,7 @@
             class="mb-1 flex justify-center rounded-full border-2 border-black p-1 text-sm font-extrabold dark:border-white"
             >Close</a
         >
-        <form action="/search" autocomplete="off">
+        <form action="/search#s" autocomplete="off">
             <input type="hidden" name="q" value={query} />
             <input
                 class="rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
