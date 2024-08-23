@@ -31,7 +31,7 @@
             >Close</a
         >
         <form action="/search#s" autocomplete="off">
-            <input type="hidden" name="q" value={query} />
+            <input type="hidden" name="q" value={query} readonly required />
             <input
                 class="rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
                 type="number"

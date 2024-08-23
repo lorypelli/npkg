@@ -38,7 +38,7 @@
     {/if}
     <a href="/search?q={query}&page={currentPage}">
         <button
-            class="mb-2 rounded-md border-2 border-black bg-gray-700 px-1 text-xl dark:border-white"
+            class="mb-2 rounded-md border-2 border-black bg-gray-300 px-1 text-xl dark:border-white dark:bg-gray-700"
             >{currentPage}</button
         >
     </a>
