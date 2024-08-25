@@ -6,6 +6,7 @@
     import Readme from '$lib/components/Readme.svelte';
     import Scripts from '$lib/components/Scripts.svelte';
     import md5 from 'crypto-js/md5';
+    import Avatar from '$lib/components/Avatar.svelte';
     export let data;
     const pkg = `${data.name}@${data.version}`;
     onMount(() => {
@@ -106,21 +107,7 @@
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>
                 <div class="flex items-center justify-center gap-x-1 space-y-1">
-                    {#if data.author.email}
-                        <img
-                            class="size-6"
-                            src="https://s.gravatar.com/avatar/{md5(
-                                data.author.email,
-                            )}?default=retro"
-                            alt="pic"
-                        />
-                    {:else}
-                        <img
-                            class="size-6"
-                            src="https://s.gravatar.com/avatar/?default=retro"
-                            alt="pic"
-                        />
-                    {/if}
+                    <Avatar email={data.author.email} />
                     {#if data.author.url}
                         <a
                             href={data.author.url}
@@ -147,21 +134,7 @@
                     <div
                         class="flex items-center justify-center gap-x-1 space-y-1"
                     >
-                        {#if c.email}
-                            <img
-                                class="size-6"
-                                src="https://s.gravatar.com/avatar/{md5(
-                                    c.email,
-                                )}?default=retro"
-                                alt="pic"
-                            />
-                        {:else}
-                            <img
-                                class="size-6"
-                                src="https://s.gravatar.com/avatar/?default=retro"
-                                alt="pic"
-                            />
-                        {/if}
+                        <Avatar email={c.email} />
                         {#if c.url}
                             <a
                                 href={c.url}
@@ -188,21 +161,7 @@
                     <div
                         class="flex items-center justify-center gap-x-1 space-y-1"
                     >
-                        {#if m.email}
-                            <img
-                                class="size-6"
-                                src="https://s.gravatar.com/avatar/{md5(
-                                    m.email,
-                                )}?default=retro"
-                                alt="pic"
-                            />
-                        {:else}
-                            <img
-                                class="size-6"
-                                src="https://s.gravatar.com/avatar/?default=retro"
-                                alt="pic"
-                            />
-                        {/if}
+                        <Avatar email={m.email} />
                         {#if m.url}
                             <a
                                 href={m.url}
