@@ -103,15 +103,21 @@
             >Click Here...</a
         >
         {#if data.author}
-            <div class="flex justify-center gap-x-1 space-y-1">
-                {#if data.author.username || data.author.name}
-                    <span class="font-extrabold">Author:</span>
+            {#if data.author.username || data.author.name}
+                <span class="font-extrabold">Author:</span>
+                <div class="flex items-center justify-center gap-x-1 space-y-1">
                     {#if data.author.email}
                         <img
                             class="size-6"
                             src="https://s.gravatar.com/avatar/{md5(
                                 data.author.email,
-                            )}"
+                            )}?default=retro"
+                            alt="pic"
+                        />
+                    {:else}
+                        <img
+                            class="size-6"
+                            src="https://s.gravatar.com/avatar/?default=retro"
                             alt="pic"
                         />
                     {/if}
@@ -129,8 +135,8 @@
                     {:else}
                         <span>{data.author.username || data.author.name}</span>
                     {/if}
-                {/if}
-            </div>
+                </div>
+            {/if}
         {/if}
         {#if data.contributors}
             <span class="font-extrabold"
@@ -138,13 +144,21 @@
             >
             {#each data.contributors as c}
                 {#if c.username || c.name}
-                    <div class="flex justify-center gap-x-1 space-y-1">
+                    <div
+                        class="flex items-center justify-center gap-x-1 space-y-1"
+                    >
                         {#if c.email}
                             <img
                                 class="size-6"
                                 src="https://s.gravatar.com/avatar/{md5(
                                     c.email,
-                                )}"
+                                )}?default=retro"
+                                alt="pic"
+                            />
+                        {:else}
+                            <img
+                                class="size-6"
+                                src="https://s.gravatar.com/avatar/?default=retro"
                                 alt="pic"
                             />
                         {/if}
@@ -171,13 +185,21 @@
             >
             {#each data.maintainers as m}
                 {#if m.username || m.name}
-                    <div class="flex justify-center gap-x-1 space-y-1">
+                    <div
+                        class="flex items-center justify-center gap-x-1 space-y-1"
+                    >
                         {#if m.email}
                             <img
                                 class="size-6"
                                 src="https://s.gravatar.com/avatar/{md5(
                                     m.email,
-                                )}"
+                                )}?default=retro"
+                                alt="pic"
+                            />
+                        {:else}
+                            <img
+                                class="size-6"
+                                src="https://s.gravatar.com/avatar/?default=retro"
                                 alt="pic"
                             />
                         {/if}
