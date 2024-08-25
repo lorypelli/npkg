@@ -5,6 +5,7 @@
     import Dependencies from '$lib/components/Dependencies.svelte';
     import Readme from '$lib/components/Readme.svelte';
     import Scripts from '$lib/components/Scripts.svelte';
+    import md5 from 'crypto-js/md5';
     export let data;
     const pkg = `${data.name}@${data.version}`;
     onMount(() => {
@@ -102,20 +103,34 @@
             >Click Here...</a
         >
         {#if data.author}
-            {#if data.author.username || data.author.name}
-                <span class="font-extrabold">Author:</span>
-                {#if data.author.url}
-                    <a
-                        href={data.author.url}
-                        target="_blank"
-                        class="hover:underline"
-                    >
+            <div class="flex justify-center gap-x-1 space-y-1">
+                {#if data.author.username || data.author.name}
+                    <span class="font-extrabold">Author:</span>
+                    {#if data.author.email}
+                        <img
+                            class="size-6"
+                            src="https://s.gravatar.com/avatar/{md5(
+                                data.author.email,
+                            )}"
+                            alt="pic"
+                        />
+                    {/if}
+                    {#if data.author.url}
+                        <a
+                            href={data.author.url}
+                            target="_blank"
+                            class="hover:underline"
+                        >
+                            <span
+                                >{data.author.username ||
+                                    data.author.name}</span
+                            >
+                        </a>
+                    {:else}
                         <span>{data.author.username || data.author.name}</span>
-                    </a>
-                {:else}
-                    <span>{data.author.username || data.author.name}</span>
+                    {/if}
                 {/if}
-            {/if}
+            </div>
         {/if}
         {#if data.contributors}
             <span class="font-extrabold"
@@ -123,13 +138,28 @@
             >
             {#each data.contributors as c}
                 {#if c.username || c.name}
-                    {#if c.url}
-                        <a href={c.url} target="_blank" class="hover:underline">
+                    <div class="flex justify-center gap-x-1 space-y-1">
+                        {#if c.email}
+                            <img
+                                class="size-6"
+                                src="https://s.gravatar.com/avatar/{md5(
+                                    c.email,
+                                )}"
+                                alt="pic"
+                            />
+                        {/if}
+                        {#if c.url}
+                            <a
+                                href={c.url}
+                                target="_blank"
+                                class="hover:underline"
+                            >
+                                <span>{c.username || c.name}</span>
+                            </a>
+                        {:else}
                             <span>{c.username || c.name}</span>
-                        </a>
-                    {:else}
-                        <span>{c.username || c.name}</span>
-                    {/if}
+                        {/if}
+                    </div>
                 {:else}
                     <span class="text-red-600">An error occurred!</span>
                 {/if}
@@ -141,13 +171,28 @@
             >
             {#each data.maintainers as m}
                 {#if m.username || m.name}
-                    {#if m.url}
-                        <a href={m.url} target="_blank" class="hover:underline">
+                    <div class="flex justify-center gap-x-1 space-y-1">
+                        {#if m.email}
+                            <img
+                                class="size-6"
+                                src="https://s.gravatar.com/avatar/{md5(
+                                    m.email,
+                                )}"
+                                alt="pic"
+                            />
+                        {/if}
+                        {#if m.url}
+                            <a
+                                href={m.url}
+                                target="_blank"
+                                class="hover:underline"
+                            >
+                                <span>{m.username || m.name}</span>
+                            </a>
+                        {:else}
                             <span>{m.username || m.name}</span>
-                        </a>
-                    {:else}
-                        <span>{m.username || m.name}</span>
-                    {/if}
+                        {/if}
+                    </div>
                 {:else}
                     <span class="text-red-600">An error occurred!</span>
                 {/if}
