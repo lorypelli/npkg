@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { User } from '../../../types/user.ts';
+    import Avatar from './Avatar.svelte';
     import Keywords from './Keywords.svelte';
     export let date: string;
     export let description = '';
@@ -18,12 +19,13 @@
             <span class="font-extrabold">{name}</span>
             {#if !small}
                 <span>({publisher.username || publisher.name})</span>
+                <Avatar email={publisher.email} />
             {/if}
         </div>
         {#if description}
             <span class="break-words text-sm">{description}</span>
         {/if}
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap items-center gap-2">
             <span
                 class="rounded-xl border-2 border-black p-1 text-center dark:border-white"
                 >{version}
