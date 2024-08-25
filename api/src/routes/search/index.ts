@@ -20,14 +20,14 @@ export default async function search(ctx: Context) {
     const pkgs: NPMSearch = await search.json();
     const packages: Search['packages'] = [];
     const lastPage = Math.ceil(pkgs.total / 20);
-    for (let i = 0; i < pkgs.objects.length; i++) {
+    for (let pkg of pkgs.objects) {
         packages.push({
-            date: pkgs.objects[i].package.date,
-            description: pkgs.objects[i].package.description || '',
-            keywords: pkgs.objects[i].package.keywords || [],
-            name: pkgs.objects[i].package.name,
-            publisher: pkgs.objects[i].package.publisher,
-            version: pkgs.objects[i].package.version,
+            date: pkg.package.date,
+            description: pkg.package.description || '',
+            keywords: pkg.package.keywords || [],
+            name: pkg.package.name,
+            publisher: pkg.package.publisher,
+            version: pkg.package.version,
         });
     }
     return ctx.json({
