@@ -5,17 +5,13 @@
     import Dependencies from '$lib/components/Dependencies.svelte';
     import Readme from '$lib/components/Readme.svelte';
     import Scripts from '$lib/components/Scripts.svelte';
-    import md5 from 'crypto-js/md5';
     import Avatar from '$lib/components/Avatar.svelte';
     export let data;
     const pkg = `${data.name}@${data.version}`;
+    const valid = ['pkg', 'deps', 'scripts'];
     onMount(() => {
         const unsubscribe = page.subscribe(($p) => {
-            if (
-                !$p.url.hash ||
-                ($p.url.hash.slice(1) != 'pkg' &&
-                    $p.url.hash.slice(1) != 'deps')
-            ) {
+            if (!$p.url.hash || valid.includes($p.url.hash)) {
                 location.href = '#pkg';
             }
         });
@@ -33,9 +29,9 @@
 
 <div
     id="pkg"
-    class="flex flex-col justify-center text-center md:flex-row md:overflow-hidden"
+    class="flex flex-col justify-center text-center h-full md:flex-row md:overflow-hidden"
 >
-    <div class="flex h-full flex-col overflow-auto px-2 md:w-1/4">
+    <div class="flex flex-col md:overflow-auto px-2 md:w-1/4">
         <span class="font-extrabold">{pkg}</span>
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>
@@ -61,12 +57,9 @@
                 <Keywords keywords={data.keywords} />
             </div>
         {/if}
-        {#if data.scripts}
-            <Scripts scripts={data.scripts} />
-        {/if}
     </div>
     <Readme name={data.name} version={data.version} />
-    <div class="flex h-full flex-col overflow-auto px-2 md:w-1/4">
+    <div class="flex flex-col md:overflow-auto px-2 md:w-1/4">
         <div class="grid grid-cols-3">
             {#if data.homepage}
                 <div class="flex flex-col">
@@ -103,6 +96,8 @@
         <a href="/{data.name}/v/{data.version}/code" class="hover:underline"
             >Click Here...</a
         >
+        <span class="font-extrabold">Scripts:</span>
+        <a href="#scripts" class="hover:underline">Click Here...</a>
         {#if data.author}
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>
@@ -185,3 +180,4 @@
     dependencies={data.dependencies}
     devDependencies={data.devDependencies}
 />
+<Scripts scripts={data.scripts} />
