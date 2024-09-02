@@ -29,9 +29,9 @@
 
 <div
     id="pkg"
-    class="flex flex-col justify-center text-center h-full md:flex-row md:overflow-hidden"
+    class="flex h-full flex-col justify-center text-center md:flex-row md:overflow-hidden"
 >
-    <div class="flex flex-col md:overflow-auto px-2 md:w-1/4">
+    <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
         <span class="font-extrabold">{pkg}</span>
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>
@@ -59,7 +59,7 @@
         {/if}
     </div>
     <Readme name={data.name} version={data.version} />
-    <div class="flex flex-col md:overflow-auto px-2 md:w-1/4">
+    <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
         <div class="grid grid-cols-3">
             {#if data.homepage}
                 <div class="flex flex-col">
