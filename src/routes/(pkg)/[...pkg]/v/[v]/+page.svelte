@@ -29,7 +29,7 @@
 
 <div
     id="pkg"
-    class="flex h-full flex-col justify-center text-center md:flex-row md:overflow-hidden"
+    class="flex flex-col justify-center text-center md:h-full md:flex-row md:overflow-hidden"
 >
     <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
         <span class="font-extrabold">{pkg}</span>

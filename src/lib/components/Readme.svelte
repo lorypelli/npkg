@@ -4,7 +4,7 @@
 </script>
 
 <iframe
-    class="h-full md:w-1/2"
+    class="md:w-1/2"
     src="/{name}/v/{version}/readme"
     title="Readme"
     sandbox="allow-popups allow-popups-to-escape-sandbox"
