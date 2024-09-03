@@ -10,7 +10,7 @@
     class="fixed inset-0 hidden items-center justify-center bg-black/60 target:flex"
 >
     <div
-        class="relative cursor-move rounded-xl border-2 border-black bg-primary p-3 {close ==
+        class="relative cursor-move overflow-y-auto rounded-xl border-2 border-black bg-primary p-3 max-size-3/4 {close ==
             'right' &&
             'pt-9'} shadow-lg shadow-black dark:border-white dark:bg-primary_dark"
         use:draggable={{ bounds: 'parent', gpuAcceleration: false }}
