@@ -26,7 +26,7 @@
             <div class="text-center">
                 <span class="font-bold">{k}</span>
                 <pre class="flex items-center justify-center">
-                    <code class="hljs language-sh rounded-lg">{v}</code>
+                    <code class="hljs rounded-lg">{v}</code>
                 </pre>
             </div>
         {/each}

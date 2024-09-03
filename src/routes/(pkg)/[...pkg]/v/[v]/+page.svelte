@@ -6,10 +6,12 @@
     import Readme from '$lib/components/Readme.svelte';
     import Scripts from '$lib/components/Scripts.svelte';
     import Avatar from '$lib/components/Avatar.svelte';
+    import hljs from 'highlight.js';
     export let data;
     const pkg = `${data.name}@${data.version}`;
     const valid = ['pkg', 'deps', 'scripts'];
     onMount(() => {
+        hljs.highlightAll();
         const unsubscribe = page.subscribe(($p) => {
             if (!$p.url.hash || valid.includes($p.url.hash)) {
                 location.href = '#pkg';
@@ -36,7 +38,7 @@
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>
         <pre class="flex items-center justify-center">
-            <code class="hljs language-sh rounded-lg">npm i {pkg}</code>
+            <code class="hljs rounded-lg">npm i {pkg}</code>
         </pre>
         <div class="grid grid-cols-2">
             <div class="flex flex-col">
@@ -92,12 +94,12 @@
                 >
             </div>
         </div>
+        <span class="font-extrabold">Scripts:</span>
+        <a href="#scripts" class="hover:underline">Click Here...</a>
         <span class="font-extrabold">Code:</span>
         <a href="/{data.name}/v/{data.version}/code" class="hover:underline"
             >Click Here...</a
         >
-        <span class="font-extrabold">Scripts:</span>
-        <a href="#scripts" class="hover:underline">Click Here...</a>
         {#if data.author}
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>
