@@ -26,7 +26,7 @@ export default {
     },
     darkMode: 'media',
     plugins: [
-        function ({ addUtilities, theme, e }) {
+        ({ addUtilities, theme, e }) => {
             const key = '3/4';
             const maxSize = theme(`maxWidth.${key}`);
             const maxSizeUtility = {
