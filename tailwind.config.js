@@ -16,7 +16,6 @@ export default {
             },
             maxHeight: {
                 '3/4': '75%',
-                container: '80vh',
             },
             textColor: {
                 primary: '#E7E5E4',

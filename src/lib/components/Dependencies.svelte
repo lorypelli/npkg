@@ -23,10 +23,10 @@
         <span class="font-extrabold">No dependencies found!</span>
     {:else}
         <div
-            class="grid max-h-container grid-cols-2 overflow-hidden text-center"
+            class="flex flex-col overflow-hidden text-center md:grid md:grid-cols-2"
         >
             {#if dependencies}
-                <div class="flex max-h-container flex-col">
+                <div class="flex flex-col">
                     <span class="text-lg font-bold">Dependencies:</span>
                     <div class="flex flex-col overflow-auto">
                         {#each Object.entries(dependencies) as [k]}
@@ -36,7 +36,7 @@
                 </div>
             {/if}
             {#if devDependencies}
-                <div class="flex max-h-container flex-col">
+                <div class="flex flex-col">
                     <span class="text-lg font-bold">Dev Dependencies</span>
                     <div class="flex flex-col overflow-auto">
                         {#each Object.entries(devDependencies) as [k]}

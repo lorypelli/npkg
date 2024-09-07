@@ -10,9 +10,9 @@
     <a href="./" class="text-sm hover:underline">Go Back!</a>
     <span class="text-center text-xl">{pkg}@{version}</span>
 </div>
-<span class="text-md text-center font-bold">{fname} - {file}</span>
-<div class="h-full p-4">
-    <pre class="flex justify-center">
+<span class="text-md break-words text-center font-bold">{fname} - {file}</span>
+<div class="h-3/4 px-4">
+    <pre class="flex h-full justify-center">
         <code class="hljs">{pkg_file}</code>
     </pre>
 </div>
