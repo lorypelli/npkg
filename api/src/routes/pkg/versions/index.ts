@@ -4,11 +4,11 @@ import type { Entries, NPMGeneral } from '../../../../../types/package.ts';
 export default async function versions(ctx: Context) {
     const { pkg } = ctx.req.param();
     if (!pkg) {
-        return ctx.notFound();
+        return ctx.json({ error: "Missing Paramethers" }, 400);
     }
     const general = await fetch(`https://registry.npmjs.com/${pkg}`);
     if (!general.ok) {
-        return ctx.notFound();
+        return ctx.json({ error: general.statusText }, 500);
     }
     const pkg_general: NPMGeneral = await general.json();
     const versions: Entries[] = [];

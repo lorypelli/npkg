@@ -5,13 +5,13 @@ export default async function suggestions(ctx: Context) {
     ctx.header('Access-Control-Allow-Origin', '*');
     const { q, size } = ctx.req.query();
     if (!q || !size) {
-        return ctx.notFound();
+        return ctx.json({ error: "Missing Paramethers" }, 400);
     }
     const suggestions = await fetch(
         `https://www.npmjs.com/search/suggestions?q=${q}`,
     );
     if (!suggestions.ok) {
-        return ctx.notFound();
+        return ctx.json({ error: "Missing Paramethers" }, 400);
     }
     const pkg_suggestions: Search['packages'] = await suggestions.json();
     const packages: Search['packages'] = [];

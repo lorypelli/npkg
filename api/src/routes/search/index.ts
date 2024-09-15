@@ -4,7 +4,7 @@ import type { NPMSearch, Search } from '../../../../types/search.ts';
 export default async function search(ctx: Context) {
     const { q, p } = ctx.req.query();
     if (!q) {
-        return ctx.notFound();
+        return ctx.json({ error: "Missing Paramethers" }, 400);
     }
     let page = 1;
     if (p) {
@@ -15,7 +15,7 @@ export default async function search(ctx: Context) {
         `https://registry.npmjs.com/-/v1/search?text=${q}&from=${pkg_page * (page - 1)}`,
     );
     if (!search.ok) {
-        return ctx.notFound();
+        return ctx.json({ error: search.statusText }, 500);
     }
     const pkgs: NPMSearch = await search.json();
     const packages: Search['packages'] = [];
