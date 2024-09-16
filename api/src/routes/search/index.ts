@@ -2,7 +2,7 @@ import type { Context } from 'hono';
 import type { NPMSearch, Search } from '../../../../types/search.ts';
 
 export default async function search(ctx: Context) {
-    const { q, p } = ctx.req.query();
+    const { q, p, n } = ctx.req.query();
     if (!q) {
         return ctx.json({ error: "Missing Paramethers" }, 400);
     }
@@ -10,7 +10,10 @@ export default async function search(ctx: Context) {
     if (p) {
         page = parseInt(p);
     }
-    const pkg_page = 20;
+    let pkg_page = 20;
+    if (n) {
+        pkg_page = parseInt(n);
+    }
     const search = await fetch(
         `https://registry.npmjs.com/-/v1/search?text=${q}&from=${pkg_page * (page - 1)}`,
     );
@@ -19,7 +22,7 @@ export default async function search(ctx: Context) {
     }
     const pkgs: NPMSearch = await search.json();
     const packages: Search['packages'] = [];
-    const lastPage = Math.ceil(pkgs.total / 20);
+    const lastPage = Math.ceil(pkgs.total / pkg_page);
     for (let pkg of pkgs.objects) {
         packages.push({
             date: pkg.package.date,

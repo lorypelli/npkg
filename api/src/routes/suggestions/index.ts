@@ -7,13 +7,11 @@ export default async function suggestions(ctx: Context) {
     if (!q || !size) {
         return ctx.json({ error: "Missing Paramethers" }, 400);
     }
-    const suggestions = await fetch(
-        `https://www.npmjs.com/search/suggestions?q=${q}`,
-    );
+    const suggestions = await fetch(`http://127.0.0.1:8787/search?q=${q}&n=${size}`);
     if (!suggestions.ok) {
-        return ctx.json({ error: "Missing Paramethers" }, 400);
+        return ctx.json({ error: suggestions.statusText }, 500);
     }
-    const pkg_suggestions: Search['packages'] = await suggestions.json();
+    const pkg_suggestions = (await suggestions.json<Search>()).packages;
     const packages: Search['packages'] = [];
     for (let i = 0; i < parseInt(size); i++) {
         if (pkg_suggestions[i]) {
