@@ -7,7 +7,8 @@ export default async function suggestions(ctx: Context) {
     if (!q || !size) {
         return ctx.json({ error: "Missing Paramethers" }, 400);
     }
-    const suggestions = await fetch(`http://127.0.0.1:8787/search?q=${q}&n=${size}`);
+    const url = new URL(ctx.req.url)
+    const suggestions = await fetch(`${url.protocol}//${url.host}/search?q=${q}&n=${size}`);
     if (!suggestions.ok) {
         return ctx.json({ error: suggestions.statusText }, 500);
     }
