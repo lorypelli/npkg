@@ -4,7 +4,7 @@ import type { NPMCode } from '../../../../../../types/package.ts';
 export default async function readme(ctx: Context) {
     const { pkg, v } = ctx.req.param();
     if (!pkg || !v) {
-        return ctx.json({ error: "Missing Paramethers" }, 400);
+        return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
     let pkg_readme = 'No README Found!';
     const code = await fetch(

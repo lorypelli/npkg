@@ -4,7 +4,7 @@ import type { Version } from '../../../../../types/package.ts';
 export default async function info(ctx: Context) {
     const { pkg, v } = ctx.req.param();
     if (!pkg || !v) {
-        return ctx.json({ error: "Missing Paramethers" }, 400);
+        return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
     const version = await fetch(`https://registry.npmjs.com/${pkg}/${v}`);
     if (!version.ok) {

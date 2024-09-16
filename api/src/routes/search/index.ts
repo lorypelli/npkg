@@ -2,40 +2,56 @@ import type { Context } from 'hono';
 import type { NPMSearch, Search } from '../../../../types/search.ts';
 
 export default async function search(ctx: Context) {
-    const { q, p, n } = ctx.req.query();
+    ctx.header('Access-Control-Allow-Origin', '*');
+    const { q, p, size } = ctx.req.query();
     if (!q) {
-        return ctx.json({ error: "Missing Paramethers" }, 400);
+        return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
     let page = 1;
     if (p) {
         page = parseInt(p);
     }
     let pkg_page = 20;
-    if (n) {
-        pkg_page = parseInt(n);
+    if (size) {
+        pkg_page = parseInt(size);
+    }
+    const flag = ctx.req.query('suggestions');
+    let suggestions = false;
+    if (flag != undefined) {
+        suggestions = true;
+    }
+    let from = pkg_page * (page - 1);
+    if (suggestions) {
+        from = 0;
     }
     const search = await fetch(
-        `https://registry.npmjs.com/-/v1/search?text=${q}&from=${pkg_page * (page - 1)}`,
+        `https://registry.npmjs.com/-/v1/search?text=${q}&from=${from}`,
     );
     if (!search.ok) {
         return ctx.json({ error: search.statusText }, 500);
     }
     const pkgs: NPMSearch = await search.json();
     const packages: Search['packages'] = [];
-    const lastPage = Math.ceil(pkgs.total / pkg_page);
-    for (let pkg of pkgs.objects) {
-        packages.push({
-            date: pkg.package.date,
-            description: pkg.package.description || '',
-            keywords: pkg.package.keywords || [],
-            name: pkg.package.name,
-            publisher: pkg.package.publisher,
-            version: pkg.package.version,
-        });
+    for (let i = 0; i < pkg_page; i++) {
+        if (pkgs.objects[i]) {
+            packages.push({
+                date: pkgs.objects[i].package.date,
+                description: pkgs.objects[i].package.description || '',
+                keywords: pkgs.objects[i].package.keywords || [],
+                name: pkgs.objects[i].package.name,
+                publisher: pkgs.objects[i].package.publisher,
+                version: pkgs.objects[i].package.version,
+            });
+        }
     }
-    return ctx.json({
-        lastPage,
-        packages,
-        q,
-    });
+    if (!suggestions) {
+        const lastPage = Math.ceil(pkgs.total / pkg_page);
+        return ctx.json({
+            lastPage,
+            packages,
+            q,
+        });
+    } else {
+        return ctx.json(packages);
+    }
 }

@@ -3,7 +3,7 @@ import type { Context } from 'hono';
 export default async function file(ctx: Context) {
     const { pkg, v, f } = ctx.req.param();
     if (!pkg || !v || !f) {
-        return ctx.json({ error: "Missing Paramethers" }, 400);
+        return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
     const file = await fetch(`https://www.npmjs.com/package/${pkg}/file/${f}`);
     if (!file.ok) {

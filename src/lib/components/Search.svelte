@@ -10,7 +10,7 @@
     async function getSuggestions(input: string) {
         if (input.trim() != '') {
             const suggestions = await fetch(
-                `${BASE_URL}/suggestions?q=${input}&size=3`,
+                `${BASE_URL}/search?q=${input}&size=3&suggestions`,
             );
             if (!suggestions.ok) {
                 return [];

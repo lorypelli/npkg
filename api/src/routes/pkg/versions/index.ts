@@ -4,7 +4,7 @@ import type { Entries, NPMGeneral } from '../../../../../types/package.ts';
 export default async function versions(ctx: Context) {
     const { pkg } = ctx.req.param();
     if (!pkg) {
-        return ctx.json({ error: "Missing Paramethers" }, 400);
+        return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
     const general = await fetch(`https://registry.npmjs.com/${pkg}`);
     if (!general.ok) {
