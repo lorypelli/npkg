@@ -14,7 +14,7 @@
         "@fontsource/fira-mono": "^5.1.0",
         "@neoconfetti/svelte": "^2.2.1",
         "@sveltejs/adapter-cloudflare": "^4.7.2",
-        "@sveltejs/kit": "^2.5.27",
+        "@sveltejs/kit": "^2.5.28",
         "@sveltejs/vite-plugin-svelte": "^3.1.2",
         "@types/crypto-js": "^4.2.2",
         "autoprefixer": "^10.4.20",
@@ -25,10 +25,10 @@
         "prettier-plugin-tailwindcss": "^0.6.6",
         "svelte": "^4.2.19",
         "svelte-check": "^4.0.2",
-        "tailwindcss": "^3.4.11",
+        "tailwindcss": "^3.4.12",
         "tslib": "^2.7.0",
         "typescript": "^5.6.2",
-        "vite": "^5.4.5"
+        "vite": "^5.4.6"
     },
     "dependencies": {
         "@neodrag/svelte": "^2.0.6",
