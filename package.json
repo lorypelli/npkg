@@ -5,9 +5,10 @@
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview",
-        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "deploy:api": "cd api && bun prod",
+        "deploy:cdn": "cd cdn && bun prod",
+        "deploy:all": "bun deploy:api && bun deploy:cdn"
     },
     "type": "module",
     "devDependencies": {
