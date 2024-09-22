@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Search } from '../../../types/search.ts';
+    import { twMerge } from 'tailwind-merge';
     import { BASE_URL } from '$lib/utils/url.ts';
     import SearchResult from './SearchResult.svelte';
     import SearchIcon from './SearchIcon.svelte';
@@ -48,7 +49,7 @@
     </form>
     {#if suggestions.length > 0 && input.trim() != ''}
         {#if showSuggestions}
-            <div class="w-64 pt-2 {nav && 'absolute top-14'}">
+            <div class={twMerge('w-64 pt-2', nav && 'absolute top-14')}>
                 {#each suggestions as s}
                     <SearchResult
                         date={s.date}

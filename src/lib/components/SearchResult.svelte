@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { User } from '../../../types/user.ts';
+    import { twMerge } from 'tailwind-merge';
     import Avatar from './Avatar.svelte';
     import Keywords from './Keywords.svelte';
     export let date: string;
@@ -24,8 +25,10 @@
         </div>
         {#if description}
             <div
-                class="mb-1 {small &&
-                    'max-h-20'} overflow-y-hidden whitespace-normal leading-3"
+                class={twMerge(
+                    'mb-1 overflow-y-hidden whitespace-normal leading-3',
+                    small && 'max-h-20',
+                )}
             >
                 <span class="break-words text-sm">{description}</span>
             </div>
