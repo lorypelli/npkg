@@ -23,7 +23,12 @@
             {/if}
         </div>
         {#if description}
-            <span class="break-words text-sm">{description}</span>
+            <div
+                class="mb-1 {small &&
+                    'max-h-20'} overflow-y-hidden whitespace-normal leading-3"
+            >
+                <span class="break-words text-sm">{description}</span>
+            </div>
         {/if}
         <div class="flex flex-wrap items-center gap-2">
             <span

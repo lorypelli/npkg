@@ -9,9 +9,5 @@
         alt="pic"
     />
 {:else}
-    <img
-        class="size-6"
-        src="https://cdn.npkg.lorypelli.dev/"
-        alt="pic"
-    />
+    <img class="size-6" src="https://cdn.npkg.lorypelli.dev/" alt="pic" />
 {/if}
