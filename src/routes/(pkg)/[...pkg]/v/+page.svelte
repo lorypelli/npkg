@@ -4,7 +4,11 @@
 </script>
 
 <svelte:head>
-    <title>npkg - {data.pkg} versions</title>
+    <title>npkg: fast and efficient - {data.pkg} versions</title>
+    <meta
+        name="og:title"
+        content="npkg: fast and efficient - {data.pkg} versions"
+    />
 </svelte:head>
 
 <Version pkg={data.pkg} tags={data.tags} versions={data.versions} />

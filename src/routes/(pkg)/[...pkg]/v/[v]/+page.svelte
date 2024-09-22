@@ -22,7 +22,13 @@
 </script>
 
 <svelte:head>
-    <title>npkg - {pkg}</title>
+    <title>npkg: fast and efficient - {pkg}</title>
+    <meta
+        name="author"
+        content={data.author?.username || data.author?.name || ''}
+    />
+    <meta name="keywords" content={data.keywords?.join(', ') || ''} />
+    <meta name="og:title" content="npkg: fast and efficient - {pkg}" />
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"

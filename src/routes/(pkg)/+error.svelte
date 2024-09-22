@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-    <title>404 - Not Found</title>
+    <title>npkg: fast and efficient - 404 Not Found!</title>
 </svelte:head>
 
 <NotFound />

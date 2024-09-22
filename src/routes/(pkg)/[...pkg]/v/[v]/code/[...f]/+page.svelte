@@ -7,7 +7,9 @@
 </script>
 
 <svelte:head>
-    <title>{data.fname} - {data.pkg}@{data.version}</title>
+    <title
+        >npkg: fast and efficient - {data.fname}, {data.pkg}@{data.version}</title
+    >
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"

@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-    <title>npkg - results for "{data.q}"</title>
+    <title>npkg: fast and efficient - results for "{data.q}"</title>
 </svelte:head>
 
 {#each data.packages as p}

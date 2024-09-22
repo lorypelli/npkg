@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Readme</title>
+    <title>npkg: fast and efficient - Readme</title>
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"
