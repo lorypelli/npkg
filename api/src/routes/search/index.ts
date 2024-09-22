@@ -2,7 +2,12 @@ import type { Context } from 'hono';
 import type { NPMSearch, Search } from '../../../../types/search.ts';
 
 export default async function search(ctx: Context) {
-    ctx.header('Access-Control-Allow-Origin', '*');
+    const flag = ctx.req.query('suggestions');
+    let suggestions = false;
+    if (flag != undefined) {
+        ctx.header('Access-Control-Allow-Origin', '*');
+        suggestions = true;
+    }
     const { q, p, size } = ctx.req.query();
     if (!q) {
         return ctx.json({ error: 'Missing Paramethers' }, 400);
@@ -14,11 +19,6 @@ export default async function search(ctx: Context) {
     let pkg_page = 20;
     if (size) {
         pkg_page = parseInt(size);
-    }
-    const flag = ctx.req.query('suggestions');
-    let suggestions = false;
-    if (flag != undefined) {
-        suggestions = true;
     }
     let from = pkg_page * (page - 1);
     if (suggestions) {
