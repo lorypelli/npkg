@@ -2,8 +2,16 @@
     export let email = '';
 </script>
 
-<img
-    class="size-6"
-    src="https://cdn.npkg.lorypelli.dev/?email={email}"
-    alt="pic"
-/>
+{#if email}
+    <img
+        class="size-6"
+        src="https://cdn.npkg.lorypelli.dev/?email={email}"
+        alt="pic"
+    />
+{:else}
+    <img
+        class="size-6"
+        src="https://cdn.npkg.lorypelli.dev/"
+        alt="pic"
+    />
+{/if}
