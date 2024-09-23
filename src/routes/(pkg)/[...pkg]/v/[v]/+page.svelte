@@ -58,6 +58,19 @@
                 <a href="#deps" class="text-sm hover:underline">Click Here...</a
                 >
             </div>
+            <div class="flex flex-col">
+                <span class="text-lg font-bold">Scripts:</span>
+                <a href="#scripts" class="text-sm hover:underline"
+                    >Click Here...</a
+                >
+            </div>
+            <div class="flex flex-col">
+                <span class="text-lg font-bold">Code:</span>
+                <a
+                    href="/{data.name}/v/{data.version}/code"
+                    class="text-sm hover:underline">Click Here...</a
+                >
+            </div>
         </div>
         {#if data.keywords}
             <span class="text-lg font-bold">Keywords:</span>
@@ -100,12 +113,6 @@
                 >
             </div>
         </div>
-        <span class="font-extrabold">Scripts:</span>
-        <a href="#scripts" class="hover:underline">Click Here...</a>
-        <span class="font-extrabold">Code:</span>
-        <a href="/{data.name}/v/{data.version}/code" class="hover:underline"
-            >Click Here...</a
-        >
         {#if data.author}
             {#if data.author.username || data.author.name}
                 <span class="font-extrabold">Author:</span>
