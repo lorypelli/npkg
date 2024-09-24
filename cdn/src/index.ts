@@ -7,7 +7,7 @@ app.get('/', async (ctx) => {
     const email = ctx.req.query('email');
     const emailHash = email ? md5(email) : '';
     const res = await fetch(
-        `https://s.gravatar.com/avatar/${emailHash}?d=retro`,
+        `https://s.gravatar.com/avatar/${emailHash}?d=retro&s=24`,
     );
     if (!res.ok) {
         return ctx.json({ error: res.statusText }, 500);

@@ -6,11 +6,11 @@
         "prod": "wrangler deploy"
     },
     "dependencies": {
-        "hono": "^4.6.2"
+        "hono": "^4.6.3"
     },
     "devDependencies": {
         "@cloudflare/workers-types": "^4.20240919.0",
         "prettier": "^3.3.3",
-        "wrangler": "^3.78.7"
+        "wrangler": "^3.78.8"
     }
 }
