@@ -21,7 +21,7 @@
     {#each Object.entries(code) as [k, v]}
         <a href="/{pkg}/v/{version}/code/{k.slice(1)}?hex={v.hex}"
             ><button
-                class="my-1 rounded-md border-2 border-black p-1 dark:border-white"
+                class="m-1 break-all rounded-md border-2 border-black p-1 dark:border-white"
                 >{k.slice(1)}</button
             ></a
         >
