@@ -10,8 +10,8 @@
         "hono": "^4.6.3"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20240919.0",
+        "@cloudflare/workers-types": "^4.20240924.0",
         "prettier": "^3.3.3",
-        "wrangler": "^3.78.8"
+        "wrangler": "^3.78.9"
     }
 }
