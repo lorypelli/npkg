@@ -1,8 +1,8 @@
 <script lang="ts">
     import type { Entries } from '../../../types/package.ts';
     import Wrapper from './Wrapper.svelte';
-    export let dependencies: Entries;
-    export let devDependencies: Entries;
+    export let dependencies: Entries = {};
+    export let devDependencies: Entries = {};
 </script>
 
 <svelte:window

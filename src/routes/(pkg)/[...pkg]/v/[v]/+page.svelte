@@ -72,7 +72,7 @@
                 >
             </div>
         </div>
-        {#if data.keywords}
+        {#if data.keywords && data.keywords.length > 0}
             <span class="text-lg font-bold">Keywords:</span>
             <div class="grid grid-cols-2 gap-2">
                 <Keywords keywords={data.keywords} />
@@ -135,7 +135,7 @@
                 </div>
             {/if}
         {/if}
-        {#if data.contributors}
+        {#if data.contributors && data.contributors.length > 0}
             <span class="font-extrabold"
                 >Contributors ({data.contributors.length}):</span
             >
@@ -162,7 +162,7 @@
                 {/if}
             {/each}
         {/if}
-        {#if data.maintainers}
+        {#if data.maintainers && data.maintainers.length > 0}
             <span class="font-extrabold"
                 >Maintainers ({data.maintainers.length}):</span
             >

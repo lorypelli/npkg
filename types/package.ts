@@ -15,9 +15,9 @@ export interface NPMGeneral {
 export interface Version {
     author?: User;
     contributors?: User[];
-    dependencies: Entries;
+    dependencies?: Entries;
     description?: string;
-    devDependencies: Entries;
+    devDependencies?: Entries;
     dist: Dist;
     homepage?: string;
     keywords?: string[];
