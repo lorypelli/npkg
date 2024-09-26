@@ -49,7 +49,7 @@
     </form>
     {#if suggestions.length > 0 && input.trim() != ''}
         {#if showSuggestions}
-            <div class={twMerge('w-64 pt-2', nav && 'absolute top-14')}>
+            <div class={twMerge('w-64 pt-1', nav && 'absolute top-14')}>
                 {#each suggestions as s}
                     <SearchResult
                         date={s.date}
