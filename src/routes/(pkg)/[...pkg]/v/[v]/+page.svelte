@@ -47,24 +47,24 @@
             <code class="hljs rounded-lg">npm i {pkg}</code>
         </pre>
         <div class="grid grid-cols-2">
-            <div class="flex flex-col">
+            <div class="flex flex-col items-center">
                 <span class="text-lg font-bold">Versions:</span>
                 <a href="/{data.name}/v" class="text-sm hover:underline"
                     >Click Here...</a
                 >
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col items-center">
                 <span class="text-lg font-bold">Dependencies:</span>
                 <a href="#deps" class="text-sm hover:underline">Click Here...</a
                 >
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col items-center">
                 <span class="text-lg font-bold">Scripts:</span>
                 <a href="#scripts" class="text-sm hover:underline"
                     >Click Here...</a
                 >
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col items-center">
                 <span class="text-lg font-bold">Code:</span>
                 <a
                     href="/{data.name}/v/{data.version}/code"
@@ -107,10 +107,14 @@
             {/if}
             <div class="flex flex-col">
                 <span class="font-extrabold">Size:</span>
-                <span
-                    >{(data.dist.unpackedSize / (1000 * 1000)).toFixed(2)} MB<br
-                    />{(data.dist.unpackedSize / (1024 * 1024)).toFixed(2)} MiB</span
-                >
+                <div class="grid grid-cols-2">
+                    <span
+                        >{(data.dist.unpackedSize / (1000 * 1000)).toFixed(2)} MB</span
+                    >
+                    <span
+                        >{(data.dist.unpackedSize / (1024 * 1024)).toFixed(2)} MiB</span
+                    >
+                </div>
             </div>
         </div>
         {#if data.author}
