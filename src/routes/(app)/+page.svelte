@@ -1,5 +1,9 @@
-<script>
+<script lang="ts">
     import Search from '$lib/components/Search.svelte';
+    import Downloads from '$lib/components/Downloads.svelte';
+    import type { ValidRange } from '../../../types/downloads.ts';
+    const ranges: ValidRange[] = ['d', 'w', 'm', 'y'];
+    export let data;
 </script>
 
 <div class="flex h-screen flex-col items-center justify-center">
@@ -12,4 +16,13 @@
             class="hover:underline">Github</a
         ></span
     >
+    <div class="flex flex-col">
+        {#each ranges as r}
+            {#if r == data.range}
+                <Downloads range={r} num={data.downloads} />
+            {:else}
+                <Downloads range={r} />
+            {/if}
+        {/each}
+    </div>
 </div>
