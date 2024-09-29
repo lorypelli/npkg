@@ -1,12 +1,14 @@
 import { BASE_URL } from '$lib/utils/url.js';
-import { error } from '@sveltejs/kit';
 
 export async function load({ url }) {
     const range = url.searchParams.get('range');
     if (range) {
         const downloads = await fetch(`${BASE_URL}/downloads?range=${range}`);
         if (!downloads.ok) {
-            error(404);
+            return {
+                range,
+                downloads: -1,
+            };
         }
         const pkg_downloads = await downloads.text();
         return {
