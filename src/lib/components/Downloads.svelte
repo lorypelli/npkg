@@ -15,7 +15,7 @@
         <span>Downloads for last year:</span>
     {/if}
     {#if num > -1}
-        <span>{num}</span>
+        <span>{num.toLocaleString()}</span>
     {:else}
         <a href="?range={range}">
             <button
