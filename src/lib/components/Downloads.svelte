@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { ValidRange } from '../../../types/downloads.ts';
     export let range: ValidRange;
-    export let num = 0;
+    export let num = -1;
 </script>
 
 <div class="flex flex-col items-center">
@@ -14,7 +14,7 @@
     {:else if range == 'y'}
         <span>Downloads for last year:</span>
     {/if}
-    {#if num}
+    {#if num > -1}
         <span>{num}</span>
     {:else}
         <a href="?range={range}">
