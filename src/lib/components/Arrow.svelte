@@ -8,18 +8,18 @@
 </script>
 
 <a
-    href="/search?q={query}&page={currentPage + num}"
-    class="flex justify-center"
+    href="/search?q={query}&page={currentPage + num}#s"
+    class="flex justify-center pb-2"
 >
     {#if type == 'previous'}
         <button
-            class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
+            class="rounded-md border-2 border-black px-1 text-xl dark:border-white"
         >
             <Back />
         </button>
     {:else if type == 'next'}
         <button
-            class="mb-2 rounded-md border-2 border-black px-1 text-xl dark:border-white"
+            class="rounded-md border-2 border-black px-1 text-xl dark:border-white"
         >
             <Forward />
         </button>
