@@ -7,6 +7,7 @@
     import Scripts from '$lib/components/Scripts.svelte';
     import Avatar from '$lib/components/Avatar.svelte';
     import hljs from 'highlight.js';
+    import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
     export let data;
     const pkg = `${data.name}@${data.version}`;
     const valid = ['pkg', 'deps', 'scripts'];
@@ -40,7 +41,12 @@
     class="flex flex-col justify-center text-center md:h-full md:flex-row md:overflow-hidden"
 >
     <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
-        <span class="font-extrabold">{pkg}</span>
+        <div class="flex justify-center gap-x-1">
+            <span class="font-extrabold">{pkg}</span>
+            {#if data.types}
+                <TypescriptIcon />
+            {/if}
+        </div>
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>
         <pre class="flex items-center justify-center">
