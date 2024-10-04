@@ -1,25 +1,15 @@
 <script lang="ts">
     import Keywords from '$lib/components/Keywords.svelte';
-    import { page } from '$app/stores';
-    import { onMount } from 'svelte';
     import Dependencies from '$lib/components/Dependencies.svelte';
+    import Downloads from '$lib/components/Downloads.svelte';
     import Readme from '$lib/components/Readme.svelte';
     import Scripts from '$lib/components/Scripts.svelte';
     import Avatar from '$lib/components/Avatar.svelte';
-    import hljs from 'highlight.js';
     import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
+    import type { ValidRange } from '../../../../../../types/downloads.ts';
     export let data;
     const pkg = `${data.name}@${data.version}`;
-    const valid = ['pkg', 'deps', 'scripts'];
-    onMount(() => {
-        hljs.highlightAll();
-        const unsubscribe = page.subscribe(($p) => {
-            if (!$p.url.hash || valid.includes($p.url.hash)) {
-                location.href = '#pkg';
-            }
-        });
-        return () => unsubscribe();
-    });
+    const ranges: ValidRange[] = ['d', 'w', 'm', 'y'];
 </script>
 
 <svelte:head>
@@ -50,7 +40,9 @@
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>
         <pre class="flex items-center justify-center">
-            <code class="hljs rounded-lg">npm i {pkg}</code>
+            <code class="hljs rounded-lg" data-highlighted="no"
+                >npm i {pkg}</code
+            >
         </pre>
         <div class="grid grid-cols-2">
             <div class="flex flex-col items-center">
@@ -84,6 +76,15 @@
                 <Keywords keywords={data.keywords} />
             </div>
         {/if}
+        <div class="flex flex-col">
+            {#each ranges as r}
+                {#if r == data.range}
+                    <Downloads range={r} num={data.downloads} />
+                {:else}
+                    <Downloads range={r} />
+                {/if}
+            {/each}
+        </div>
     </div>
     <Readme name={data.name} version={data.version} />
     <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">

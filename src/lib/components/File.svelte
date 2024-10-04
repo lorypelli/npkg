@@ -7,7 +7,9 @@
 </script>
 
 <div class="flex items-center justify-center space-x-4">
-    <a href="./" class="text-sm hover:underline">Go Back!</a>
+    <a href="/{pkg}/v/{version}/code" class="text-sm hover:underline"
+        >Go Back!</a
+    >
     <span class="text-center text-xl">{pkg}@{version}</span>
 </div>
 <span class="text-md break-words text-center font-bold">{fname} - {file}</span>
