@@ -7,6 +7,7 @@
     import Avatar from '$lib/components/Avatar.svelte';
     import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
     import type { ValidRange } from '../../../../../../types/downloads.ts';
+    import { twMerge } from 'tailwind-merge';
     export let data;
     const pkg = `${data.name}@${data.version}`;
     const ranges: ValidRange[] = ['d', 'w', 'm', 'y'];
@@ -26,9 +27,17 @@
     />
 </svelte:head>
 
+{#if data.deprecated}
+    <div class="mx-2 flex justify-center rounded-md bg-red-600 py-1">
+        <span>{data.deprecated}</span>
+    </div>
+{/if}
 <div
     id="pkg"
-    class="flex flex-col justify-center text-center md:h-full md:flex-row md:overflow-hidden"
+    class={twMerge(
+        'flex flex-col justify-center text-center md:h-full md:flex-row md:overflow-hidden',
+        data.deprecated && 'pt-1',
+    )}
 >
     <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
         <div class="flex justify-center gap-x-1">

@@ -16,6 +16,7 @@ export interface Version {
     author?: User;
     contributors?: User[];
     dependencies?: Entries;
+    deprecated?: string;
     description?: string;
     devDependencies?: Entries;
     dist: Dist;
