@@ -29,7 +29,7 @@
 
 {#if data.deprecated}
     <div class="mx-2 flex justify-center rounded-md bg-red-600 py-1">
-        <span>{data.deprecated}</span>
+        <span class="text-center">{data.deprecated}</span>
     </div>
 {/if}
 <div
