@@ -6,7 +6,7 @@ export default async function downloads(ctx: Context) {
     if (!range) {
         return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
-    let r: string = '';
+    let r = '';
     switch (range) {
         case 'd': {
             r = 'last-day';

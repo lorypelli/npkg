@@ -4,10 +4,10 @@ import { Hono } from 'hono';
 const app = new Hono();
 
 app.get('/', async (ctx) => {
-    const email = ctx.req.query('email');
+    const { email, size } = ctx.req.query();
     const emailHash = email ? md5(email) : '';
     const res = await fetch(
-        `https://s.gravatar.com/avatar/${emailHash}?d=retro&s=24`,
+        `https://s.gravatar.com/avatar/${emailHash}?d=retro&s=${size || '24'}`,
     );
     if (!res.ok) {
         return ctx.json({ error: res.statusText }, 500);
