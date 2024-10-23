@@ -3,7 +3,7 @@
     import Downloads from '$lib/components/Downloads.svelte';
     import type { ValidRange } from '../../../types/downloads.ts';
     const ranges: ValidRange[] = ['d', 'w', 'm', 'y'];
-    export let data;
+    let { data } = $props();
 </script>
 
 <div class="flex h-screen flex-col items-center justify-center">

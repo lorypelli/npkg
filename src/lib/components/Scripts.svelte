@@ -1,12 +1,15 @@
 <script lang="ts">
     import type { Entries } from '../../../types/package.ts';
     import Wrapper from './Wrapper.svelte';
-    export let scripts: Entries = {};
+    interface Props {
+        scripts?: Entries;
+    }
+    let { scripts = {} }: Props = $props();
     const s = Object.entries(scripts);
 </script>
 
 <svelte:window
-    on:keydown={(e) => {
+    onkeydown={(e) => {
         if (e.shiftKey && e.key == 'S') {
             e.preventDefault();
             location.href = '#scripts';

@@ -1,8 +1,11 @@
 <script lang="ts">
     import type { FileEntries } from '../../../types/package.ts';
-    export let code: FileEntries;
-    export let pkg: string;
-    export let version: string;
+    interface Props {
+        code: FileEntries;
+        pkg: string;
+        version: string;
+    }
+    let { code, pkg, version }: Props = $props();
 </script>
 
 <span class="text-center text-xl">Code for {pkg}</span>

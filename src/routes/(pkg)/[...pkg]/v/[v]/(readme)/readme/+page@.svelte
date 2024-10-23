@@ -1,6 +1,6 @@
 <script lang="ts">
     import '../readme.css';
-    export let data;
+    let { data } = $props();
 </script>
 
 <svelte:head>

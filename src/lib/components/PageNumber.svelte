@@ -1,8 +1,11 @@
 <script lang="ts">
     import { twMerge } from 'tailwind-merge';
-    export let query: string;
-    export let page: number;
-    export let isCurrent = false;
+    interface Props {
+        query: string;
+        page: number;
+        isCurrent?: boolean;
+    }
+    let { query, page, isCurrent = false }: Props = $props();
 </script>
 
 <a href="/search?q={query}&page={page}#s" class="pb-2">

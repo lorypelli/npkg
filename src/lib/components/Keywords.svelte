@@ -1,6 +1,9 @@
 <script lang="ts">
-    export let keywords: string[];
-    export let limit = keywords.length;
+    interface Props {
+        keywords: string[];
+        limit?: number;
+    }
+    let { keywords, limit = keywords.length }: Props = $props();
 </script>
 
 {#each keywords.slice(0, limit) as k}

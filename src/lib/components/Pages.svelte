@@ -2,9 +2,12 @@
     import Arrow from './Arrow.svelte';
     import PageNumber from './PageNumber.svelte';
     import PageSelector from './PageSelector.svelte';
-    export let currentPage: number;
-    export let lastPage: number;
-    export let query: string;
+    interface Props {
+        currentPage: number;
+        lastPage: number;
+        query: string;
+    }
+    let { currentPage, lastPage, query }: Props = $props();
     const pages = 2;
     const pageRemains = lastPage - currentPage;
 </script>

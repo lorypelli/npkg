@@ -1,6 +1,10 @@
 <script lang="ts">
     import Search from '$lib/components/Search.svelte';
     import '../../globals.css';
+    interface Props {
+        children?: import('svelte').Snippet;
+    }
+    let { children }: Props = $props();
 </script>
 
 <nav class="flex justify-center p-2 sm:justify-between">
@@ -14,4 +18,4 @@
     </div>
     <Search nav />
 </nav>
-<slot />
+{@render children?.()}

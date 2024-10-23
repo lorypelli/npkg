@@ -1,8 +1,11 @@
 <script lang="ts">
     import type { Entries } from '../../../types/package.ts';
-    export let pkg: string;
-    export let tags: Entries;
-    export let versions: Entries[];
+    interface Props {
+        pkg: string;
+        tags: Entries;
+        versions: Entries[];
+    }
+    let { pkg, tags, versions }: Props = $props();
 </script>
 
 <div class="px-4">

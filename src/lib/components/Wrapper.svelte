@@ -1,9 +1,13 @@
 <script lang="ts">
     import { draggable } from '@neodrag/svelte';
     import { twMerge } from 'tailwind-merge';
-    export let innerHash: string;
-    export let outerHash: string;
-    export let close: 'center' | 'right' = 'right';
+    interface Props {
+        innerHash: string;
+        outerHash: string;
+        close?: 'center' | 'right';
+        children?: import('svelte').Snippet;
+    }
+    let { innerHash, outerHash, close = 'right', children }: Props = $props();
 </script>
 
 <div
@@ -18,7 +22,7 @@
     >
         <div class="flex flex-col">
             <div class={twMerge(close == 'center' ? 'order-2' : 'order-1')}>
-                <slot />
+                {@render children?.()}
             </div>
             <a
                 href="#{outerHash}"

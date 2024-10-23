@@ -2,7 +2,7 @@
     import File from '$lib/components/File.svelte';
     import hljs from 'highlight.js';
     import { onMount } from 'svelte';
-    export let data;
+    let { data } = $props();
     onMount(() => hljs.highlightAll());
 </script>
 

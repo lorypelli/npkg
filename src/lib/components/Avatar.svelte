@@ -1,5 +1,8 @@
 <script lang="ts">
-    export let email = '';
+    interface Props {
+        email?: string;
+    }
+    let { email = '' }: Props = $props();
 </script>
 
 {#if email}

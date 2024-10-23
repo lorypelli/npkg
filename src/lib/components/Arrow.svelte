@@ -1,9 +1,12 @@
 <script lang="ts">
     import Back from './Back.svelte';
     import Forward from './Forward.svelte';
-    export let currentPage: number;
-    export let query: string;
-    export let type: 'previous' | 'next';
+    interface Props {
+        currentPage: number;
+        query: string;
+        type: 'previous' | 'next';
+    }
+    let { currentPage, query, type }: Props = $props();
     const num = type == 'previous' ? -1 : 1;
 </script>
 

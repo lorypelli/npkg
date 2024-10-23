@@ -3,13 +3,24 @@
     import { twMerge } from 'tailwind-merge';
     import Avatar from './Avatar.svelte';
     import Keywords from './Keywords.svelte';
-    export let date: string;
-    export let description = '';
-    export let keywords: string[] = [];
-    export let name: string;
-    export let publisher: User;
-    export let version: string;
-    export let small = false;
+    interface Props {
+        date: string;
+        description?: string;
+        keywords?: string[];
+        name: string;
+        publisher: User;
+        version: string;
+        small?: boolean;
+    }
+    let {
+        date,
+        description = '',
+        keywords = [],
+        name,
+        publisher,
+        version,
+        small = false,
+    }: Props = $props();
 </script>
 
 <a href="/{name}/v/latest#pkg">

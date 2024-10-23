@@ -4,10 +4,13 @@
     import { BASE_URL } from '$lib/utils/url.ts';
     import SearchResult from './SearchResult.svelte';
     import SearchIcon from './SearchIcon.svelte';
-    export let nav = false;
-    let input = '';
-    let suggestions: Search['packages'] = [];
-    let showSuggestions = false;
+    interface Props {
+        nav?: boolean;
+    }
+    let { nav = false }: Props = $props();
+    let input = $state('');
+    let suggestions: Search['packages'] = $state([]);
+    let showSuggestions = $state(false);
     async function getSuggestions(input: string) {
         if (input.trim() != '') {
             const suggestions = await fetch(
@@ -33,7 +36,7 @@
         <input
             name="q"
             placeholder="Search Packages..."
-            on:input={async (e) => {
+            oninput={async (e) => {
                 input = e.currentTarget.value;
                 suggestions = await getSuggestions(input);
                 showSuggestions = true;

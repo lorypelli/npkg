@@ -1,6 +1,9 @@
 <script lang="ts">
-    export let name: string;
-    export let version: string;
+    interface Props {
+        name: string;
+        version: string;
+    }
+    let { name, version }: Props = $props();
 </script>
 
 <iframe
@@ -8,4 +11,4 @@
     src="/{name}/v/{version}/readme"
     title="Readme"
     sandbox="allow-popups allow-popups-to-escape-sandbox"
-/>
+></iframe>

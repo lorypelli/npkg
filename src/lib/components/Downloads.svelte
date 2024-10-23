@@ -1,7 +1,10 @@
 <script lang="ts">
     import type { ValidRange } from '../../../types/downloads.ts';
-    export let range: ValidRange;
-    export let num = -1;
+    interface Props {
+        range: ValidRange;
+        num?: number;
+    }
+    let { range, num = -1 }: Props = $props();
 </script>
 
 <div class="flex flex-col items-center">

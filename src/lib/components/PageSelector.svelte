@@ -1,11 +1,14 @@
 <script lang="ts">
     import Wrapper from './Wrapper.svelte';
-    export let lastPage: number;
-    export let query: string;
+    interface Props {
+        lastPage: number;
+        query: string;
+    }
+    let { lastPage, query }: Props = $props();
 </script>
 
 <svelte:window
-    on:keydown={(e) => {
+    onkeydown={(e) => {
         if (e.shiftKey && e.key == 'P') {
             e.preventDefault();
             location.href = '#p_select';

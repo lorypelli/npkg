@@ -8,7 +8,7 @@
     import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
     import type { ValidRange } from '../../../../../../types/downloads.ts';
     import { twMerge } from 'tailwind-merge';
-    export let data;
+    let { data } = $props();
     const pkg = `${data.name}@${data.version}`;
     const ranges: ValidRange[] = ['d', 'w', 'm', 'y'];
 </script>

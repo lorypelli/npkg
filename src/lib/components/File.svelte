@@ -1,9 +1,12 @@
 <script lang="ts">
-    export let file: string;
-    export let fname: string;
-    export let pkg: string;
-    export let pkg_file: string;
-    export let version: string;
+    interface Props {
+        file: string;
+        fname: string;
+        pkg: string;
+        pkg_file: string;
+        version: string;
+    }
+    let { file, fname, pkg, pkg_file, version }: Props = $props();
 </script>
 
 <div class="flex items-center justify-center space-x-4">
