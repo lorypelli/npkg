@@ -1,4 +1,4 @@
-import { BASE_URL } from '$lib/utils/url.js';
+import { BASE_URL } from '$lib/utils/url.ts';
 
 export async function load({ url }) {
     const range = url.searchParams.get('range');
