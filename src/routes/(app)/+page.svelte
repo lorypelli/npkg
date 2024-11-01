@@ -1,8 +1,6 @@
 <script lang="ts">
+    import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
     import Search from '$lib/components/Search.svelte';
-    import Downloads from '$lib/components/Downloads.svelte';
-    import type { ValidRange } from '../../../types/downloads.ts';
-    const ranges: ValidRange[] = ['d', 'w', 'm', 'y'];
     let { data } = $props();
 </script>
 
@@ -16,13 +14,5 @@
             class="hover:underline">Github</a
         ></span
     >
-    <div class="flex flex-col">
-        {#each ranges as r}
-            {#if r == data.range}
-                <Downloads range={r} num={data.downloads} />
-            {:else}
-                <Downloads range={r} />
-            {/if}
-        {/each}
-    </div>
+    <DownloadsWrapper range={data.range} downloads={data.downloads} />
 </div>

@@ -1,16 +1,14 @@
 <script lang="ts">
     import Keywords from '$lib/components/Keywords.svelte';
     import Dependencies from '$lib/components/Dependencies.svelte';
-    import Downloads from '$lib/components/Downloads.svelte';
     import Readme from '$lib/components/Readme.svelte';
     import Scripts from '$lib/components/Scripts.svelte';
     import Avatar from '$lib/components/Avatar.svelte';
     import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
-    import type { ValidRange } from '../../../../../../types/downloads.ts';
     import { twMerge } from 'tailwind-merge';
+    import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
     let { data } = $props();
     const pkg = `${data.name}@${data.version}`;
-    const ranges: ValidRange[] = ['d', 'w', 'm', 'y'];
 </script>
 
 <svelte:head>
@@ -53,7 +51,7 @@
                 >npm i {pkg}</code
             >
         </pre>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="flex flex-col items-center">
                 <span class="text-lg font-bold">Versions:</span>
                 <a href="/{data.name}/v" class="text-sm hover:underline"
@@ -85,15 +83,6 @@
                 <Keywords keywords={data.keywords} />
             </div>
         {/if}
-        <div class="flex flex-col">
-            {#each ranges as r}
-                {#if r == data.range}
-                    <Downloads range={r} num={data.downloads} />
-                {:else}
-                    <Downloads range={r} />
-                {/if}
-            {/each}
-        </div>
     </div>
     <Readme name={data.name} version={data.version} />
     <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
@@ -209,6 +198,7 @@
                 {/if}
             {/each}
         {/if}
+        <DownloadsWrapper range={data.range} downloads={data.downloads} />
     </div>
 </div>
 <Dependencies
