@@ -1,5 +1,6 @@
 <script lang="ts">
-    import '../readme.css';
+    import '$lib/styles/readme.css';
+    import '$lib/styles/scrollbar.css';
     let { data } = $props();
 </script>
 

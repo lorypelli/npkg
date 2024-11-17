@@ -1,5 +1,6 @@
 <script lang="ts">
-    import '../../globals.css';
+    import '$lib/styles/globals.css';
+    import '$lib/styles/scrollbar.css';
     interface Props {
         children?: import('svelte').Snippet;
     }

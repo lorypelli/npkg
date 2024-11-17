@@ -1,6 +1,6 @@
 <script lang="ts">
     import Search from '$lib/components/Search.svelte';
-    import '../../globals.css';
+    import '$lib/styles/globals.css';
     interface Props {
         children?: import('svelte').Snippet;
     }

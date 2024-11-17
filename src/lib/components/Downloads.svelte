@@ -22,7 +22,7 @@
     {:else}
         <a href="?range={range}">
             <button
-                class="rounded-xl border-2 border-black bg-primary p-3 active:bg-gray-300 dark:border-white dark:bg-primary_dark dark:active:bg-gray-700"
+                class="rounded-xl border-2 border-black bg-primary p-3 active:bg-gray-300 dark:border-white dark:bg-primary_dark dark:active:bg-gray-800"
                 >Show Downloads!</button
             >
         </a>
