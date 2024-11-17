@@ -25,14 +25,16 @@ export default {
     },
     darkMode: 'media',
     plugins: [
-        ({ addUtilities, theme, e }) => {
-            const key = '3/4';
-            const maxSize = theme(`maxWidth.${key}`);
+        ({ addUtilities, e }) => {
             const maxSizeUtility = {
-                [`.${e(`max-size-${key}`)}`]: {
-                    'max-width': maxSize,
-                    'max-height': maxSize,
+                [`.${e(`max-size-3/4`)}`]: {
+                    'max-width': '3/4',
+                    'max-height': '3/4',
                 },
+                ['.max-size-full']: {
+                    'max-width': '100%',
+                    'max-height': '100%',
+                }
             };
             addUtilities(maxSizeUtility);
         },
