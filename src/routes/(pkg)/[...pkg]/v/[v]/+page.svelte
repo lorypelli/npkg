@@ -13,12 +13,22 @@
 
 <svelte:head>
     <title>npkg: fast and efficient - {pkg}</title>
-    <meta
-        name="author"
-        content={data.author?.username || data.author?.name || ''}
-    />
-    <meta name="keywords" content={data.keywords?.join(', ') || ''} />
     <meta name="og:title" content="npkg: fast and efficient - {pkg}" />
+    {#if data.description}
+        <meta name="description" content={data.description} />
+        <meta name="og:description" content={data.description} />
+    {/if}
+    {#if data.author}
+        {#if data.author.username || data.author.name}
+            <meta
+                name="author"
+                content={data.author.username || data.author.name}
+            />
+        {/if}
+    {/if}
+    {#if data.keywords}
+        <meta name="keywords" content={data.keywords.join(', ')} />
+    {/if}
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"
