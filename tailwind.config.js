@@ -34,7 +34,7 @@ export default {
                 ['.max-size-full']: {
                     'max-width': '100%',
                     'max-height': '100%',
-                }
+                },
             };
             addUtilities(maxSizeUtility);
         },
