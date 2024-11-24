@@ -9,7 +9,7 @@
 </script>
 
 <div class="px-4">
-    <div class="grid grid-cols-4 gap-2">
+    <div class="grid grid-cols-3 gap-2 md:grid-cols-4">
         {#each Object.entries(tags) as [k, v]}
             <a href="/{pkg}/v/{k}#pkg">
                 <div
@@ -22,7 +22,7 @@
         {/each}
     </div>
     <br />
-    <div class="grid grid-cols-4 gap-2">
+    <div class="grid grid-cols-3 gap-2 md:grid-cols-4">
         {#each versions as v}
             {#each Object.keys(v) as k}
                 <a href="/{pkg}/v/{k}#pkg">
