@@ -28,8 +28,8 @@ export default {
         ({ addUtilities, e }) => {
             const maxSizeUtility = {
                 [`.${e(`max-size-3/4`)}`]: {
-                    'max-width': '3/4',
-                    'max-height': '3/4',
+                    'max-width': '75%',
+                    'max-height': '75%',
                 },
                 ['.max-size-full']: {
                     'max-width': '100%',
