@@ -120,17 +120,23 @@
                     <span>{data.license}</span>
                 </div>
             {/if}
-            <div class="flex flex-col">
-                <span class="font-extrabold">Size:</span>
-                <div class="grid grid-cols-2">
-                    <span
-                        >{(data.dist.unpackedSize / (1000 * 1000)).toFixed(2)} MB</span
-                    >
-                    <span
-                        >{(data.dist.unpackedSize / (1024 * 1024)).toFixed(2)} MiB</span
-                    >
+            {#if data.dist.unpackedSize}
+                <div class="flex flex-col">
+                    <span class="font-extrabold">Size:</span>
+                    <div class="grid grid-cols-2">
+                        <span
+                            >{(data.dist.unpackedSize / (1000 * 1000)).toFixed(
+                                2,
+                            )} MB</span
+                        >
+                        <span
+                            >{(data.dist.unpackedSize / (1024 * 1024)).toFixed(
+                                2,
+                            )} MiB</span
+                        >
+                    </div>
                 </div>
-            </div>
+            {/if}
         </div>
         {#if data.author}
             {#if data.author.username || data.author.name}

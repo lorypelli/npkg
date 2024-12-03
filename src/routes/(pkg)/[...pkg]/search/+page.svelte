@@ -21,7 +21,7 @@
 {:else}
     <NotFound />
 {/each}
-{#if data.packages.length > 0}
+{#if data.packages && data.packages.length > 0}
     <Pages
         currentPage={data.currentPage}
         lastPage={data.lastPage}

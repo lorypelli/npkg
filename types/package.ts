@@ -56,7 +56,7 @@ export interface FileEntries {
 }
 
 export interface Dist {
-    unpackedSize: number;
+    unpackedSize?: number;
 }
 
 interface FileInfo {
