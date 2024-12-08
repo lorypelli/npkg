@@ -138,27 +138,22 @@
                 </div>
             {/if}
         </div>
-        {#if data.author}
-            {#if data.author.username || data.author.name}
-                <span class="font-extrabold">Author:</span>
-                <div class="flex items-center justify-center gap-x-1 space-y-1">
-                    <Avatar email={data.author.email} />
-                    {#if data.author.url}
-                        <a
-                            href={data.author.url}
-                            target="_blank"
-                            class="hover:underline"
-                        >
-                            <span
-                                >{data.author.username ||
-                                    data.author.name}</span
-                            >
-                        </a>
-                    {:else}
+        {#if data.author && (data.author.username || data.author.name)}
+            <span class="font-extrabold">Author:</span>
+            <div class="flex items-center justify-center gap-x-1 space-y-1">
+                <Avatar email={data.author.email} />
+                {#if data.author.url}
+                    <a
+                        href={data.author.url}
+                        target="_blank"
+                        class="hover:underline"
+                    >
                         <span>{data.author.username || data.author.name}</span>
-                    {/if}
-                </div>
-            {/if}
+                    </a>
+                {:else}
+                    <span>{data.author.username || data.author.name}</span>
+                {/if}
+            </div>
         {/if}
         {#if data.contributors && data.contributors.length > 0}
             <span class="font-extrabold"
