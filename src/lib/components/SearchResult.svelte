@@ -37,7 +37,7 @@
         {#if description}
             <div
                 class={twMerge(
-                    'mb-1 overflow-y-hidden whitespace-normal leading-3',
+                    'overflow-y-hidden whitespace-normal pb-1 leading-3',
                     small && 'max-h-20',
                 )}
             >
