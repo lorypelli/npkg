@@ -44,7 +44,7 @@
                 <span class="break-words text-sm">{description}</span>
             </div>
         {/if}
-        <div class="flex flex-wrap items-center gap-2">
+        <div class="flex flex-wrap items-center gap-x-2">
             <span
                 class="rounded-xl border-2 border-black p-1 text-center dark:border-white"
                 >{version}
@@ -54,7 +54,7 @@
                 ></span
             >
             {#if !small && keywords}
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-x-2">
                     <Keywords {keywords} limit={5} />
                 </div>
             {/if}

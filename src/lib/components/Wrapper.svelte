@@ -20,7 +20,7 @@
             'pt-9'} shadow-lg shadow-black dark:border-white dark:bg-primary_dark"
         use:draggable={{ bounds: 'parent', gpuAcceleration: false }}
     >
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-y-1">
             <div class={twMerge(close == 'center' ? 'order-2' : 'order-1')}>
                 {@render children?.()}
             </div>
