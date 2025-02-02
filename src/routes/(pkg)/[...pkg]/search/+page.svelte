@@ -6,7 +6,11 @@
 </script>
 
 <svelte:head>
-    <title>npkg: fast and efficient - results for "{data.q}"</title>
+    <title>npkg: fast and efficient - results for '{data.q}'</title>
+    <meta
+        name="og:title"
+        content="npkg: fast and efficient - results for '{data.q}'"
+    />
 </svelte:head>
 
 {#each data.packages as p}

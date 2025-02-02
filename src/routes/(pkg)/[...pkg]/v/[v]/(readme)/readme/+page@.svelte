@@ -6,6 +6,7 @@
 
 <svelte:head>
     <title>npkg: fast and efficient - Readme</title>
+    <meta name="og:title" content="npkg: fast and efficient - Readme" />
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"
