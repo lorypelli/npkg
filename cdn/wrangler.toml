@@ -1,3 +1,6 @@
-name = "cdn"
+name = "npkg_cdn"
 compatibility_date = "2024-07-15"
 main = "src/index.ts"
+routes = [
+  { pattern = "cdn.npkg.lorypelli.dev", custom_domain = true }
+]

@@ -1,3 +1,6 @@
-name = "api"
+name = "npkg_api"
 compatibility_date = "2024-07-15"
 main = "src/index.ts"
+routes = [
+  { pattern = "api.npkg.lorypelli.dev", custom_domain = true }
+]
