@@ -46,7 +46,7 @@
         />
         <button
             type="submit"
-            class="bg-primary dark:bg-primary_dark rounded-xl border-2 border-black p-3 active:bg-gray-300 dark:border-white dark:active:bg-gray-800"
+            class="bg-primary dark:bg-primary_dark cursor-pointer rounded-xl border-2 border-black p-3 active:bg-gray-300 dark:border-white dark:active:bg-gray-800"
             ><SearchIcon /></button
         >
     </form>

@@ -16,13 +16,13 @@
 >
     {#if type == 'previous'}
         <button
-            class="rounded-md border-2 border-black px-1 text-xl dark:border-white"
+            class="cursor-pointer rounded-md border-2 border-black px-1 text-xl dark:border-white"
         >
             <Back />
         </button>
     {:else if type == 'next'}
         <button
-            class="rounded-md border-2 border-black px-1 text-xl dark:border-white"
+            class="cursor-pointer rounded-md border-2 border-black px-1 text-xl dark:border-white"
         >
             <Forward />
         </button>

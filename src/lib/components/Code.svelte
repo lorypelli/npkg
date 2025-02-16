@@ -14,7 +14,7 @@
     <div
         class="flex justify-center rounded-md border-2 border-black py-1 dark:border-white"
     >
-        <button class="toggle">Select a File</button>
+        <button class="cursor-pointer">Select a File</button>
     </div>
 </a>
 <div
@@ -24,7 +24,7 @@
     {#each Object.entries(code) as [k, v]}
         <a class="p-1" href="/{pkg}/v/{version}/code/{k.slice(1)}?hex={v.hex}"
             ><button
-                class="rounded-md border-2 border-black p-1 break-all dark:border-white"
+                class="cursor-pointer rounded-md border-2 border-black p-1 break-all dark:border-white"
                 >{k.slice(1)}</button
             ></a
         >
