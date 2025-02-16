@@ -1,3 +1,7 @@
 * {
-    @apply font-mono max-size-full;
+    font-family:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        'Liberation Mono', 'Courier New', monospace;
+    max-width: 100%;
+    max-height: 100%;
 }

@@ -12,7 +12,7 @@
     <div class="hidden sm:block">
         <a href="/">
             <button
-                class="w-32 rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
+                class="bg-primary dark:bg-primary_dark w-32 rounded-xl border-2 border-black p-3 dark:border-white"
                 >Home</button
             >
         </a>

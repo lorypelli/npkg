@@ -15,9 +15,9 @@
     class="fixed inset-0 hidden items-center justify-center bg-black/60 target:flex"
 >
     <div
-        class="relative cursor-move overflow-y-auto rounded-xl border-2 border-black bg-primary p-3 max-size-3/4 {close ==
+        class="bg-primary relative max-h-3/4 max-w-3/4 cursor-move overflow-y-auto rounded-xl border-2 border-black p-3 {close ==
             'right' &&
-            'pt-9'} shadow-lg shadow-black dark:border-white dark:bg-primary_dark"
+            'pt-9'} dark:bg-primary_dark shadow-lg shadow-black dark:border-white"
         use:draggable={{ bounds: 'parent', gpuAcceleration: false }}
     >
         <div class="flex flex-col gap-y-1">
@@ -30,7 +30,7 @@
                     'rounded-full border-2 border-black p-1 text-sm font-extrabold dark:border-white',
                     close == 'center'
                         ? 'order-1 flex justify-center'
-                        : 'absolute right-2 top-2',
+                        : 'absolute top-2 right-2',
                 )}>Close</a
             >
         </div>

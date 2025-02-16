@@ -25,7 +25,7 @@
 
 <a href="/{name}/v/latest#pkg">
     <div
-        class="m-1 flex flex-col rounded-xl border-2 border-black bg-primary p-2 hover:bg-gray-300 dark:border-white dark:bg-primary_dark dark:hover:bg-gray-800"
+        class="bg-primary dark:bg-primary_dark m-1 flex flex-col rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
     >
         <div class="flex space-x-1">
             <span class="font-extrabold">{name}</span>
@@ -37,11 +37,11 @@
         {#if description}
             <div
                 class={twMerge(
-                    'overflow-y-hidden whitespace-normal pb-1 leading-3',
+                    'overflow-y-hidden pb-1 leading-3 whitespace-normal',
                     small && 'max-h-20',
                 )}
             >
-                <span class="break-words text-sm">{description}</span>
+                <span class="text-sm break-words">{description}</span>
             </div>
         {/if}
         <div class="flex flex-wrap items-center gap-x-2">

@@ -42,11 +42,11 @@
                 showSuggestions = true;
             }}
             required
-            class="w-64 rounded-xl border-2 border-black bg-primary p-3 dark:border-white dark:bg-primary_dark"
+            class="bg-primary dark:bg-primary_dark w-64 rounded-xl border-2 border-black p-3 dark:border-white"
         />
         <button
             type="submit"
-            class="rounded-xl border-2 border-black bg-primary p-3 active:bg-gray-300 dark:border-white dark:bg-primary_dark dark:active:bg-gray-800"
+            class="bg-primary dark:bg-primary_dark rounded-xl border-2 border-black p-3 active:bg-gray-300 dark:border-white dark:active:bg-gray-800"
             ><SearchIcon /></button
         >
     </form>

@@ -1,9 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+    --background-color-primary: #e7e5e4;
+    --background-color-primary_dark: #181a1b;
+    --fill-primary: #e7e5e4;
+    --fill-primary_dark: #181a1b;
+    --color-primary: #e7e5e4;
+    --color-primary_dark: #181a1b;
+}
 
 * {
-    @apply font-mono text-primary_dark dark:text-primary;
+    @apply text-primary_dark dark:text-primary font-mono;
 }
 
 :focus {
