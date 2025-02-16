@@ -15,9 +15,10 @@
     class="fixed inset-0 hidden items-center justify-center bg-black/60 target:flex"
 >
     <div
-        class="bg-primary relative max-h-3/4 max-w-3/4 cursor-move overflow-y-auto rounded-xl border-2 border-black p-3 {close ==
-            'right' &&
-            'pt-9'} dark:bg-primary_dark shadow-lg shadow-black dark:border-white"
+        class={twMerge(
+            'bg-primary dark:bg-primary_dark relative max-h-3/4 max-w-3/4 cursor-move overflow-y-auto rounded-xl border-2 border-black p-3 shadow-lg shadow-black dark:border-white',
+            close == 'right' && 'pt-9',
+        )}
         use:draggable={{ bounds: 'parent', gpuAcceleration: false }}
     >
         <div class="flex flex-col gap-y-1">
