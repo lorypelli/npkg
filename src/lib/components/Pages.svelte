@@ -13,7 +13,7 @@
 </script>
 
 <div class="flex flex-wrap justify-center gap-x-1 pt-0.5">
-    <Arrow {currentPage} {query} type="previous" />
+    <Arrow {currentPage} {lastPage} {query} type="previous" />
     {#if currentPage - 1 > pages}
         <PageNumber {query} page={1} />
         {#if currentPage - 2 > pages}
@@ -47,5 +47,5 @@
         {/if}
         <PageNumber {query} page={lastPage} />
     {/if}
-    <Arrow {currentPage} {query} type="next" />
+    <Arrow {currentPage} {lastPage} {query} type="next" />
 </div>

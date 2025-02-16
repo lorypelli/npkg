@@ -3,15 +3,21 @@
     import Forward from './Forward.svelte';
     interface Props {
         currentPage: number;
+        lastPage: number;
         query: string;
         type: 'previous' | 'next';
     }
-    let { currentPage, query, type }: Props = $props();
+    let { currentPage, lastPage, query, type }: Props = $props();
     const num = type == 'previous' ? -1 : 1;
+    const newPage = currentPage + num;
 </script>
 
 <a
-    href="/search?q={query}&page={currentPage + num}#s"
+    href="/search?q={query}&page={currentPage == lastPage && type == 'next'
+        ? 1
+        : currentPage == 1 && type == 'previous'
+          ? lastPage
+          : newPage}#s"
     class="flex justify-center pb-2"
 >
     {#if type == 'previous'}
