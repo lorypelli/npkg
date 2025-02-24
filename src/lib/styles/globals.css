@@ -10,7 +10,7 @@
 }
 
 * {
-    @apply text-primary_dark dark:text-primary font-mono;
+    @apply font-mono;
 }
 
 :focus {

@@ -178,7 +178,9 @@
                         {/if}
                     </div>
                 {:else}
-                    <span class="text-red-600">An error occurred!</span>
+                    <span class="font-bold text-red-600"
+                        >An error occurred!</span
+                    >
                 {/if}
             {/each}
         {/if}
@@ -205,7 +207,9 @@
                         {/if}
                     </div>
                 {:else}
-                    <span class="text-red-600">An error occurred!</span>
+                    <span class="font-bold text-red-600"
+                        >An error occurred!</span
+                    >
                 {/if}
             {/each}
         {/if}
