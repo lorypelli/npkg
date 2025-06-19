@@ -7,11 +7,11 @@
     },
     "dependencies": {
         "crypto-js": "^4.2.0",
-        "hono": "^4.7.1"
+        "hono": "^4.8.0"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20250214.0",
-        "prettier": "^3.5.1",
-        "wrangler": "^3.109.1"
+        "@cloudflare/workers-types": "^4.20250619.0",
+        "prettier": "^3.5.3",
+        "wrangler": "^4.20.3"
     }
 }

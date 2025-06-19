@@ -1,0 +1,11 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "npkg_cdn",
+    "compatibility_date": "2025-06-15",
+    "compatibility_flags": ["nodejs_compat"],
+    "main": "src/index.ts",
+    "route": {
+        "pattern": "cdn.npkg.lorypelli.dev",
+        "custom_domain": true
+    }
+}
