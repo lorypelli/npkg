@@ -36,8 +36,10 @@
 </svelte:head>
 
 {#if data.deprecated}
-    <div class="mx-2 flex justify-center rounded-md bg-red-600 py-1">
-        <span class="text-center">{data.deprecated}</span>
+    <div
+        class="mx-2 flex justify-center rounded-md bg-red-600 py-1 text-center"
+    >
+        <span>{data.deprecated}</span>
     </div>
 {/if}
 <div
@@ -140,7 +142,7 @@
         </div>
         {#if data.author && (data.author.username || data.author.name)}
             <span class="font-extrabold">Author:</span>
-            <div class="flex items-center justify-center gap-x-1 space-y-1">
+            <div class="flex items-center justify-center space-y-1 gap-x-1">
                 <Avatar email={data.author.email} />
                 {#if data.author.url}
                     <a
@@ -162,7 +164,7 @@
             {#each data.contributors as c}
                 {#if c.username || c.name}
                     <div
-                        class="flex items-center justify-center gap-x-1 space-y-1"
+                        class="flex items-center justify-center space-y-1 gap-x-1"
                     >
                         <Avatar email={c.email} />
                         {#if c.url}
@@ -191,7 +193,7 @@
             {#each data.maintainers as m}
                 {#if m.username || m.name}
                     <div
-                        class="flex items-center justify-center gap-x-1 space-y-1"
+                        class="flex items-center justify-center space-y-1 gap-x-1"
                     >
                         <Avatar email={m.email} />
                         {#if m.url}

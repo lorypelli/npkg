@@ -10,23 +10,33 @@
 
 <span class="text-center text-xl">Code for {pkg}</span>
 <span class="text-md text-center font-bold">{version}</span>
-<a href="#select">
+{#if !code}
     <div
-        class="flex justify-center rounded-md border-2 border-black py-1 dark:border-white"
+        class="mx-2 flex justify-center rounded-md bg-red-600 py-1 text-center"
     >
-        <button class="cursor-pointer">Select a File</button>
+        <span>Not Found!</span>
     </div>
-</a>
-<div
-    id="select"
-    class="m-1 hidden flex-col items-center overflow-auto rounded-xl border-2 border-black target:flex dark:border-white"
->
-    {#each Object.entries(code) as [k, v]}
-        <a class="p-1" href="/{pkg}/v/{version}/code/{k.slice(1)}?hex={v.hex}"
-            ><button
-                class="cursor-pointer rounded-md border-2 border-black p-1 break-all dark:border-white"
-                >{k.slice(1)}</button
-            ></a
+{:else}
+    <a href="#select">
+        <div
+            class="flex justify-center rounded-md border-2 border-black py-1 dark:border-white"
         >
-    {/each}
-</div>
+            <button class="cursor-pointer">Select a File</button>
+        </div>
+    </a>
+    <div
+        id="select"
+        class="m-1 hidden flex-col items-center overflow-auto rounded-xl border-2 border-black target:flex dark:border-white"
+    >
+        {#each Object.entries(code) as [k, v]}
+            <a
+                class="p-1"
+                href="/{pkg}/v/{version}/code/{k.slice(1)}?hex={v.hex}"
+                ><button
+                    class="cursor-pointer rounded-md border-2 border-black p-1 break-all dark:border-white"
+                    >{k.slice(1)}</button
+                ></a
+            >
+        {/each}
+    </div>
+{/if}
