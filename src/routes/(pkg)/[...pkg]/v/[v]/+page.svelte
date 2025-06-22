@@ -7,6 +7,7 @@
     import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
     import { twMerge } from 'tailwind-merge';
     import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
+    import { fixURL } from '$lib/utils/url.ts';
     let { data } = $props();
     const pkg = `${data.name}@${data.version}`;
 </script>
@@ -169,7 +170,7 @@
                         <Avatar email={c.email} />
                         {#if c.url}
                             <a
-                                href={c.url}
+                                href={fixURL(c.url)}
                                 target="_blank"
                                 class="hover:underline"
                             >
