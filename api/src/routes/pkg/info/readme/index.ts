@@ -23,6 +23,7 @@ export default async function readme(ctx: Context) {
                 return ctx.json({ error: readme.statusText }, 500);
             }
             pkg_readme = await readme.text();
+            break;
         }
     }
     return ctx.text(pkg_readme);
