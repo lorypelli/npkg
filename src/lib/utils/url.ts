@@ -3,7 +3,7 @@ export const BASE_URL = import.meta.env.DEV
     : 'https://api.npkg.lorypelli.dev';
 
 export function fixURL(url: string): string {
-    if (!new RegExp('^https?://').test(url)) {
+    if (!/^https?:\/\//.test(url)) {
         return 'http://' + url;
     }
     return url;

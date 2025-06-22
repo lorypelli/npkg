@@ -1,4 +1,5 @@
 import type { Context } from 'hono';
+import micromatch from 'micromatch';
 import type { NPMCode } from '../../../../../../types/package.ts';
 
 export default async function readme(ctx: Context) {
@@ -14,17 +15,20 @@ export default async function readme(ctx: Context) {
         return ctx.json({ error: code.statusText }, 500);
     }
     const pkg_code: NPMCode = await code.json();
-    for (let f in pkg_code.files) {
-        if (/^readme(\.(txt|md))?$/i.test(f.slice(1))) {
-            const readme = await fetch(
-                `https://www.npmjs.com/package/${pkg}/file/${pkg_code.files[f].hex}`,
-            );
-            if (!readme.ok) {
-                return ctx.json({ error: readme.statusText }, 500);
-            }
-            pkg_readme = await readme.text();
-            break;
+    const files = micromatch(
+        Object.keys(pkg_code.files),
+        ['/readme', '/readme.md', '/readme.txt'],
+        { nocase: true },
+    );
+    for (let f of files) {
+        const readme = await fetch(
+            `https://www.npmjs.com/package/${pkg}/file/${pkg_code.files[f].hex}`,
+        );
+        if (!readme.ok) {
+            return ctx.json({ error: readme.statusText }, 500);
         }
+        pkg_readme = await readme.text();
+        break;
     }
     return ctx.text(pkg_readme);
 }
