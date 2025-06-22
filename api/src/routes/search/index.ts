@@ -44,14 +44,13 @@ export default async function search(ctx: Context) {
             });
         }
     }
-    if (!suggestions) {
-        const lastPage = Math.ceil(pkgs.total / pkg_page);
-        return ctx.json({
-            lastPage,
-            packages,
-            q,
-        });
-    } else {
+    if (suggestions) {
         return ctx.json(packages);
     }
+    const lastPage = Math.ceil(pkgs.total / pkg_page);
+    return ctx.json({
+        lastPage,
+        packages,
+        q,
+    });
 }
