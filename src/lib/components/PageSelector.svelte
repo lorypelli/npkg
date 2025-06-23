@@ -11,17 +11,17 @@
     onkeydown={(e) => {
         if (e.shiftKey && e.key == 'P') {
             e.preventDefault();
-            location.href = '#p_select';
+            location.hash = '#p_select';
         }
-        if (location.hash.slice(1) == 'p_select' && e.key == 'Escape') {
+        if (location.hash == '#p_select' && e.key == 'Escape') {
             e.preventDefault();
-            location.href = '#s';
+            location.hash = '#';
         }
     }}
 />
 
 <a href="#p_select">...</a>
-<Wrapper innerHash="p_select" outerHash="s" close="center">
+<Wrapper hash="p_select" close="center">
     <form action="/search#s" autocomplete="off">
         <input type="hidden" name="q" value={query} readonly required />
         <input

@@ -8,7 +8,7 @@
     let { query, page, isCurrent = false }: Props = $props();
 </script>
 
-<a href="/search?q={query}&page={page}#s" class="pb-2">
+<a href="/search?q={query}&page={page}" class="pb-2">
     <button
         class={twMerge(
             'cursor-pointer rounded-md border-2 border-black px-1 text-xl dark:border-white',

@@ -12,16 +12,16 @@
     onkeydown={(e) => {
         if (e.shiftKey && e.key == 'D') {
             e.preventDefault();
-            location.href = '#deps';
+            location.hash = '#deps';
         }
-        if (location.hash.slice(1) == 'deps' && e.key == 'Escape') {
+        if (location.hash == '#deps' && e.key == 'Escape') {
             e.preventDefault();
-            location.href = '#pkg';
+            location.hash = '#';
         }
     }}
 />
 
-<Wrapper innerHash="deps" outerHash="pkg">
+<Wrapper hash="deps">
     {#if !dependencies && !devDependencies}
         <span class="font-extrabold">No dependencies found!</span>
     {:else}

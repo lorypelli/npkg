@@ -17,7 +17,7 @@
         ? 1
         : currentPage == 1 && type == 'previous'
           ? lastPage
-          : newPage}#s"
+          : newPage}"
     class="flex justify-center pb-2"
 >
     {#if type == 'previous'}

@@ -23,7 +23,7 @@
     }: Props = $props();
 </script>
 
-<a href="/{name}/v/latest#pkg">
+<a href="/{name}">
     <div
         class="bg-primary dark:bg-primary_dark m-1 flex flex-col rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
     >

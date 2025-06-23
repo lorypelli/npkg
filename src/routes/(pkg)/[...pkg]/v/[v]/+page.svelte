@@ -44,7 +44,6 @@
     </div>
 {/if}
 <div
-    id="pkg"
     class={twMerge(
         'flex flex-col justify-center text-center md:h-full md:flex-row md:overflow-hidden',
         data.deprecated && 'pt-1',

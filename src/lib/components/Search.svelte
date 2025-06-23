@@ -29,7 +29,7 @@
 
 <div class="flex flex-col">
     <form
-        action="/search#s"
+        action="/search"
         autocomplete="off"
         class="flex justify-center gap-x-2"
     >

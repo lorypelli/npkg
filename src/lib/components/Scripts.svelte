@@ -12,16 +12,16 @@
     onkeydown={(e) => {
         if (e.shiftKey && e.key == 'S') {
             e.preventDefault();
-            location.href = '#scripts';
+            location.hash = '#scripts';
         }
-        if (location.hash.slice(1) == 'scripts' && e.key == 'Escape') {
+        if (location.hash == '#scripts' && e.key == 'Escape') {
             e.preventDefault();
-            location.href = '#pkg';
+            location.hash = '#';
         }
     }}
 />
 
-<Wrapper innerHash="scripts" outerHash="pkg">
+<Wrapper hash="scripts">
     {#if s.length == 0}
         <span class="font-extrabold">No Scripts Found!</span>
     {:else}
