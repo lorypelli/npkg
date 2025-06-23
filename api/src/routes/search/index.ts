@@ -11,6 +11,8 @@ export default async function search(ctx: Context) {
     const { q, p, size } = ctx.req.query();
     if (!q) {
         return ctx.json({ error: 'Missing Paramethers' }, 400);
+    } else if (q.length < 2 || q.length > 64) {
+        return ctx.redirect('/');
     }
     let page = 1;
     if (p) {
