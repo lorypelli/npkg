@@ -12,7 +12,8 @@
     let suggestions: Search['packages'] = $state([]);
     let showSuggestions = $state(false);
     async function getSuggestions(input: string) {
-        if (input.trim() != '') {
+        const len = input.length;
+        if (len > 2 && len < 64) {
             const suggestions = await fetch(
                 `${BASE_URL}/search?q=${input}&size=3&suggestions`,
             );
@@ -38,7 +39,7 @@
             placeholder="Search Packages..."
             oninput={async (e) => {
                 input = e.currentTarget.value;
-                suggestions = await getSuggestions(input);
+                suggestions = await getSuggestions(input.trim());
                 showSuggestions = true;
             }}
             required

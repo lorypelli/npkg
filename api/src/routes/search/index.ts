@@ -12,7 +12,7 @@ export default async function search(ctx: Context) {
     if (!q) {
         return ctx.json({ error: 'Missing Paramethers' }, 400);
     } else if (q.length < 2 || q.length > 64) {
-        return ctx.redirect('/');
+        return ctx.body(null, 204);
     }
     let page = 1;
     if (p) {
