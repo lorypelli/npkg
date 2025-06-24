@@ -9,7 +9,7 @@
     }
     let { nav = false }: Props = $props();
     let input = $state('');
-    let suggestions: Search['packages'] = $state([]);
+    let suggestions = $state<Search['packages']>([]);
     let showSuggestions = $state(false);
     async function getSuggestions(input: string) {
         const len = input.length;
