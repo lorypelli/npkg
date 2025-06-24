@@ -1,10 +1,11 @@
 <script lang="ts">
     import { draggable } from '@neodrag/svelte';
     import { twMerge } from 'tailwind-merge';
+    import type { LayoutProps } from '../../routes/$types';
     interface Props {
         hash: string;
         close?: 'center' | 'right';
-        children?: import('svelte').Snippet;
+        children: LayoutProps['children'];
     }
     let { hash, close = 'right', children }: Props = $props();
 </script>
@@ -22,7 +23,7 @@
     >
         <div class="flex flex-col gap-y-1">
             <div class={twMerge(close == 'center' ? 'order-2' : 'order-1')}>
-                {@render children?.()}
+                {@render children()}
             </div>
             <!-- svelte-ignore a11y_invalid_attribute -->
             <a

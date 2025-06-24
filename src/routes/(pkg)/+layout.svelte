@@ -2,10 +2,8 @@
     import Search from '$lib/components/Search.svelte';
     import '$lib/styles/globals.css';
     import '$lib/styles/scrollbar.css';
-    interface Props {
-        children?: import('svelte').Snippet;
-    }
-    let { children }: Props = $props();
+    import type { LayoutProps } from './$types';
+    let { children }: LayoutProps = $props();
 </script>
 
 <nav class="flex justify-center p-2 sm:justify-between">
@@ -19,4 +17,4 @@
     </div>
     <Search nav />
 </nav>
-{@render children?.()}
+{@render children()}

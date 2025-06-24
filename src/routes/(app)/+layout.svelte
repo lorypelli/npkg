@@ -1,10 +1,8 @@
 <script lang="ts">
     import '$lib/styles/globals.css';
     import '$lib/styles/scrollbar.css';
-    interface Props {
-        children?: import('svelte').Snippet;
-    }
-    let { children }: Props = $props();
+    import type { LayoutProps } from './$types';
+    let { children }: LayoutProps = $props();
 </script>
 
 <svelte:head>
