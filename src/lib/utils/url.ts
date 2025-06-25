@@ -4,7 +4,7 @@ export const BASE_URL = import.meta.env.DEV
 
 export function fixURL(url: string): string {
     if (!/^https?:\/\//.test(url)) {
-        return 'http://' + url;
+        return 'https://' + url;
     }
     return url;
 }
