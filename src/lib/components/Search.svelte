@@ -33,6 +33,9 @@
         action="/search"
         autocomplete="off"
         class="flex justify-center gap-x-2"
+        onsubmit={() => {
+            showSuggestions = false;
+        }}
     >
         <input
             name="q"
