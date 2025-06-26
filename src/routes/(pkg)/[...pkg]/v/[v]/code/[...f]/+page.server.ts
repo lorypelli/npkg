@@ -2,16 +2,17 @@ import { BASE_URL } from '$lib/utils/url.ts';
 import { error, redirect } from '@sveltejs/kit';
 import type { File } from '../../../../../../../../types/package.ts';
 
-export async function load({ params: { pkg, v, f }, url }) {
-    let hex = url.searchParams.get('hex');
+export async function load({ parent, params: { pkg, v, f } }) {
+    const { code } = await parent();
+    const fname = '/' + f;
     if (!pkg || !v || !f) {
         error(404);
     }
-    if (!hex) {
+    if (!code[fname]) {
         redirect(302, `/${pkg}/v/${v}/code`);
     }
     const file = await fetch(
-        `${BASE_URL}/pkg/${encodeURIComponent(pkg)}/${v}/code/${hex}`,
+        `${BASE_URL}/pkg/${encodeURIComponent(pkg)}/${v}/code/${code[fname].hex}`,
     );
     if (!file.ok) {
         error(404);
