@@ -15,7 +15,7 @@ export async function load({ parent, params: { pkg, v, f } }) {
         `${BASE_URL}/pkg/${encodeURIComponent(pkg)}/${v}/code/${code[fname].hex}`,
     );
     if (!file.ok) {
-        error(404);
+        redirect(302, `/${pkg}/v/${v}/code`);
     }
     const pkg_file: File = await file.json();
     return {
