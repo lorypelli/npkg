@@ -22,7 +22,7 @@
 
 <a href="#p_select">...</a>
 <Wrapper hash="p_select" close="center">
-    <form action="/search#s" autocomplete="off">
+    <form action="/search" autocomplete="off">
         <input type="hidden" name="q" value={query} readonly required />
         <input
             class="bg-primary dark:bg-primary_dark rounded-xl border-2 border-black p-3 dark:border-white"
