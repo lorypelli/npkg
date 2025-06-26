@@ -13,7 +13,5 @@ export async function load({ params: { pkg, v } }) {
         error(404);
     }
     const pkg_code: Code = await code.json();
-    return {
-        ...pkg_code,
-    };
+    return pkg_code;
 }

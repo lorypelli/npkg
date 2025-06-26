@@ -32,7 +32,5 @@ export async function load({ url, params: { pkg, v } }) {
             downloads: parseInt(pkg_downloads),
         };
     }
-    return {
-        ...pkg_version,
-    };
+    return pkg_version;
 }

@@ -11,7 +11,5 @@ export default async function info(ctx: Context) {
         return ctx.json({ error: version.statusText }, 500);
     }
     const pkg_version: Version = await version.json();
-    return ctx.json({
-        ...pkg_version,
-    });
+    return ctx.json(pkg_version);
 }

@@ -13,7 +13,5 @@ export async function load({ params: { pkg } }) {
         error(404);
     }
     const pkg_versions: General = await versions.json();
-    return {
-        ...pkg_versions,
-    };
+    return pkg_versions;
 }
