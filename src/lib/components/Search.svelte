@@ -66,6 +66,9 @@
                         publisher={s.publisher}
                         version={s.version}
                         small
+                        onclick={() => {
+                            showSuggestions = false;
+                        }}
                     />
                 {/each}
             </div>
