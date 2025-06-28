@@ -39,6 +39,7 @@
     >
         <input
             name="q"
+            type="search"
             placeholder="Search Packages..."
             oninput={async (e) => {
                 input = e.currentTarget.value;
