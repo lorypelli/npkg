@@ -55,24 +55,28 @@
             ><SearchIcon /></button
         >
     </form>
-    {#if suggestions.length > 0 && input.trim() != ''}
-        {#if showSuggestions}
-            <div class={twMerge('w-64 pt-1', nav && 'absolute top-14')}>
-                {#each suggestions as s}
-                    <SearchResult
-                        date={s.date}
-                        description={s.description}
-                        keywords={s.keywords}
-                        name={s.name}
-                        publisher={s.publisher}
-                        version={s.version}
-                        small
-                        onclick={() => {
-                            showSuggestions = false;
-                        }}
-                    />
-                {/each}
-            </div>
-        {/if}
+    {#if showSuggestions && input.trim() != ''}
+        <div class={twMerge('w-64 pt-1', nav && 'absolute top-14')}>
+            {#each suggestions as s}
+                <SearchResult
+                    date={s.date}
+                    description={s.description}
+                    keywords={s.keywords}
+                    name={s.name}
+                    publisher={s.publisher}
+                    version={s.version}
+                    small
+                    onclick={() => {
+                        showSuggestions = false;
+                    }}
+                />
+            {:else}
+                <div
+                    class="bg-primary dark:bg-primary_dark m-1 text-center rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
+                >
+                    <span class="text-xl">...</span>
+                </div>
+            {/each}
+        </div>
     {/if}
 </div>
