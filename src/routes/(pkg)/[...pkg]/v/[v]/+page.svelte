@@ -7,10 +7,17 @@
     import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
     import { twMerge } from 'tailwind-merge';
     import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
-    import { fixURL } from '$lib/utils/url.ts';
+    import { BASE_URL, fixURL } from '$lib/utils/url.ts';
     import Highlight from '$lib/components/Highlight.svelte';
     const { data } = $props();
     const pkg = $derived(`${data.name}@${data.version}`);
+    let external = false;
+    if (!data.types) {
+        const res = fetch(
+            `https://registry.npmjs.org/@types/${data.name}/latest`,
+        );
+        external = res.then((r) => r.ok);
+    }
 </script>
 
 <svelte:head>
