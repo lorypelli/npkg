@@ -4,7 +4,7 @@
         lastPage: number;
         query: string;
     }
-    let { lastPage, query }: Props = $props();
+    const { lastPage, query }: Props = $props();
 </script>
 
 <svelte:window

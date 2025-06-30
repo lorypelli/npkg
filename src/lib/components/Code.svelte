@@ -5,7 +5,7 @@
         pkg: string;
         version: string;
     }
-    let { code, pkg, version }: Props = $props();
+    const { code, pkg, version }: Props = $props();
 </script>
 
 <span class="text-center text-xl">Code for {pkg}</span>

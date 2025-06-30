@@ -7,7 +7,7 @@
         lastPage: number;
         query: string;
     }
-    let { currentPage, lastPage, query }: Props = $props();
+    const { currentPage, lastPage, query }: Props = $props();
     const pages = 2;
     const pageRemains = $derived(lastPage - currentPage);
 </script>

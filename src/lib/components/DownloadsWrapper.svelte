@@ -6,7 +6,7 @@
         range?: string;
         downloads?: number;
     }
-    let { range, downloads = -1 }: Props = $props();
+    const { range, downloads = -1 }: Props = $props();
 </script>
 
 <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">

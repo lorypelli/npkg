@@ -1,6 +1,6 @@
 <script lang="ts">
     import Code from '$lib/components/Code.svelte';
-    let { data } = $props();
+    const { data } = $props();
     const pkg = $derived(`${data.pkg}@${data.version}`);
 </script>
 

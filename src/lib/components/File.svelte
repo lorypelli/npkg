@@ -6,7 +6,7 @@
         pkg_file: string;
         version: string;
     }
-    let { file, fname, pkg, pkg_file, version }: Props = $props();
+    const { file, fname, pkg, pkg_file, version }: Props = $props();
 </script>
 
 <div class="flex items-center justify-center space-x-4">

@@ -7,7 +7,7 @@
         query: string;
         type: 'previous' | 'next';
     }
-    let { currentPage, lastPage, query, type }: Props = $props();
+    const { currentPage, lastPage, query, type }: Props = $props();
     const num = type == 'previous' ? -1 : 1;
     const newPage = currentPage + num;
 </script>

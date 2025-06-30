@@ -2,7 +2,7 @@
     import Highlight from '$lib/components/Highlight.svelte';
     import '$lib/styles/readme.css';
     import '$lib/styles/scrollbar.css';
-    let { data } = $props();
+    const { data } = $props();
 </script>
 
 <svelte:head>

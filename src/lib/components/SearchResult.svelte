@@ -13,7 +13,7 @@
         small?: boolean;
         onclick?: () => void;
     }
-    let {
+    const {
         date,
         description = '',
         keywords = [],

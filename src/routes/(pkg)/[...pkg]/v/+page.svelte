@@ -1,6 +1,6 @@
 <script lang="ts">
     import Version from '$lib/components/Version.svelte';
-    let { data } = $props();
+    const { data } = $props();
 </script>
 
 <svelte:head>

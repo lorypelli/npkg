@@ -7,7 +7,7 @@
     interface Props {
         nav?: boolean;
     }
-    let { nav = false }: Props = $props();
+    const { nav = false }: Props = $props();
     let input = $state('');
     let suggestions = $state<Search['packages']>([]);
     let showSuggestions = $state(false);

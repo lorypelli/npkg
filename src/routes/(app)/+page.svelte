@@ -1,7 +1,7 @@
 <script lang="ts">
     import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
     import Search from '$lib/components/Search.svelte';
-    let { data } = $props();
+    const { data } = $props();
 </script>
 
 <div class="flex h-screen flex-col items-center justify-center">

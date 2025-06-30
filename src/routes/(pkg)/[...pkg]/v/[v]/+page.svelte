@@ -9,7 +9,7 @@
     import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
     import { fixURL } from '$lib/utils/url.ts';
     import Highlight from '$lib/components/Highlight.svelte';
-    let { data } = $props();
+    const { data } = $props();
     const pkg = $derived(`${data.name}@${data.version}`);
 </script>
 

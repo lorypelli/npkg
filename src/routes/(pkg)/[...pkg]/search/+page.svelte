@@ -2,7 +2,7 @@
     import NotFound from '$lib/components/NotFound.svelte';
     import Pages from '$lib/components/Pages.svelte';
     import SearchResult from '$lib/components/SearchResult.svelte';
-    let { data } = $props();
+    const { data } = $props();
 </script>
 
 <svelte:head>

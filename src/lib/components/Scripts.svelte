@@ -4,7 +4,7 @@
     interface Props {
         scripts?: Entries;
     }
-    let { scripts = {} }: Props = $props();
+    const { scripts = {} }: Props = $props();
     const s = $derived(Object.entries(scripts));
 </script>
 

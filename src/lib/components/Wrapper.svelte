@@ -7,7 +7,7 @@
         close?: 'center' | 'right';
         children: LayoutProps['children'];
     }
-    let { hash, close = 'right', children }: Props = $props();
+    const { hash, close = 'right', children }: Props = $props();
 </script>
 
 <div

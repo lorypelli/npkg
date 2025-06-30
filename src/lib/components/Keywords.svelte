@@ -3,7 +3,7 @@
         keywords: string[];
         limit?: number;
     }
-    let { keywords, limit = keywords.length }: Props = $props();
+    const { keywords, limit = keywords.length }: Props = $props();
 </script>
 
 {#each keywords.slice(0, limit) as k}

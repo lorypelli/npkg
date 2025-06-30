@@ -3,7 +3,7 @@
     import '$lib/styles/globals.css';
     import '$lib/styles/scrollbar.css';
     import type { LayoutProps } from './$types';
-    let { children }: LayoutProps = $props();
+    const { children }: LayoutProps = $props();
 </script>
 
 <nav class="flex justify-center p-2 sm:justify-between">

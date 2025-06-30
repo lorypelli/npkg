@@ -2,7 +2,7 @@
     import File from '$lib/components/File.svelte';
     import Highlight from '$lib/components/Highlight.svelte';
     import hljs from 'highlight.js';
-    let { data } = $props();
+    const { data } = $props();
     const pkg = $derived(`${data.pkg}@${data.version}`);
     $effect(() => hljs.highlightAll());
 </script>

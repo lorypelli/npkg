@@ -3,7 +3,7 @@
         name: string;
         version: string;
     }
-    let { name, version }: Props = $props();
+    const { name, version }: Props = $props();
 </script>
 
 <iframe

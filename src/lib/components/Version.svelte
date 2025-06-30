@@ -5,7 +5,7 @@
         tags: Entries;
         versions: Entries[];
     }
-    let { pkg, tags, versions }: Props = $props();
+    const { pkg, tags, versions }: Props = $props();
 </script>
 
 <div class="px-4">

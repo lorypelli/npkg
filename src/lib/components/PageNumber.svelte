@@ -5,7 +5,7 @@
         page: number;
         isCurrent?: boolean;
     }
-    let { query, page, isCurrent = false }: Props = $props();
+    const { query, page, isCurrent = false }: Props = $props();
 </script>
 
 <a href="/search?q={query}&page={page}" class="pb-2">
