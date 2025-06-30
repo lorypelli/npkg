@@ -5,7 +5,9 @@
         dependencies?: Entries;
         devDependencies?: Entries;
     }
-    let { dependencies = {}, devDependencies = {} }: Props = $props();
+    const { dependencies = {}, devDependencies = {} }: Props = $props();
+    const deps = $derived(Object.keys(dependencies));
+    const devDeps = $derived(Object.keys(devDependencies));
 </script>
 
 <svelte:window
@@ -22,27 +24,29 @@
 />
 
 <Wrapper hash="deps">
-    {#if !dependencies && !devDependencies}
-        <span class="font-extrabold">No dependencies found!</span>
+    {#if deps.length == 0 && devDeps.length == 0}
+        <div class="pt-1">
+            <span class="font-extrabold">No dependencies found!</span>
+        </div>
     {:else}
         <div
             class="flex flex-col overflow-hidden text-center md:grid md:grid-cols-2"
         >
-            {#if dependencies}
+            {#if deps.length != 0}
                 <div class="flex flex-col">
                     <span class="text-lg font-bold">Dependencies:</span>
                     <div class="flex flex-col overflow-auto">
-                        {#each Object.entries(dependencies) as [k]}
+                        {#each deps as k}
                             <span class="font-extrabold">{k}</span>
                         {/each}
                     </div>
                 </div>
             {/if}
-            {#if devDependencies}
+            {#if devDeps.length != 0}
                 <div class="flex flex-col">
-                    <span class="text-lg font-bold">Dev Dependencies</span>
+                    <span class="text-lg font-bold">Dev Dependencies:</span>
                     <div class="flex flex-col overflow-auto">
-                        {#each Object.entries(devDependencies) as [k]}
+                        {#each devDeps as k}
                             <span class="font-extrabold">{k}</span>
                         {/each}
                     </div>

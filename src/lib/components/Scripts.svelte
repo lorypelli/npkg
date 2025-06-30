@@ -5,7 +5,7 @@
         scripts?: Entries;
     }
     let { scripts = {} }: Props = $props();
-    const s = Object.entries(scripts);
+    const s = $derived(Object.entries(scripts));
 </script>
 
 <svelte:window
@@ -23,7 +23,9 @@
 
 <Wrapper hash="scripts">
     {#if s.length == 0}
-        <span class="font-extrabold">No Scripts Found!</span>
+        <div class="pt-1">
+            <span class="font-extrabold">No Scripts Found!</span>
+        </div>
     {:else}
         {#each s as [k, v]}
             <div class="text-center">

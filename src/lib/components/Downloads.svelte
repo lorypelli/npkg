@@ -4,7 +4,7 @@
         range: ValidRange;
         num?: number;
     }
-    let { range, num = -1 }: Props = $props();
+    const { range, num = -1 }: Props = $props();
 </script>
 
 <div class="flex flex-col items-center">

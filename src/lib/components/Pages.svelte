@@ -9,7 +9,7 @@
     }
     let { currentPage, lastPage, query }: Props = $props();
     const pages = 2;
-    const pageRemains = lastPage - currentPage;
+    const pageRemains = $derived(lastPage - currentPage);
 </script>
 
 <div class="flex flex-wrap justify-center gap-x-1 pt-0.5">
