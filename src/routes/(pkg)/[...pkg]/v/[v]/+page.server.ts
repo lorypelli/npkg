@@ -17,10 +17,10 @@ export async function load({ url, params: { pkg, v } }) {
     if (!pkg_version.types) {
         const res = await fetch(
             `https://registry.npmjs.org/@types/${pkg}/latest`,
+            { method: 'HEAD' },
         );
         external = res.ok;
     }
-    console.log(external);
     const range = url.searchParams.get('range');
     if (range) {
         const downloads = await fetch(
