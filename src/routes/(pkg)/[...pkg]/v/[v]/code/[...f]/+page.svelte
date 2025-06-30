@@ -1,5 +1,6 @@
 <script lang="ts">
     import File from '$lib/components/File.svelte';
+    import Highlight from '$lib/components/Highlight.svelte';
     import hljs from 'highlight.js';
     let { data } = $props();
     const pkg = $derived(`${data.pkg}@${data.version}`);
@@ -12,10 +13,7 @@
         name="og:title"
         content="npkg: fast and efficient - {data.fname}, {pkg}"
     />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"
-    />
+    <Highlight />
 </svelte:head>
 
 <File

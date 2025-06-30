@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Highlight from '$lib/components/Highlight.svelte';
     import '$lib/styles/readme.css';
     import '$lib/styles/scrollbar.css';
     let { data } = $props();
@@ -11,10 +12,7 @@
         http-equiv="content-security-policy"
         content="upgrade-insecure-requests"
     />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"
-    />
+    <Highlight />
     <base target="_blank" />
 </svelte:head>
 

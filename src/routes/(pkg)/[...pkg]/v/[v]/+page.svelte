@@ -8,6 +8,7 @@
     import { twMerge } from 'tailwind-merge';
     import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
     import { fixURL } from '$lib/utils/url.ts';
+    import Highlight from '$lib/components/Highlight.svelte';
     let { data } = $props();
     const pkg = $derived(`${data.name}@${data.version}`);
 </script>
@@ -30,10 +31,7 @@
     {#if data.keywords}
         <meta name="keywords" content={data.keywords.join(', ')} />
     {/if}
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/github-dark.min.css"
-    />
+    <Highlight />
 </svelte:head>
 
 {#if data.deprecated}
