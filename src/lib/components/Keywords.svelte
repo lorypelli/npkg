@@ -1,9 +1,9 @@
 <script lang="ts">
     interface Props {
         keywords: string[];
-        limit?: number;
+        limit: number;
     }
-    const { keywords, limit = keywords.length }: Props = $props();
+    const { keywords, limit }: Props = $props();
 </script>
 
 {#each keywords.slice(0, limit) as k}

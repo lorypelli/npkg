@@ -90,7 +90,10 @@
         {#if data.keywords && data.keywords.length > 0}
             <span class="text-lg font-bold">Keywords:</span>
             <div class="grid grid-cols-2 gap-2">
-                <Keywords keywords={data.keywords} />
+                <Keywords
+                    keywords={data.keywords}
+                    limit={data.keywords.length}
+                />
             </div>
         {/if}
     </div>
