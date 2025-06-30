@@ -50,9 +50,7 @@
     <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
         <div class="flex justify-center gap-x-1">
             <span class="font-extrabold">{pkg}</span>
-            {#if data.types}
-                <TypescriptIcon />
-            {/if}
+            <TypescriptIcon external={data.external} />
         </div>
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>

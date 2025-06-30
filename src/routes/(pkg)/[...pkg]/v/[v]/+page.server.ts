@@ -13,6 +13,14 @@ export async function load({ url, params: { pkg, v } }) {
         error(404);
     }
     const pkg_version: Version = await version.json();
+    let external = false;
+    if (!pkg_version.types) {
+        const res = await fetch(
+            `https://registry.npmjs.org/@types/${pkg}/latest`,
+        );
+        external = res.ok;
+    }
+    console.log(external);
     const range = url.searchParams.get('range');
     if (range) {
         const downloads = await fetch(
@@ -23,6 +31,7 @@ export async function load({ url, params: { pkg, v } }) {
                 ...pkg_version,
                 range,
                 downloads: -1,
+                external,
             };
         }
         const pkg_downloads = await downloads.text();
@@ -30,7 +39,11 @@ export async function load({ url, params: { pkg, v } }) {
             ...pkg_version,
             range,
             downloads: parseInt(pkg_downloads),
+            external,
         };
     }
-    return pkg_version;
+    return {
+        ...pkg_version,
+        external,
+    };
 }
