@@ -7,17 +7,10 @@
     import TypescriptIcon from '$lib/components/TypescriptIcon.svelte';
     import { twMerge } from 'tailwind-merge';
     import DownloadsWrapper from '$lib/components/DownloadsWrapper.svelte';
-    import { BASE_URL, fixURL } from '$lib/utils/url.ts';
+    import { fixURL } from '$lib/utils/url.ts';
     import Highlight from '$lib/components/Highlight.svelte';
     const { data } = $props();
     const pkg = $derived(`${data.name}@${data.version}`);
-    let external = false;
-    if (!data.types) {
-        const res = fetch(
-            `https://registry.npmjs.org/@types/${data.name}/latest`,
-        );
-        external = res.then((r) => r.ok);
-    }
 </script>
 
 <svelte:head>
@@ -57,9 +50,7 @@
     <div class="flex flex-col px-2 md:w-1/4 md:overflow-auto">
         <div class="flex justify-center gap-x-1">
             <span class="font-extrabold">{pkg}</span>
-            {#if data.types}
-                <TypescriptIcon />
-            {/if}
+            <TypescriptIcon external={data.external} />
         </div>
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>
