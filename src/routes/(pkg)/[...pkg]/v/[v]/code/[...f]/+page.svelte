@@ -1,9 +1,8 @@
 <script lang="ts">
     import File from '$lib/components/File.svelte';
     import hljs from 'highlight.js';
-    import { onMount } from 'svelte';
     let { data } = $props();
-    onMount(() => hljs.highlightAll());
+    $effect(() => hljs.highlightAll());
 </script>
 
 <svelte:head>
