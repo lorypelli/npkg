@@ -2,16 +2,15 @@
     import File from '$lib/components/File.svelte';
     import hljs from 'highlight.js';
     let { data } = $props();
+    const pkg = $derived(`${data.pkg}@${data.version}`);
     $effect(() => hljs.highlightAll());
 </script>
 
 <svelte:head>
-    <title
-        >npkg: fast and efficient - {data.fname}, {data.pkg}@{data.version}</title
-    >
+    <title>npkg: fast and efficient - {data.fname}, {pkg}</title>
     <meta
         name="og:title"
-        content="npkg: fast and efficient - {data.fname}, {data.pkg}@{data.version}"
+        content="npkg: fast and efficient - {data.fname}, {pkg}"
     />
     <link
         rel="stylesheet"
