@@ -26,7 +26,7 @@
 <Wrapper hash="deps">
     {#if deps.length == 0 && devDeps.length == 0}
         <div class="pt-1">
-            <span class="font-extrabold">No dependencies found!</span>
+            <span class="font-extrabold">No Dependencies Found!</span>
         </div>
     {:else}
         <div
