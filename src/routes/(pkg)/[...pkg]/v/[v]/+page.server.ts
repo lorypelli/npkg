@@ -15,10 +15,9 @@ export async function load({ url, params: { pkg, v } }) {
     const pkg_version: Version = await version.json();
     let external = false;
     if (!pkg_version.types) {
-        const res = await fetch(
-            `https://registry.npmjs.com/@types/${pkg}`,
-            { method: 'HEAD' },
-        );
+        const res = await fetch(`https://registry.npmjs.com/@types/${pkg}`, {
+            method: 'HEAD',
+        });
         external = res.ok;
     }
     const range = url.searchParams.get('range');
