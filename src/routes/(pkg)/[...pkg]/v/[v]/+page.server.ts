@@ -16,7 +16,7 @@ export async function load({ url, params: { pkg, v } }) {
     let external = false;
     if (!pkg_version.types) {
         const res = await fetch(
-            `https://registry.npmjs.org/@types/${pkg}/latest`,
+            `https://registry.npmjs.org/@types/${pkg}`,
             { method: 'HEAD' },
         );
         external = res.ok;
