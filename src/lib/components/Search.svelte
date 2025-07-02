@@ -72,7 +72,7 @@
                 />
             {:else}
                 <div
-                    class="bg-primary dark:bg-primary_dark m-1 text-center rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
+                    class="bg-primary dark:bg-primary_dark mt-1 text-center rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
                 >
                     <span class="text-xl">...</span>
                 </div>

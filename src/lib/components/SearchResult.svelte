@@ -27,7 +27,7 @@
 
 <a href="/{name}" {onclick}>
     <div
-        class="bg-primary dark:bg-primary_dark m-1 flex flex-col rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
+        class="bg-primary dark:bg-primary_dark mt-1 flex flex-col rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
     >
         <div class="flex space-x-1">
             <span class="font-extrabold">{name}</span>

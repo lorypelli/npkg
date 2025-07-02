@@ -2,8 +2,7 @@
     import Search from '$lib/components/Search.svelte';
     import '$lib/styles/globals.css';
     import '$lib/styles/scrollbar.css';
-    import type { LayoutProps } from './$types';
-    const { children }: LayoutProps = $props();
+    const { children } = $props();
 </script>
 
 <nav class="flex justify-center p-2 sm:justify-between">
