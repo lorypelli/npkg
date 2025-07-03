@@ -4,7 +4,7 @@
     import hljs from 'highlight.js';
     const { data } = $props();
     const pkg = $derived(`${data.pkg}@${data.version}`);
-    $effect(() => hljs.highlightAll());
+    $effect(hljs.highlightAll);
 </script>
 
 <svelte:head>
