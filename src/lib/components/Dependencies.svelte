@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { twMerge } from 'tailwind-merge';
     import type { Entries } from '../../../types/package.ts';
     import Wrapper from './Wrapper.svelte';
     interface Props {
@@ -8,6 +9,8 @@
     const { dependencies = {}, devDependencies = {} }: Props = $props();
     const deps = $derived(Object.keys(dependencies));
     const devDeps = $derived(Object.keys(devDependencies));
+    const hasDeps = $derived(deps.length != 0);
+    const hasDevDeps = $derived(devDeps.length != 0);
 </script>
 
 <svelte:window
@@ -24,15 +27,18 @@
 />
 
 <Wrapper hash="deps">
-    {#if deps.length == 0 && devDeps.length == 0}
+    {#if !hasDeps && !hasDevDeps}
         <div class="pt-1">
             <span class="font-extrabold">No Dependencies Found!</span>
         </div>
     {:else}
         <div
-            class="flex flex-col overflow-hidden text-center md:grid md:grid-cols-2"
+            class={twMerge(
+                'flex flex-col items-center overflow-hidden text-center md:grid-cols-2',
+                hasDeps && hasDevDeps && 'md:grid',
+            )}
         >
-            {#if deps.length != 0}
+            {#if hasDeps}
                 <div class="flex flex-col">
                     <span class="text-lg font-bold">Dependencies:</span>
                     <div class="flex flex-col overflow-auto">
@@ -42,7 +48,7 @@
                     </div>
                 </div>
             {/if}
-            {#if devDeps.length != 0}
+            {#if hasDevDeps}
                 <div class="flex flex-col">
                     <span class="text-lg font-bold">Dev Dependencies:</span>
                     <div class="flex flex-col overflow-auto">
