@@ -4,7 +4,9 @@
     import hljs from 'highlight.js';
     const { data } = $props();
     const pkg = $derived(`${data.pkg}@${data.version}`);
-    $effect(hljs.highlightAll);
+    const { value } = $derived(
+        hljs.highlight(data.pkg_file, { language: data.language }),
+    );
 </script>
 
 <svelte:head>
@@ -20,6 +22,7 @@
     file={data.file}
     fname={data.fname}
     pkg={data.pkg}
-    pkg_file={data.pkg_file}
+    pkg_file={value}
+    lang={data.language}
     version={data.version}
 />

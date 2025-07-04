@@ -57,9 +57,7 @@
         <span class="text-sm">{data.description}</span>
         <span class="text-lg font-bold">Installation:</span>
         <pre class="flex items-center justify-center">
-            <code class="hljs rounded-lg" data-highlighted="no"
-                >npm i {pkg}</code
-            >
+            <code class="hljs rounded-lg">npm i {pkg}</code>
         </pre>
         <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="flex flex-col items-center">

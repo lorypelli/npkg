@@ -4,9 +4,10 @@
         fname: string;
         pkg: string;
         pkg_file: string;
+        lang: string;
         version: string;
     }
-    const { file, fname, pkg, pkg_file, version }: Props = $props();
+    const { file, fname, pkg, pkg_file, lang, version }: Props = $props();
 </script>
 
 <div class="flex items-center justify-center space-x-4">
@@ -18,6 +19,6 @@
 <span class="text-md text-center font-bold break-words">{fname} - {file}</span>
 <div class="h-3/4 px-4">
     <pre class="flex h-full justify-center">
-        <code class="hljs">{pkg_file}</code>
+        <code class="hljs lang-{lang}">{@html pkg_file}</code>
     </pre>
 </div>

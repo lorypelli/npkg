@@ -1,5 +1,6 @@
 import { BASE_URL } from '$lib/utils/url.ts';
 import { error, redirect } from '@sveltejs/kit';
+import hljs from 'highlight.js';
 import type { File } from '../../../../../../../../types/package.ts';
 
 export async function load({ parent, params: { pkg, v, f } }) {
@@ -18,8 +19,11 @@ export async function load({ parent, params: { pkg, v, f } }) {
         redirect(302, `/${pkg}/v/${v}/code`);
     }
     const pkg_file: File = await file.json();
+    const ext = f.split('.').at(-1);
+    const language = ext && hljs.getLanguage(ext) ? ext : 'txt';
     return {
         ...pkg_file,
         fname: f,
+        language,
     };
 }
