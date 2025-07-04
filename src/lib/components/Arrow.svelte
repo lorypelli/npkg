@@ -8,14 +8,16 @@
         type: 'previous' | 'next';
     }
     const { currentPage, lastPage, query, type }: Props = $props();
-    const num = type == 'previous' ? -1 : 1;
-    const newPage = currentPage + num;
+    const num = $derived(type == 'previous' ? -1 : 1);
+    const newPage = $derived(currentPage + num);
+    const isLastPage = $derived(currentPage == lastPage);
+    const isFirstPage = $derived(currentPage == 1);
 </script>
 
 <a
-    href="/search?q={query}&page={currentPage == lastPage && type == 'next'
+    href="/search?q={query}&page={isLastPage && type == 'next'
         ? 1
-        : currentPage == 1 && type == 'previous'
+        : isFirstPage && type == 'previous'
           ? lastPage
           : newPage}"
     class="flex justify-center pb-2"
