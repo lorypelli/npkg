@@ -12,9 +12,9 @@ export async function load({ params: { pkg, v } }) {
     }
     const md = new Marked(
         markedHighlight({
-            langPrefix: 'hljs language-',
+            langPrefix: 'hljs lang-',
             highlight(code, lang) {
-                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                const language = hljs.getLanguage(lang) ? lang : 'txt';
                 return hljs.highlight(code, { language }).value;
             },
         }),
