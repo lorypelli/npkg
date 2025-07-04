@@ -25,7 +25,7 @@ export async function load({ params: { pkg, v } }) {
     if (!readme.ok) {
         error(404);
     }
-    const pkg_readme = md.parse(await readme.text()).toString();
+    const pkg_readme = await md.parse(await readme.text());
     return {
         pkg_readme,
     };
