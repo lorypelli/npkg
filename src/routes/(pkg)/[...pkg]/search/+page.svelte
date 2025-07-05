@@ -13,18 +13,20 @@
     />
 </svelte:head>
 
-{#each data.packages as p}
-    <SearchResult
-        date={p.date}
-        description={p.description}
-        keywords={p.keywords}
-        name={p.name}
-        publisher={p.publisher}
-        version={p.version}
-    />
-{:else}
-    <NotFound />
-{/each}
+<div class="flex flex-col gap-y-1">
+    {#each data.packages as p}
+        <SearchResult
+            date={p.date}
+            description={p.description}
+            keywords={p.keywords}
+            name={p.name}
+            publisher={p.publisher}
+            version={p.version}
+        />
+    {:else}
+        <NotFound />
+    {/each}
+</div>
 {#if data.packages && data.packages.length > 0}
     <Pages
         currentPage={data.currentPage}

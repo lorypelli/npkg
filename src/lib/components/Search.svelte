@@ -28,7 +28,7 @@
     }
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col gap-y-1">
     <form
         action="/search"
         autocomplete="off"
@@ -56,7 +56,12 @@
         >
     </form>
     {#if showSuggestions && input.trim() != ''}
-        <div class={twMerge('w-64 pt-1', nav && 'absolute top-14')}>
+        <div
+            class={twMerge(
+                'flex w-64 flex-col gap-y-1',
+                nav && 'absolute top-16',
+            )}
+        >
             {#each suggestions as s}
                 <SearchResult
                     date={s.date}
@@ -72,7 +77,7 @@
                 />
             {:else}
                 <div
-                    class="bg-primary dark:bg-primary_dark mt-1 text-center rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
+                    class="bg-primary dark:bg-primary_dark text-center rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
                 >
                     <span class="text-xl">...</span>
                 </div>
