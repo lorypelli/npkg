@@ -14,6 +14,7 @@ export default async function search(ctx: Context) {
     } else if (q.length < 2 || q.length > 64) {
         return ctx.body(null, 204);
     }
+    const total = 5000;
     let page = 1;
     if (p) {
         page = parseInt(p);
@@ -22,12 +23,16 @@ export default async function search(ctx: Context) {
     if (size) {
         pkg_page = parseInt(size);
     }
+    const lastPage = total / pkg_page;
+    if (page < 0 || page > lastPage) {
+        return ctx.json({ error: 'Page too high' }, 400);
+    }
     let from = pkg_page * (page - 1);
     if (suggestions) {
         from = 0;
     }
     const search = await fetch(
-        `https://registry.npmjs.com/-/v1/search?text=${q}&from=${from}`,
+        `https://registry.npmjs.com/-/v1/search?text=${q}&from=${from}&size=${pkg_page}`,
     );
     if (!search.ok) {
         return ctx.json({ error: search.statusText }, 500);
@@ -49,7 +54,6 @@ export default async function search(ctx: Context) {
     if (suggestions) {
         return ctx.json(packages);
     }
-    const lastPage = Math.ceil(pkgs.total / pkg_page);
     return ctx.json({
         lastPage,
         packages,

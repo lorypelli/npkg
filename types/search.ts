@@ -10,7 +10,6 @@ export interface NPMSearch {
     objects: {
         package: Package;
     }[];
-    total: number;
 }
 
 interface Package {
