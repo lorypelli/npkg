@@ -10,7 +10,7 @@
     const { file, fname, pkg, pkg_file, lang, version }: Props = $props();
 </script>
 
-<div class="flex items-center justify-center space-x-4">
+<div class="flex items-center justify-center gap-x-4">
     <a href="/{pkg}/v/{version}/code" class="text-sm hover:underline"
         >Go Back!</a
     >

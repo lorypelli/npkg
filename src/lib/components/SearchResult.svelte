@@ -29,7 +29,7 @@
     <div
         class="bg-primary dark:bg-primary_dark flex flex-col rounded-xl border-2 border-black p-2 hover:bg-gray-300 dark:border-white dark:hover:bg-gray-800"
     >
-        <div class="flex space-x-1">
+        <div class="flex gap-x-1">
             <span class="font-extrabold">{name}</span>
             {#if !small}
                 <span>({publisher.username || publisher.name})</span>
