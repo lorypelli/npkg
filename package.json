@@ -2,7 +2,9 @@
     "name": "npkg",
     "private": true,
     "scripts": {
-        "dev": "vite dev",
+        "dev": "pnpm \"/dev:.*/\"",
+        "dev:frontend": "vite dev",
+        "dev:api": "cd api && pnpm dev",
         "build": "vite build",
         "preview": "vite preview",
         "format": "prettier --write .",
