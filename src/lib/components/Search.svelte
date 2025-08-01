@@ -41,7 +41,7 @@
             name="q"
             type="search"
             placeholder="Search Packages..."
-            oninput={async (e) => {
+            onkeyup={async (e) => {
                 input = e.currentTarget.value;
                 suggestions = await getSuggestions(input.trim());
                 showSuggestions = true;
