@@ -11,5 +11,8 @@
     "assets": {
         "binding": "ASSETS",
         "directory": "./dist"
+    },
+    "build": {
+        "command": "pnpm build"
     }
 }
