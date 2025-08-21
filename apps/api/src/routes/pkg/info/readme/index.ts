@@ -1,6 +1,6 @@
+import type { NPMCode } from '@npkg/typespackage.ts';
 import type { Context } from 'hono';
 import micromatch from 'micromatch';
-import type { NPMCode } from '../../../../../../types/package.ts';
 
 export default async function readme(ctx: Context) {
     const { pkg, v } = ctx.req.param();

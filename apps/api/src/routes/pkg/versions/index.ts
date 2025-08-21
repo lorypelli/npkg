@@ -1,5 +1,5 @@
+import type { Entries, NPMGeneral } from '@npkg/types';
 import type { Context } from 'hono';
-import type { Entries, NPMGeneral } from '../../../../../types/package.ts';
 
 export default async function versions(ctx: Context) {
     const { pkg } = ctx.req.param();

@@ -1,5 +1,5 @@
+import type { NPMCode } from '@npkg/typespackage.ts';
 import type { Context } from 'hono';
-import type { NPMCode } from '../../../../../../types/package.ts';
 
 export default async function code(ctx: Context) {
     const { pkg, v } = ctx.req.param();

@@ -2,41 +2,21 @@
     "name": "npkg",
     "private": true,
     "scripts": {
-        "dev": "vite dev",
-        "build": "vite build",
-        "preview": "vite preview",
-        "format": "prettier --write .",
-        "deploy:api": "cd api && bun prod",
-        "deploy:cdn": "cd cdn && bun prod",
-        "deploy:all": "bun deploy:api && bun deploy:cdn"
+        "build": "turbo run build",
+        "check-types": "turbo run check-types",
+        "dev": "turbo run dev",
+        "format": "prettier --write ."
     },
-    "type": "module",
     "devDependencies": {
-        "@fontsource/fira-mono": "^5.2.6",
-        "@neoconfetti/svelte": "^2.2.2",
-        "@sveltejs/adapter-cloudflare": "^7.0.4",
-        "@sveltejs/kit": "^2.21.5",
-        "@sveltejs/vite-plugin-svelte": "^5.1.0",
-        "@types/crypto-js": "^4.2.2",
-        "prettier": "^3.5.3",
+        "prettier": "^3.6.0",
         "prettier-plugin-organize-imports": "^4.1.0",
+        "prettier-plugin-packagejson": "^2.5.19",
         "prettier-plugin-svelte": "^3.4.0",
         "prettier-plugin-tailwindcss": "^0.6.12",
-        "svelte": "^5.34.6",
-        "svelte-check": "^4.2.2",
-        "tailwind-merge": "^3.3.1",
-        "tailwindcss": "^4.1.10",
-        "tslib": "^2.8.1",
-        "typescript": "^5.8.3",
-        "vite": "^6.3.5",
-        "wrangler": "^4.20.3"
+        "turbo": "^2.5.6"
     },
-    "dependencies": {
-        "@neodrag/svelte": "^2.3.3",
-        "@tailwindcss/vite": "^4.1.10",
-        "crypto-js": "^4.2.0",
-        "highlight.js": "^11.11.1",
-        "marked": "^15.0.12",
-        "marked-highlight": "^2.2.1"
+    "packageManager": "pnpm@10.0.0",
+    "engines": {
+        "node": ">=18"
     }
 }

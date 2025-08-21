@@ -1,5 +1,5 @@
+import type { NPMDownloads } from '@npkg/types';
 import type { Context } from 'hono';
-import type { NPMDownloads } from '../../../../types/downloads.ts';
 
 export default async function downloads(ctx: Context) {
     const { q, range } = ctx.req.query();

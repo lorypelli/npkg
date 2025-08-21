@@ -1,5 +1,5 @@
+import type { Version } from '@npkg/types';
 import type { Context } from 'hono';
-import type { Version } from '../../../../../types/package.ts';
 
 export default async function info(ctx: Context) {
     const { pkg, v } = ctx.req.param();

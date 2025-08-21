@@ -1,5 +1,5 @@
+import type { NPMSearch, Search } from '@npkg/types';
 import type { Context } from 'hono';
-import type { NPMSearch, Search } from '../../../../types/search.ts';
 
 export default async function search(ctx: Context) {
     const flag = ctx.req.query('suggestions');
