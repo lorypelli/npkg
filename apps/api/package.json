@@ -7,12 +7,14 @@
     },
     "dependencies": {
         "hono": "^4.8.0",
-        "micromatch": "^4.0.8"
+        "micromatch": "^4.0.8",
+        "crypto-js": "^4.2.0"
     },
     "devDependencies": {
         "@cloudflare/workers-types": "^4.20250619.0",
         "@types/micromatch": "^4.0.9",
         "prettier": "^3.5.3",
-        "wrangler": "^4.20.3"
+        "wrangler": "^4.20.3",
+        "@npkg/types": "workspace:*"
     }
 }

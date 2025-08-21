@@ -8,13 +8,13 @@
 {#if email}
 	<img
 		class="size-8 rounded-full border-2 border-black dark:border-white"
-		src="https://cdn.npkg.lorypelli.dev/?email={email}"
+		src="https://api.npkg.lorypelli.dev/avatar?email={email}"
 		alt="pic"
 	/>
 {:else}
 	<img
 		class="size-8 rounded-full border-2 border-black dark:border-white"
-		src="https://cdn.npkg.lorypelli.dev/"
+		src="https://api.npkg.lorypelli.dev/avatar"
 		alt="pic"
 	/>
 {/if}

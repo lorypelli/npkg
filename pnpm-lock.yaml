@@ -29,6 +29,9 @@ importers:
 
   apps/api:
     dependencies:
+      crypto-js:
+        specifier: ^4.2.0
+        version: 4.2.0
       hono:
         specifier: ^4.8.0
         version: 4.9.2
@@ -39,28 +42,12 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20250619.0
         version: 4.20250821.0
+      '@npkg/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@types/micromatch':
         specifier: ^4.0.9
         version: 4.0.9
-      prettier:
-        specifier: ^3.5.3
-        version: 3.6.2
-      wrangler:
-        specifier: ^4.20.3
-        version: 4.32.0(@cloudflare/workers-types@4.20250821.0)
-
-  apps/cdn:
-    dependencies:
-      crypto-js:
-        specifier: ^4.2.0
-        version: 4.2.0
-      hono:
-        specifier: ^4.8.0
-        version: 4.9.2
-    devDependencies:
-      '@cloudflare/workers-types':
-        specifier: ^4.20250619.0
-        version: 4.20250821.0
       prettier:
         specifier: ^3.5.3
         version: 3.6.2

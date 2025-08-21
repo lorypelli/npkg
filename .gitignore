@@ -21,14 +21,13 @@ packages/*/LICENSE
 
 # Generated dirs
 dist
-.nuxt
-.nuxt-*
 .vercel
 .netlify
 .output
 .output-*
 .gen
 .test
+.turbo
 
 # Junit reports
 reports

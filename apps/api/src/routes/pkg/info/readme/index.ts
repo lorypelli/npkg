@@ -1,4 +1,4 @@
-import type { NPMCode } from '@npkg/typespackage.ts';
+import type { NPMCode } from '@npkg/types';
 import type { Context } from 'hono';
 import micromatch from 'micromatch';
 
