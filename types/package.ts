@@ -9,7 +9,7 @@ export interface General {
 export interface NPMGeneral {
     ['dist-tags']: Entries;
     time: Entries;
-    versions: Entries;
+    versions: VersionEntries;
 }
 
 export interface Version {
@@ -51,6 +51,10 @@ export interface Entries {
     [x: string]: string;
 }
 
+export interface VersionEntries {
+    [x: string]: VersionInfo;
+}
+
 export interface FileEntries {
     [x: string]: FileInfo;
 }
@@ -65,4 +69,9 @@ interface FileInfo {
     path: string;
     size: number;
     type: string;
+}
+
+interface VersionInfo {
+    deprecated: string;
+    time: string;
 }
