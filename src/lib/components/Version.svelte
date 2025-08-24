@@ -14,21 +14,28 @@
     let exactMatch = $state(false);
     let hideDeprecated = $state(false);
     let input = $state('');
-    $effect(() => filterVersions(input.toLowerCase().trim(), exactMatch));
-    $effect(() => hideVersions(input.toLowerCase().trim(), hideDeprecated));
-    function filterVersions(input: string, exactMatch: boolean) {
-        filteredVersions = versions.filter((v) =>
-            Object.keys(v).some((k) =>
-                input.length > 0 && exactMatch ? k == input : k.includes(input),
-            ),
-        );
-    }
-    function hideVersions(input: string, exactMatch: boolean) {
-        filteredVersions = versions.filter((v) =>
-            Object.values(v).some((k) =>
-                hideDeprecated ? !k.deprecated : true,
-            ),
-        );
+    $effect(() =>
+        filterVersions(input.toLowerCase().trim(), exactMatch, hideDeprecated),
+    );
+    function filterVersions(
+        input: string,
+        exactMatch: boolean,
+        hideDeprecated: boolean,
+    ) {
+        let arr = [...versions];
+        filteredVersions = arr
+            .filter((v) =>
+                Object.keys(v).some((k) =>
+                    input.length > 0 && exactMatch
+                        ? k == input
+                        : k.includes(input),
+                ),
+            )
+            .filter((v) =>
+                Object.values(v).some((k) =>
+                    hideDeprecated ? !k.deprecated : true,
+                ),
+            );
     }
 </script>
 
