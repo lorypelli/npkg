@@ -15,7 +15,7 @@
     let hideDeprecated = $state(false);
     let input = $state('');
     $effect(() =>
-        filterVersions(input.toLowerCase().trim(), exactMatch, hideDeprecated),
+        filterVersions(input.toLowerCase(), exactMatch, hideDeprecated),
     );
     function filterVersions(
         input: string,
@@ -88,7 +88,14 @@
             <input
                 type="search"
                 placeholder="Search Versions..."
-                onkeyup={async (e) => (input = e.currentTarget.value)}
+                onkeyup={async (e) => {
+                    input = e.currentTarget.value.trim();
+                    if (input.length >= 0) {
+                        document.body.style.overflowY = 'scroll';
+                    } else {
+                        document.body.removeAttribute('style');
+                    }
+                }}
                 class="bg-primary dark:bg-primary_dark w-full rounded-xl border-2 border-black p-3 text-center dark:border-white"
             />
         {/if}

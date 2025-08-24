@@ -42,8 +42,8 @@
             type="search"
             placeholder="Search Packages..."
             onkeyup={async (e) => {
-                input = e.currentTarget.value;
-                suggestions = await getSuggestions(input.trim());
+                input = e.currentTarget.value.trim();
+                suggestions = await getSuggestions(input);
                 showSuggestions = true;
             }}
             required

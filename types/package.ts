@@ -3,7 +3,7 @@ import type { User } from './user.ts';
 export interface General {
     pkg: string;
     tags: Entries;
-    versions: Entries[];
+    versions: VersionEntries[];
 }
 
 export interface NPMGeneral {
