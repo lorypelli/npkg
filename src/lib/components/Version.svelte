@@ -22,7 +22,7 @@
         exactMatch: boolean,
         hideDeprecated: boolean,
     ) {
-        if (input.length >= 0) {
+        if (input.length > 0 || exactMatch || hideDeprecated) {
             document.body.style.overflowY = 'scroll';
         } else {
             document.body.removeAttribute('style');
