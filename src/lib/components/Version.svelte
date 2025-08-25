@@ -15,6 +15,11 @@
     let hideDeprecated = $state(false);
     let input = $state('');
     $effect(() =>
+        input.length > 0 || exactMatch || hideDeprecated
+            ? void (document.body.style.overflowY = 'scroll')
+            : document.body.removeAttribute('style'),
+    );
+    $effect(() =>
         filterVersions(input.toLowerCase(), exactMatch, hideDeprecated),
     );
     function filterVersions(
@@ -22,13 +27,7 @@
         exactMatch: boolean,
         hideDeprecated: boolean,
     ) {
-        if (input.length > 0 || exactMatch || hideDeprecated) {
-            document.body.style.overflowY = 'scroll';
-        } else {
-            document.body.removeAttribute('style');
-        }
-        let arr = [...versions];
-        filteredVersions = arr
+        filteredVersions = [...versions]
             .filter((v) =>
                 Object.keys(v).some((k) =>
                     input.length > 0 && exactMatch
