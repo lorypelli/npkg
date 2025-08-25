@@ -1,8 +1,8 @@
 <script lang="ts">
     import { twMerge } from 'tailwind-merge';
     import type { Entries, VersionEntries } from '../../../types/package.ts';
-    import Tick from './Tick.svelte';
-    import Untick from './Untick.svelte';
+    import Check from './Check.svelte';
+    import Uncheck from './Uncheck.svelte';
     import { browser } from '$app/environment';
     interface Props {
         pkg: string;
@@ -22,6 +22,11 @@
         exactMatch: boolean,
         hideDeprecated: boolean,
     ) {
+        if (input.length >= 0) {
+            document.body.style.overflowY = 'scroll';
+        } else {
+            document.body.removeAttribute('style');
+        }
         let arr = [...versions];
         filteredVersions = arr
             .filter((v) =>
@@ -64,9 +69,9 @@
                 >
                     <div class="flex gap-x-2">
                         {#if exactMatch}
-                            <Tick />
+                            <Check />
                         {:else}
-                            <Untick />
+                            <Uncheck />
                         {/if}
                         <span>Exact Match!</span>
                     </div>
@@ -77,9 +82,9 @@
                 >
                     <div class="flex gap-x-2">
                         {#if hideDeprecated}
-                            <Tick />
+                            <Check />
                         {:else}
-                            <Untick />
+                            <Uncheck />
                         {/if}
                         <span>Hide Deprecated!</span>
                     </div>
@@ -88,14 +93,7 @@
             <input
                 type="search"
                 placeholder="Search Versions..."
-                onkeyup={async (e) => {
-                    input = e.currentTarget.value.trim();
-                    if (input.length >= 0) {
-                        document.body.style.overflowY = 'scroll';
-                    } else {
-                        document.body.removeAttribute('style');
-                    }
-                }}
+                onkeyup={async (e) => (input = e.currentTarget.value.trim())}
                 class="bg-primary dark:bg-primary_dark w-full rounded-xl border-2 border-black p-3 text-center dark:border-white"
             />
         {/if}
