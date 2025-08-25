@@ -59,9 +59,8 @@
     </div>
     {#if !browser}
         <br />
-    {/if}
-    <div class={twMerge('flex flex-col gap-y-1', browser && 'py-1')}>
-        {#if browser}
+    {:else}
+        <div class="flex flex-col gap-y-1 py-1">
             <div class="flex justify-center gap-x-2 py-1">
                 <button
                     class="bg-primary dark:bg-primary_dark cursor-pointer rounded-xl border-2 border-black p-3 active:bg-gray-300 dark:border-white dark:active:bg-gray-800"
@@ -96,8 +95,8 @@
                 onkeyup={async (e) => (input = e.currentTarget.value.trim())}
                 class="bg-primary dark:bg-primary_dark w-full rounded-xl border-2 border-black p-3 text-center dark:border-white"
             />
-        {/if}
-    </div>
+        </div>
+    {/if}
     <div class="grid grid-cols-3 gap-2 pt-1 md:grid-cols-4">
         {#each filteredVersions as version}
             {#each Object.entries(version) as [k, v]}
