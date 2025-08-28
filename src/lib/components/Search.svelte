@@ -6,11 +6,13 @@
     import SearchIcon from './SearchIcon.svelte';
     interface Props {
         nav?: boolean;
+        width?: number;
     }
-    const { nav = false }: Props = $props();
+    const { nav = false, width = 0 }: Props = $props();
     let input = $state('');
     let suggestions = $state<Search['packages']>([]);
     let showSuggestions = $state(false);
+    let inputElement = $state<HTMLInputElement>();
     async function getSuggestions(input: string) {
         const len = input.length;
         if (len > 2 && len < 64) {
@@ -28,7 +30,7 @@
     }
 </script>
 
-<div class="flex flex-col gap-y-1">
+<div class={twMerge('flex flex-col gap-y-1', nav && 'w-full')}>
     <form
         action="/search"
         autocomplete="off"
@@ -46,8 +48,12 @@
                 suggestions = await getSuggestions(input);
                 showSuggestions = true;
             }}
+            bind:this={inputElement}
             required
-            class="bg-primary dark:bg-primary_dark w-64 rounded-xl border-2 border-black p-3 dark:border-white"
+            class={twMerge(
+                'bg-primary dark:bg-primary_dark w-64 rounded-xl border-2 border-black p-3 dark:border-white',
+                nav && 'w-full',
+            )}
         />
         <button
             type="submit"
@@ -57,10 +63,8 @@
     </form>
     {#if showSuggestions && input.trim() != ''}
         <div
-            class={twMerge(
-                'flex w-64 flex-col gap-y-1',
-                nav && 'absolute top-16',
-            )}
+            class={twMerge('flex flex-col gap-y-1', nav && `absolute top-16`)}
+            style:width="{inputElement.offsetWidth}px"
         >
             {#each suggestions as s}
                 <SearchResult

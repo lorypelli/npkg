@@ -5,7 +5,7 @@
     const { children } = $props();
 </script>
 
-<nav class="flex justify-center p-2 sm:justify-between">
+<nav class="flex gap-x-2 py-2">
     <div class="hidden sm:block">
         <a href="/">
             <button
