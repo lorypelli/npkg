@@ -6,9 +6,8 @@
     import SearchIcon from './SearchIcon.svelte';
     interface Props {
         nav?: boolean;
-        width?: number;
     }
-    const { nav = false, width = 0 }: Props = $props();
+    const { nav = false }: Props = $props();
     let input = $state('');
     let suggestions = $state<Search['packages']>([]);
     let showSuggestions = $state(false);
