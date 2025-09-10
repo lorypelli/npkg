@@ -1,0 +1,6 @@
+{
+    "name": "@npkg/types",
+    "private": true,
+    "type": "module",
+    "main": "./src/index.ts"
+}
