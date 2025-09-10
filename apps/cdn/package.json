@@ -6,7 +6,6 @@
         "deploy": "wrangler deploy"
     },
     "dependencies": {
-        "crypto-js": "^4.2.0",
         "hono": "^4.9.6"
     },
     "devDependencies": {
