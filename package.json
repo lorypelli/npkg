@@ -4,10 +4,8 @@
     "scripts": {
         "build": "turbo run build",
         "dev": "turbo run dev",
-        "format": "prettier --write .",
-        "deploy": "pnpm \"/deploy:.*/\"",
-        "deploy:api": "cd api && pnpm prod",
-        "deploy:cdn": "cd cdn && pnpm prod"
+        "deploy": "turbo run deploy",
+        "format": "prettier --write ."
     },
     "devDependencies": {
         "prettier": "^3.6.2",

@@ -3,7 +3,7 @@
     "private": true,
     "scripts": {
         "dev": "wrangler dev",
-        "prod": "wrangler deploy"
+        "deploy": "wrangler deploy"
     },
     "dependencies": {
         "crypto-js": "^4.2.0",

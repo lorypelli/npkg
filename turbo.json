@@ -3,9 +3,10 @@
     "ui": "tui",
     "tasks": {
         "build": {
-            "dependsOn": ["^build"],
-            "inputs": ["$TURBO_DEFAULT$"],
-            "outputs": [".svelte-kit/**"]
+            "dependsOn": ["^build"]
+        },
+        "deploy": {
+            "dependsOn": ["^deploy"]
         },
         "dev": {
             "cache": false,
