@@ -8,6 +8,11 @@ export default async function code(ctx: Context) {
     }
     const code = await fetch(
         `https://www.npmjs.com/package/${pkg}/v/${v}/index`,
+        {
+            headers: {
+                'User-Agent': 'npkg',
+            },
+        },
     );
     if (!code.ok) {
         return ctx.json({ error: code.statusText }, 500);

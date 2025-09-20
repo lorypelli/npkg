@@ -29,7 +29,11 @@ export default async function downloads(ctx: Context) {
     if (q) {
         url = `https://api.npmjs.org/downloads/point/${r}/${q}`;
     }
-    const downloads = await fetch(url);
+    const downloads = await fetch(url, {
+        headers: {
+            'User-Agent': 'npkg',
+        },
+    });
     if (!downloads.ok) {
         return ctx.json({ error: downloads.statusText }, 500);
     }

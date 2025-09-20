@@ -33,6 +33,11 @@ export default async function search(ctx: Context) {
     }
     const search = await fetch(
         `https://registry.npmjs.com/-/v1/search?text=${q}&from=${from}&size=${pkg_page}`,
+        {
+            headers: {
+                'User-Agent': 'npkg',
+            },
+        },
     );
     if (!search.ok) {
         return ctx.json({ error: search.statusText }, 500);

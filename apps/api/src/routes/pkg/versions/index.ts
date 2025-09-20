@@ -6,7 +6,11 @@ export default async function versions(ctx: Context) {
     if (!pkg) {
         return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
-    const general = await fetch(`https://registry.npmjs.com/${pkg}`);
+    const general = await fetch(`https://registry.npmjs.com/${pkg}`, {
+        headers: {
+            'User-Agent': 'npkg',
+        },
+    });
     if (!general.ok) {
         return ctx.json({ error: general.statusText }, 500);
     }

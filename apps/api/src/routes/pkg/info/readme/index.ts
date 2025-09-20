@@ -10,6 +10,11 @@ export default async function readme(ctx: Context) {
     let pkg_readme = 'No README Found!';
     const code = await fetch(
         `https://www.npmjs.com/package/${pkg}/v/${v}/index`,
+        {
+            headers: {
+                'User-Agent': 'npkg',
+            },
+        },
     );
     if (!code.ok) {
         return ctx.json({ error: code.statusText }, 500);
@@ -23,6 +28,11 @@ export default async function readme(ctx: Context) {
     for (let f of files) {
         const readme = await fetch(
             `https://www.npmjs.com/package/${pkg}/file/${pkg_code.files[f].hex}`,
+            {
+                headers: {
+                    'User-Agent': 'npkg',
+                },
+            },
         );
         if (!readme.ok) {
             return ctx.json({ error: readme.statusText }, 500);

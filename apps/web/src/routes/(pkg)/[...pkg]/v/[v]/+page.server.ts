@@ -17,6 +17,9 @@ export async function load({ url, params: { pkg, v } }) {
     if (!pkg_version.types) {
         const res = await fetch(`https://registry.npmjs.com/@types/${pkg}`, {
             method: 'HEAD',
+            headers: {
+                'User-Agent': 'npkg',
+            },
         });
         external = res.ok;
     }

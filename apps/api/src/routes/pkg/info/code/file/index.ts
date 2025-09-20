@@ -5,7 +5,11 @@ export default async function file(ctx: Context) {
     if (!pkg || !v || !f) {
         return ctx.json({ error: 'Missing Paramethers' }, 400);
     }
-    const file = await fetch(`https://www.npmjs.com/package/${pkg}/file/${f}`);
+    const file = await fetch(`https://www.npmjs.com/package/${pkg}/file/${f}`, {
+        headers: {
+            'User-Agent': 'npkg',
+        },
+    });
     if (!file.ok) {
         return ctx.json({ error: file.statusText }, 500);
     }
