@@ -5,7 +5,7 @@
     const { children } = $props();
 </script>
 
-<nav class="flex gap-x-2 py-2">
+<nav class="flex gap-x-2 p-2">
     <div class="hidden sm:block">
         <a href="/">
             <button
