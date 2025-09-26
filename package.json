@@ -2,7 +2,6 @@
     "name": "npkg",
     "private": true,
     "scripts": {
-        "build": "turbo run build",
         "dev": "turbo run dev",
         "deploy": "turbo run deploy",
         "format": "prettier --write ."

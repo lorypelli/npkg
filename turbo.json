@@ -2,12 +2,7 @@
     "$schema": "https://turborepo.com/schema.json",
     "ui": "tui",
     "tasks": {
-        "build": {
-            "dependsOn": ["^build"],
-            "cache": false
-        },
         "deploy": {
-            "dependsOn": ["^deploy"],
             "cache": false
         },
         "dev": {
