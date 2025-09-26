@@ -3,10 +3,12 @@
     "ui": "tui",
     "tasks": {
         "build": {
-            "dependsOn": ["^build"]
+            "dependsOn": ["^build"],
+            "cache": false
         },
         "deploy": {
-            "dependsOn": ["^deploy"]
+            "dependsOn": ["^deploy"],
+            "cache": false
         },
         "dev": {
             "cache": false,
