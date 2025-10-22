@@ -8,7 +8,7 @@
 
 {#each keywords.slice(0, limit) as k}
     <span
-        class="break-words rounded-xl border-2 border-black p-1 dark:border-white"
+        class="rounded-xl border-2 border-black p-1 wrap-break-word dark:border-white"
         >{k}</span
     >
 {/each}

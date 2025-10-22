@@ -39,11 +39,11 @@
         {#if description}
             <div
                 class={twMerge(
-                    'overflow-y-hidden whitespace-normal pb-1 leading-3',
+                    'overflow-y-hidden pb-1 leading-3 whitespace-normal',
                     small && 'max-h-20',
                 )}
             >
-                <span class="break-words text-sm">{description}</span>
+                <span class="text-sm wrap-break-word">{description}</span>
             </div>
         {/if}
         <div class="flex flex-wrap items-center gap-2">

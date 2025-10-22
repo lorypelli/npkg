@@ -32,7 +32,7 @@
             {#each Object.keys(code) as k}
                 <a class="p-1" href="/{pkg}/v/{version}/code/{k.slice(1)}"
                     ><button
-                        class="cursor-pointer break-all rounded-md border-2 border-black p-1 dark:border-white"
+                        class="cursor-pointer rounded-md border-2 border-black p-1 break-all dark:border-white"
                         >{k.slice(1)}</button
                     ></a
                 >

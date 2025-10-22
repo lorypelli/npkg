@@ -106,7 +106,7 @@
                         target="_blank"
                         class="hover:underline"
                     >
-                        <span class="break-words"
+                        <span class="wrap-break-word"
                             >{data.homepage.replace(
                                 /(http?s:\/\/)|(\/$)/g,
                                 '',
