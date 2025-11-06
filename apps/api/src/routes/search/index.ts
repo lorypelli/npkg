@@ -14,7 +14,6 @@ export default async function search(ctx: Context) {
     } else if (q.length < 2 || q.length > 64) {
         return ctx.body(null, 204);
     }
-    const total = 5000;
     let page = 1;
     if (p) {
         page = parseInt(p);
@@ -22,10 +21,6 @@ export default async function search(ctx: Context) {
     let pkg_page = 20;
     if (size) {
         pkg_page = parseInt(size);
-    }
-    const lastPage = total / pkg_page;
-    if (page < 0 || page > lastPage) {
-        return ctx.json({ error: 'Page too high' }, 400);
     }
     let from = pkg_page * (page - 1);
     if (suggestions) {
@@ -44,6 +39,11 @@ export default async function search(ctx: Context) {
     }
     const pkgs: NPMSearch = await search.json();
     const packages: Search['packages'] = [];
+    const total = Math.min(pkgs.total, 5000);
+    const lastPage = Math.floor(total / pkg_page);
+    if (page < 0 || page > lastPage) {
+        return ctx.json({ error: 'Page too high' }, 400);
+    }
     for (let i = 0; i < pkg_page; i++) {
         if (pkgs.objects[i]) {
             packages.push({
