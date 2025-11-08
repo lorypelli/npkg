@@ -6,13 +6,13 @@
         "deploy": "wrangler deploy"
     },
     "dependencies": {
-        "hono": "^4.10.2",
+        "hono": "^4.10.4",
         "micromatch": "^4.0.8"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20251014.0",
+        "@cloudflare/workers-types": "^4.20251107.0",
         "@npkg/types": "workspace:*",
-        "@types/micromatch": "^4.0.9",
-        "wrangler": "^4.44.0"
+        "@types/micromatch": "^4.0.10",
+        "wrangler": "^4.46.0"
     }
 }
