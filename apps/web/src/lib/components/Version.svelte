@@ -10,7 +10,7 @@
         versions: VersionEntries[];
     }
     const { pkg, tags, versions }: Props = $props();
-    let filteredVersions = $state([...versions]);
+    let filteredVersions = $derived([...versions]);
     let exactMatch = $state(false);
     let hideDeprecated = $state(false);
     let input = $state('');
