@@ -60,12 +60,12 @@
         <br />
     {:else}
         <div class="flex flex-col gap-y-1 py-1">
-            <div class="flex justify-center gap-x-2 py-1">
+            <div class="flex items-center justify-center gap-x-2 py-1">
                 <button
                     class="bg-primary dark:bg-primary_dark cursor-pointer rounded-xl border-2 border-black p-3 active:bg-gray-300 dark:border-white dark:active:bg-gray-800"
                     onclick={() => (exactMatch = !exactMatch)}
                 >
-                    <div class="flex gap-x-2">
+                    <div class="flex items-center gap-x-2">
                         {#if exactMatch}
                             <Check />
                         {:else}
@@ -78,7 +78,7 @@
                     class="bg-primary dark:bg-primary_dark cursor-pointer rounded-xl border-2 border-black p-3 active:bg-gray-300 dark:border-white dark:active:bg-gray-800"
                     onclick={() => (hideDeprecated = !hideDeprecated)}
                 >
-                    <div class="flex gap-x-2">
+                    <div class="flex items-center gap-x-2">
                         {#if hideDeprecated}
                             <Check />
                         {:else}
