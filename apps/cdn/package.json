@@ -3,7 +3,7 @@
     "private": true,
     "scripts": {
         "dev": "wrangler dev",
-        "deploy": "wrangler deploy"
+        "build": "wrangler build"
     },
     "dependencies": {
         "hono": "^4.11.7"

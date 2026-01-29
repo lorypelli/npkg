@@ -2,9 +2,6 @@
     "$schema": "https://turborepo.com/schema.json",
     "ui": "tui",
     "tasks": {
-        "deploy": {
-            "cache": false
-        },
         "dev": {
             "cache": false
         }

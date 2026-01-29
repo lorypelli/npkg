@@ -1,7 +1,7 @@
 {
     "$schema": "node_modules/wrangler/config-schema.json",
     "name": "npkg",
-    "compatibility_date": "2026-01-15",
+    "compatibility_date": "2026-01-25",
     "compatibility_flags": ["nodejs_compat"],
     "main": "dist/_worker.js/index.js",
     "route": {
