@@ -12,19 +12,19 @@
         "@fontsource/fira-mono": "^5.2.7",
         "@neoconfetti/svelte": "^2.2.2",
         "@npkg/types": "workspace:*",
-        "@sveltejs/adapter-cloudflare": "^7.2.5",
-        "@sveltejs/kit": "^2.50.0",
+        "@sveltejs/adapter-cloudflare": "^7.2.6",
+        "@sveltejs/kit": "^2.50.1",
         "@sveltejs/vite-plugin-svelte": "^6.2.4",
         "@tailwindcss/vite": "^4.1.18",
         "@types/crypto-js": "^4.2.2",
-        "svelte": "^5.48.0",
+        "svelte": "^5.49.0",
         "svelte-check": "^4.3.5",
         "tailwind-merge": "^3.4.0",
         "tailwindcss": "^4.1.18",
         "tslib": "^2.8.1",
         "typescript": "^5.9.3",
         "vite": "^7.3.1",
-        "wrangler": "^4.59.3"
+        "wrangler": "^4.61.1"
     },
     "dependencies": {
         "@neodrag/svelte": "^2.3.3",
