@@ -6,10 +6,10 @@
         "build": "wrangler build"
     },
     "dependencies": {
-        "hono": "^4.11.7"
+        "hono": "^4.12.1"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20260129.0",
-        "wrangler": "^4.61.1"
+        "@cloudflare/workers-types": "^4.20260228.0",
+        "wrangler": "^4.67.0"
     }
 }

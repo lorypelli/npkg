@@ -8,9 +8,9 @@
     "devDependencies": {
         "prettier": "^3.8.1",
         "prettier-plugin-organize-imports": "^4.3.0",
-        "prettier-plugin-svelte": "^3.4.1",
+        "prettier-plugin-svelte": "^3.5.0",
         "prettier-plugin-tailwindcss": "^0.7.2",
-        "turbo": "^2.8.0"
+        "turbo": "^2.8.10"
     },
     "packageManager": "pnpm@10.25.0"
 }
