@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { keydown } from '$lib/utils/handle';
     import Wrapper from './Wrapper.svelte';
     interface Props {
         lastPage: number;
@@ -7,18 +8,7 @@
     const { lastPage, query }: Props = $props();
 </script>
 
-<svelte:window
-    onkeydown={(e) => {
-        if (e.shiftKey && e.key == 'P') {
-            e.preventDefault();
-            location.hash = '#p_select';
-        }
-        if (location.hash == '#p_select' && e.key == 'Escape') {
-            e.preventDefault();
-            location.hash = '#';
-        }
-    }}
-/>
+<svelte:window onkeydown={(e) => keydown('#p_select', e)} />
 
 <a href="#p_select">...</a>
 <Wrapper hash="p_select" close="center">

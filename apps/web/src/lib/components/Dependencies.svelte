@@ -2,6 +2,7 @@
     import { twMerge } from 'tailwind-merge';
     import type { Entries } from '@npkg/types';
     import Wrapper from './Wrapper.svelte';
+    import { keydown } from '$lib/utils/handle';
     interface Props {
         dependencies?: Entries;
         devDependencies?: Entries;
@@ -13,18 +14,7 @@
     const hasDevDeps = $derived(devDeps.length != 0);
 </script>
 
-<svelte:window
-    onkeydown={(e) => {
-        if (e.shiftKey && e.key == 'D') {
-            e.preventDefault();
-            location.hash = '#deps';
-        }
-        if (location.hash == '#deps' && e.key == 'Escape') {
-            e.preventDefault();
-            location.hash = '#';
-        }
-    }}
-/>
+<svelte:window onkeydown={(e) => keydown('#deps', e)} />
 
 <Wrapper hash="deps">
     {#if !hasDeps && !hasDevDeps}

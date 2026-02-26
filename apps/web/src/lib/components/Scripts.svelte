@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Entries } from '@npkg/types';
     import Wrapper from './Wrapper.svelte';
+    import { keydown } from '$lib/utils/handle';
     interface Props {
         scripts?: Entries;
     }
@@ -8,18 +9,7 @@
     const s = $derived(Object.entries(scripts));
 </script>
 
-<svelte:window
-    onkeydown={(e) => {
-        if (e.shiftKey && e.key == 'S') {
-            e.preventDefault();
-            location.hash = '#scripts';
-        }
-        if (location.hash == '#scripts' && e.key == 'Escape') {
-            e.preventDefault();
-            location.hash = '#';
-        }
-    }}
-/>
+<svelte:window onkeydown={(e) => keydown('#scripts', e)} />
 
 <Wrapper hash="scripts">
     {#if s.length == 0}
