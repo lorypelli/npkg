@@ -10,7 +10,7 @@
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-svelte": "^3.5.1",
         "prettier-plugin-tailwindcss": "^0.7.2",
-        "turbo": "^2.8.21"
+        "turbo": "^2.9.5"
     },
     "packageManager": "pnpm@10.25.0"
 }
